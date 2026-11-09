@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="es"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas Pixel · Catálogo de videojuegos</title>
+<meta name="description" content="Atlas Pixel: catálogo interactivo de videojuegos (proyecto académico).">
+
+
+<link rel="stylesheet" href="assets/vendor/bootstrap-icons.css">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido principal</a>
+<!-- CABECERA: marca, búsqueda global, navegación y preferencias. -->
+<header class="top" id="top">
+ <a class="brand" href="#inicio"><i class="bi bi-controller" aria-hidden="true"></i> ATLAS<span>PIXEL</span></a>
+ <button id="menuBtn" class="icon" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><i class="ic" aria-hidden="true">☰</i></button>
+ <label class="global-search"><i class="bi bi-search" aria-hidden="true"></i><span class="sr-only">Buscar videojuegos</span><input id="globalSearch" type="search" placeholder="Encuentra tu próxima aventura…" autocomplete="off" maxlength="120"><kbd>/</kbd></label>
+ <nav id="nav" aria-label="Principal">
+  <a href="#inicio" aria-current="page">Inicio</a><a href="#catalogo">Catálogo</a><a href="#favoritos">Favoritos</a><a href="#solicitar">Solicitar un videojuego</a><a href="#info"> Empresa y redes</a>
+ </nav>
+ <div class="tools">
+  <a class="icon" href="#favoritos" aria-label="Ir a favoritos"><i class="ic" aria-hidden="true">♥</i><span id="favCount" class="badge">0</span></a>
+  <button id="themeBtn" class="icon" aria-pressed="false" aria-label="Activar tema claro"><i class="ic" aria-hidden="true">☀</i></button>
+ </div>
+</header>
+<!-- NAVEGACIÓN LATERAL: categorías y accesos, independiente del menú móvil. -->
+<aside class="sidebar" aria-label="Explorar Atlas Pixel"><p class="side-label">TU UNIVERSO GAMING</p><nav id="sideNav"><a href="#inicio"><i class="bi bi-house-door" aria-hidden="true"></i> Inicio</a><a href="#catalogo"><i class="bi bi-grid" aria-hidden="true"></i> Catálogo</a><a href="#favoritos"><i class="bi bi-heart" aria-hidden="true"></i> Favoritos <span id="sideFavCount">0</span></a><a href="#solicitar"><i class="bi bi-plus-circle" aria-hidden="true"></i> Solicitar juego</a><a href="#info"><i class="bi bi-info-circle" aria-hidden="true"></i> Empresa y redes</a></nav><div class="side-card"><i class="bi bi-stars" aria-hidden="true"></i><strong>Tu próximo mundo<br>te está esperando.</strong><p>Explora. Descubre. Guarda.</p></div><span class="side-bottom"><span class="online-dot"></span> 24 mundos por descubrir</span></aside>
+<div id="note" class="note" role="status" hidden=""></div>
+<main id="main" tabindex="-1">
+<section id="inicio" class="hero view" aria-labelledby="h-inicio">
+ <div class="hero-intro"><span class="eyebrow"><span class="online-dot"></span> TU PRÓXIMA AVENTURA EMPIEZA AQUÍ</span><h1 id="h-inicio" tabindex="-1">Un universo de juegos.<br><span>Tu próxima historia.</span></h1>
+ <p>Descubre grandes aventuras, joyas independientes y mundos que merecen una partida más. Encuentra el tuyo.</p>
+ <a class="btn primary" href="#catalogo">Explorar el catálogo</a></div>
+ <div class="carousel" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Juegos destacados">
+  <div id="slides"></div>
+  <div class="car-ctl">
+   <button class="icon" id="prev" aria-label="Anterior"><i class="ic" aria-hidden="true">❮</i></button>
+   <button class="icon" id="pp" aria-label="Pausar avance automático"><i class="ic" aria-hidden="true">❚❚</i></button>
+   <button class="icon" id="next" aria-label="Siguiente"><i class="ic" aria-hidden="true">❯</i></button>
+   <div id="dots" class="dots"></div>
+  </div>
+ </div>
+<div class="home-heading"><h2>Encuentra tu estilo</h2><a class="link" href="#catalogo">Ver los 24 juegos →</a></div><div id="collections" class="collections" role="group" aria-label="Selecciones temáticas"></div><div id="homeGrid" class="grid"></div></section>
+
+<section id="catalogo" aria-labelledby="h-cat" class="view" hidden="">
+ <div class="section-heading"><div><span class="eyebrow">ELIGE TU SIGUIENTE PARTIDA</span><h2 id="h-cat" tabindex="-1">Explora el catálogo<span class="accent">.</span></h2></div><span class="section-pill">24 juegos · infinitas aventuras</span></div>
+ <p>Ediciones de Steam · plataformas PC, Mac y Linux · año de esta edición. <button class="link" id="helpBtn" aria-expanded="false" aria-controls="help">¿Cómo uso el catálogo?</button></p>
+ <div id="help" class="panel" hidden="">Busca en la barra superior, elige un género y combina plataforma y año. Explora hasta 8 juegos por página. El corazón guarda favoritos y Ver detalles abre la información completa.</div>
+ 
+ <div class="catalog-toolbar"><button class="btn" id="filtBtn" aria-expanded="false" aria-controls="filters"><i class="bi bi-sliders" aria-hidden="true"></i> <span id="filterButtonLabel">Filtros</span></button><label for="sort" class="sr-only">Ordenar catálogo</label><select id="sort"><option value="az">Nombre A–Z</option><option value="za">Nombre Z–A</option><option value="new">Más recientes</option><option value="old">Más antiguos</option></select><button class="btn" id="clear" type="button" hidden="">Limpiar filtros</button></div><div id="filters" class="filters" hidden="">
+  
+  <label>Plataforma<select id="plat"></select></label>
+  <label>Año<select id="year"></select></label>
+  
+  
+ </div>
+ <div id="genres" class="chips" role="group" aria-label="Géneros"></div><div id="activeFilters" class="active-filters" role="group" aria-label="Filtros aplicados"></div>
+ <p id="count" class="count" aria-live="polite" aria-atomic="true"></p>
+ <div id="grid" class="grid"></div>
+ <div id="empty" class="empty" hidden=""><div class="empty-art" aria-hidden="true"><i class="bi bi-search"></i><span>?</span></div><p>Esta combinación todavía no tiene una aventura. Prueba otro filtro y descubre un nuevo mundo.</p><button class="btn primary" id="clear2">Limpiar filtros</button></div>
+<nav id="pagination" class="pagination" aria-label="Páginas del catálogo"></nav></section>
+
+<section id="favoritos" aria-labelledby="h-fav" class="view" hidden="">
+ <span class="eyebrow">TU COLECCIÓN PERSONAL</span><h2 id="h-fav" tabindex="-1">Tus favoritos <span class="accent">(<span id="favCount2">0</span>)</span></h2>
+ <div id="favGrid" class="grid"></div>
+ <div id="favEmpty" class="empty"><div class="empty-art" aria-hidden="true"><i class="bi bi-controller"></i><span>♡</span></div><p>Tu colección está esperando su primer juego. Pulsa el corazón de una tarjeta para comenzar.</p><a class="btn primary" href="#catalogo">Ir al catálogo</a></div>
+<nav id="favPagination" class="pagination" aria-label="Páginas de favoritos"></nav></section>
+
+<section id="solicitar" aria-labelledby="h-sol" class="view" hidden="">
+ <h2 id="h-sol" tabindex="-1">Sugiere tu próximo juego<span class="accent">.</span></h2>
+ <p class="edition-caption">Te acompañamos paso a paso. Puedes volver y corregir tus datos. Es una demostración: no se envía una solicitud real.</p>
+ <!-- FORMULARIO: validación local; no se envían ni almacenan datos personales. -->
+ <form id="form" novalidate=""><ol id="stepList" class="step-list" aria-label="Pasos de la solicitud"></ol><progress id="stepProgress" value="1" max="6" aria-label="Progreso del formulario"></progress><div class="step-heading"><span id="stepNumber" class="eyebrow">PASO 1 DE 6</span><h3 id="stepTitle" tabindex="-1">¿Cómo te llamas?</h3><p id="stepGuide" role="status" aria-live="polite" aria-atomic="true">Primero, escribe tu nombre para comenzar.</p></div><div id="fieldFeedback" class="field-feedback" role="status" aria-live="polite" aria-atomic="true"><i class="bi bi-pencil-square" aria-hidden="true"></i><span>Llene su nombre para comenzar.</span></div><fieldset class="wizard-step" data-step="0"><legend class="sr-only">Tu nombre</legend><div class="f"><label for="fn">Nombre (obligatorio)</label><input id="fn" name="nombre" required="" minlength="2" maxlength="80" autocomplete="name" aria-describedby="e-fn" placeholder="Ej. María López"><p class="err" id="e-fn" aria-live="polite"></p></div></fieldset><fieldset class="wizard-step" data-step="1" hidden="" disabled=""><legend class="sr-only">Tu correo</legend><div class="f"><label for="fe">Correo electrónico (obligatorio)</label><input id="fe" name="correo" type="email" required="" maxlength="120" autocomplete="email" aria-describedby="e-fe" placeholder="nombre@ejemplo.com"><p class="err" id="e-fe" aria-live="polite"></p></div></fieldset><fieldset class="wizard-step" data-step="2" hidden="" disabled=""><legend class="sr-only">Tu videojuego</legend><div class="f"><label for="fg">Nombre del videojuego (obligatorio)</label><input id="fg" name="juego" required="" minlength="2" maxlength="120" aria-describedby="e-fg" placeholder="¿Qué juego te gustaría encontrar?"><p class="err" id="e-fg" aria-live="polite"></p></div></fieldset><fieldset class="wizard-step" data-step="3" hidden="" disabled=""><legend class="sr-only">Tu plataforma</legend><div class="f"><label for="fp">Plataforma de interés (obligatoria)</label><select id="fp" name="plataforma" required="" aria-describedby="e-fp"></select><p class="err" id="e-fp" aria-live="polite"></p></div></fieldset><fieldset class="wizard-step" data-step="4" hidden="" disabled=""><legend class="sr-only">Tu comentario opcional</legend><div class="f wide"><label for="fc">Comentario (opcional)</label><textarea id="fc" name="comentario" maxlength="500" rows="3" aria-describedby="e-fc c-fc" placeholder="Cuéntanos por qué lo recomiendas…"></textarea><p class="cnt" id="c-fc">0/500</p><p class="err" id="e-fc" aria-live="polite"></p></div></fieldset><fieldset class="wizard-step" data-step="5" hidden="" disabled=""><legend class="sr-only">Revisión final</legend><div id="review" class="review"></div><p class="privacy-note"><i class="bi bi-shield-check" aria-hidden="true"></i> Revisa con calma: no hay límite de tiempo. Esta demostración no envía ni guarda datos personales.</p></fieldset><label class="auto-advance-option"><input id="autoAdvance" type="checkbox" checked=""> Avanzar automáticamente al validar <span>Espera una pausa al escribir. Puedes desactivarlo.</span></label><div class="wizard-actions"><button id="stepBack" class="btn" type="button" disabled="">← Anterior</button><button id="stepNext" class="btn primary" type="button">Continuar →</button><button id="send" class="btn primary" type="submit" hidden="">Completar demostración <i class="bi bi-check2" aria-hidden="true"></i></button></div><p class="form-footnote"><i class="bi bi-lock" aria-hidden="true"></i> Solo validación local · Sin cuentas ni contraseñas · Ningún dato personal se guarda al recargar.</p></form>
+</section>
+
+<section id="info" aria-labelledby="h-info" class="view" hidden=""><!-- Empresa ficticia: todos los datos de esta ficha son de demostración académica. -->
+<span class="eyebrow">CONOCE ATLAS PIXEL</span><h2 id="h-info" tabindex="-1">Nuestra empresa y redes<span class="accent">.</span></h2>
+<p class="fiction-notice"><i class="bi bi-info-circle" aria-hidden="true"></i> Empresa ficticia para un proyecto académico. Datos y perfiles de muestra; no existe atención comercial real.</p>
+<div class="company-layout"><article class="company-card"><div class="company-brand"><i class="bi bi-controller" aria-hidden="true"></i><div><h3>Atlas Pixel</h3><span>Descubre tu próximo mundo.</span></div></div><p>Microempresa ficticia dedicada a la difusión y orientación sobre videojuegos. Su catálogo ayuda a descubrir títulos y organizar favoritos.</p>
+<dl class="company-facts"><div><dt>Nombre comercial</dt><dd>Atlas Pixel</dd></div><div><dt>Razón social simulada</dt><dd>Atlas Pixel · Catálogo Digital</dd></div><div><dt>Actividad</dt><dd>Catálogo informativo de videojuegos</dd></div><div><dt>Domicilio de muestra</dt><dd>Avenida Pixel 123, Ciudad Pixel · ubicación ficticia</dd></div><div><dt>Correo de muestra</dt><dd>contacto@atlaspixel.example</dd></div><div><dt>Teléfono</dt><dd>No habilitado · demostración académica</dd></div><div><dt>Registro tributario</dt><dd>No aplica: empresa ficticia, sin registro comercial</dd></div></dl>
+<button id="hoursBtn" type="button" class="btn" aria-expanded="false" aria-controls="companyHours"><i class="bi bi-clock" aria-hidden="true"></i> Ver horarios de muestra</button><div id="companyHours" class="company-hours" hidden="">Lunes a viernes: 09:00–18:00. Sábado: 09:00–13:00.<br>Horario ficticio, sin servicio de atención real.</div></article>
+<article class="social-card"><span class="eyebrow">CONECTA CON NUESTRO UNIVERSO</span><h3>Redes sociales</h3><p>Explora los perfiles de muestra. Los enlaces externos abren la plataforma, no una cuenta real de Atlas Pixel.</p>
+<div id="socialChoices" class="social-choices" role="group" aria-label="Elegir perfil de muestra"><button type="button" data-social="instagram" aria-pressed="true"><i class="bi bi-instagram" aria-hidden="true"></i> Instagram</button><button type="button" data-social="facebook" aria-pressed="false"><i class="bi bi-facebook" aria-hidden="true"></i> Facebook</button><button type="button" data-social="youtube" aria-pressed="false"><i class="bi bi-youtube" aria-hidden="true"></i> YouTube</button></div>
+<div id="socialPreview" class="social-preview" aria-live="polite" aria-atomic="true"></div>
+<p class="company-footnote">Los perfiles son representaciones locales. No se publican mensajes ni se envían datos a estas plataformas.</p></article></div>
+<div class="panel company-project"><h3>Acerca del proyecto</h3><p> Las imágenes pertenecen a sus titulares y las fichas enlazan a Steam. Solo los favoritos .</p></div></section>
+</main>
+<footer><strong>ATLAS PIXEL</strong><span>Descubre tu próximo mundo.</span><nav aria-label="Enlaces del pie"><a href="#info">Empresa y redes</a></nav><small>Proyecto académico · Arte y videojuegos © sus respectivos titulares · jQuery 3.7.1 · Bootstrap Icons</small></footer>
+
+<!-- AVISOS Y DIÁLOGO: contenido actualizado por jQuery. -->
+<div id="toast" class="toast" role="status"></div>
+<div id="modal" class="modal" hidden=""><div class="backdrop"></div>
+ <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="mTitle" tabindex="-1"><div class="dialog-close-bar"><button class="icon close" id="mClose" aria-label="Cerrar"><i class="ic" aria-hidden="true">✕</i></button></div><div id="mBody"></div></div>
+</div>
+<script src="assets/vendor/jquery-3.7.1.min.js"></script>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>
