@@ -1,0 +1,640 @@
+{
+  "originalArchive": "Atlas_Pixel_Frontend_GitHub.zip",
+  "libraryVersion": 5,
+  "originalAppSha256": "1224984a4c4438d189867ff2227e2190c7cfabd7561bb30db51f914868d851c5",
+  "folder": "02_bitacoras",
+  "functions": [
+    {
+      "function": "loadCatalog",
+      "source": "app.js",
+      "from": 22,
+      "to": 38,
+      "sha256": "dbea99d5c8120d28c2683123c3d9087f4a86c4424a92826e51e00501595f458e",
+      "role": "Solicita catalogo.json, valida su contenido y carga el respaldo local si falla."
+    },
+    {
+      "function": "track",
+      "source": "app.js",
+      "from": 102,
+      "to": 104,
+      "sha256": "a85736718eedd8dc7d31c17dbb2b6f2cf9e4656dc802930009ae063f8e231365",
+      "role": "Conserva los contenedores cuyos eventos jQuery deben retirarse."
+    },
+    {
+      "function": "cleanupEvents",
+      "source": "app.js",
+      "from": 105,
+      "to": 108,
+      "sha256": "2fc6b961db7faa954c9bfc43719996dc12898de9aac294e1e1d1f9a17777c3a8",
+      "role": "Retira únicamente los eventos del namespace .atlas de los contenedores registrados."
+    },
+    {
+      "function": "later",
+      "source": "app.js",
+      "from": 111,
+      "to": 116,
+      "sha256": "36f73fcae27927df5147da2210693849c3a2e0ea6f3af202e055d3a3d4063524",
+      "role": "Programa una tarea y conserva su identificador para cancelarla al navegar."
+    },
+    {
+      "function": "cleanupView",
+      "source": "app.js",
+      "from": 117,
+      "to": 120,
+      "sha256": "a516a890a799199aa3c4fe3171807592fc87d860c8ff1e9134f9baf02bf634ca",
+      "role": "Cancela tareas de la vista y retira efectos temporales de las tarjetas."
+    },
+    {
+      "function": "storageWarning",
+      "source": "app.js",
+      "from": 131,
+      "to": 133,
+      "sha256": "f992803c184fb8486b77a1540b1ee2cfc88bbfc21d68530c3c00bc8729f68d04",
+      "role": "Muestra un aviso si el navegador no permite guardar una preferencia."
+    },
+    {
+      "function": "persist",
+      "source": "app.js",
+      "from": 134,
+      "to": 140,
+      "sha256": "f2416c4982fcb0e7456bdde8bfaddb44b589873d2917ad30747822eac4f02788",
+      "role": "Guarda una preferencia en localStorage y controla sus errores."
+    },
+    {
+      "function": "setTheme",
+      "source": "app.js",
+      "from": 141,
+      "to": 144,
+      "sha256": "a097dc9ab1c7070aea119315b568d438459fbc01d5cd6a9efc06f81dd0790644",
+      "role": "Alterna la paleta clara/oscura y actualiza el estado accesible del botón."
+    },
+    {
+      "function": "loadPreferences",
+      "source": "app.js",
+      "from": 145,
+      "to": 158,
+      "sha256": "82a1e8e250fde9d5952d86c7e993323bed56b23de4eec85883188159fb713f98",
+      "role": "Recupera tema y favoritos validando el formato de los datos guardados."
+    },
+    {
+      "function": "notify",
+      "source": "app.js",
+      "from": 159,
+      "to": 161,
+      "sha256": "ea152132fa93db5452ea0bd80e04b1771f9e7bd6054db92d50af24671204eb62",
+      "role": "Muestra un mensaje temporal como texto seguro y cancela el aviso anterior."
+    },
+    {
+      "function": "showView",
+      "source": "app.js",
+      "from": 162,
+      "to": 166,
+      "sha256": "3cb03e230d2e259f4e5951194ea824f525fd5319c0408de63af256367bc8595c",
+      "role": "Oculta las otras secciones, activa la elegida y actualiza navegación, título y foco."
+    },
+    {
+      "function": "navigate",
+      "source": "app.js",
+      "from": 167,
+      "to": 169,
+      "sha256": "039566e93690d32fe201b74dfd453e83b61645486083f941d279988d557a1cf6",
+      "role": "Cambia el hash para navegar y conservar historial."
+    },
+    {
+      "function": "cover",
+      "source": "app.js",
+      "from": 170,
+      "to": 172,
+      "sha256": "690d2c92365655037a4b522299c5bbd693c8848bf33db4cfd3720ed6723a262c",
+      "role": "Genera portada lazy y botón de vista rápida para un juego real."
+    },
+    {
+      "function": "favoriteButton",
+      "source": "app.js",
+      "from": 173,
+      "to": 176,
+      "sha256": "9d61d3df7ecf6a9b69dc68747b2e067a540bfcc369dac16638add2eccceaf995",
+      "role": "Genera el corazón con identificador, etiqueta y estado aria-pressed."
+    },
+    {
+      "function": "card",
+      "source": "app.js",
+      "from": 177,
+      "to": 179,
+      "sha256": "1526f1722089924c9cd6fd587faaaf381d9e2fc0e19483a7165ec498f72250ca",
+      "role": "Construye la tarjeta original con datos escapados, categoría, detalle y favorito."
+    },
+    {
+      "function": "pageControls",
+      "source": "app.js",
+      "from": 180,
+      "to": 183,
+      "sha256": "3f218a2f6beb77539f8c5afaa32d4ac0332eada75d60b7939c31c86f499c9ef8",
+      "role": "Genera Anterior/Siguiente y el indicador de página."
+    },
+    {
+      "function": "filteredGames",
+      "source": "app.js",
+      "from": 184,
+      "to": 186,
+      "sha256": "415e26d8e165c2880c300773127e99e6210a7dab8f69fcd4581ddcca8bb99220",
+      "role": "Aplica los filtros originales sobre el catálogo cargado."
+    },
+    {
+      "function": "fitCards",
+      "source": "app.js",
+      "from": 188,
+      "to": 203,
+      "sha256": "7b51d9b526e86dbc26e9f98cbead04e20e0761ae447cff3513869479c4e96495",
+      "role": "Ajusta columnas y filas al espacio real y al número de tarjetas."
+    },
+    {
+      "function": "renderCatalog",
+      "source": "app.js",
+      "from": 204,
+      "to": 212,
+      "sha256": "a01059a2a0803da3b1788b260689a65fe2df3b14837eaca0ab6aaeed5f470b87",
+      "role": "Filtra, pagina y actualiza tarjetas, contador y controles del catálogo."
+    },
+    {
+      "function": "renderFavorites",
+      "source": "app.js",
+      "from": 213,
+      "to": 217,
+      "sha256": "4c6002ff0ec9180e700e967e087afe96339252681c0eaf4ce4863080fe59697d",
+      "role": "Muestra los juegos guardados y sincroniza sus contadores."
+    },
+    {
+      "function": "syncFavorites",
+      "source": "app.js",
+      "from": 218,
+      "to": 222,
+      "sha256": "5d3feee455c3f3c62a4d0b718d686b53af80be728bc5a45da33d3eb8e24479f1",
+      "role": "Sincroniza corazones, ficha y lista después de un cambio."
+    },
+    {
+      "function": "renderHome",
+      "source": "app.js",
+      "from": 223,
+      "to": 226,
+      "sha256": "c1423b3826ee57700c27030f9d72ed33cb0ceb64dd2a9f0b56c93fcf33f882b3",
+      "role": "Muestra el número adecuado de recomendaciones en Inicio."
+    },
+    {
+      "function": "buildFilters",
+      "source": "app.js",
+      "from": 227,
+      "to": 233,
+      "sha256": "791b385a1a36b648d05c99ba2410da1fac0f9815980173cf0c2a74773eeae4f8",
+      "role": "Construye opciones y categorías a partir del catálogo real."
+    },
+    {
+      "function": "renderFilterTags",
+      "source": "app.js",
+      "from": 234,
+      "to": 243,
+      "sha256": "1af861b1a602b3a0e1ec46c6667943f35917d85db586c8e8c3eea21b7d44918e",
+      "role": "Genera etiquetas removibles e indica si hay filtros activos."
+    },
+    {
+      "function": "clearFilters",
+      "source": "app.js",
+      "from": 245,
+      "to": 253,
+      "sha256": "5cefd5e004da752ee3ffc0475d62a4f1cd90dd5dee60a79fa8cf79d09692a0b1",
+      "role": "Limpia estado y controles sin enfocar la búsqueda ni abrir el teclado."
+    },
+    {
+      "function": "togglePanel",
+      "source": "app.js",
+      "from": 254,
+      "to": 258,
+      "sha256": "882ec28e9a2ee38ec2763734d1822a235883abca288607f0afcc673bd4772416",
+      "role": "Abre o cierra un panel con slideToggle y actualiza aria-expanded."
+    },
+    {
+      "function": "openModal",
+      "source": "app.js",
+      "from": 259,
+      "to": 261,
+      "sha256": "9fee5a4355a63c0749a9bf555f4723e755dc410d59f1da3c1cda6892584e8ea8",
+      "role": "Abre una ventana original, bloquea el fondo y prepara su ciclo de vida."
+    },
+    {
+      "function": "closeModal",
+      "source": "app.js",
+      "from": 262,
+      "to": 266,
+      "sha256": "de4c0bcc550fe070c53add02cea1cfd704020229b2eae3826087f5ab6cb72416",
+      "role": "Cancela tareas del diálogo y recupera la interacción y el foco."
+    },
+    {
+      "function": "showDetail",
+      "source": "app.js",
+      "from": 267,
+      "to": 277,
+      "sha256": "a4686b609b4a2f563c8f6b9f8edfbd0c790d80c7555f808eeb35810534c1e702",
+      "role": "Muestra Resumen, Galería y Datos de la ficha del juego."
+    },
+    {
+      "function": "galleryImages",
+      "source": "app.js",
+      "from": 278,
+      "to": 280,
+      "sha256": "5b247447b9b72cab574d7e52eb25ae151a45e47079af0a82f000841d8c41cf43",
+      "role": "Obtiene las imágenes reales del catálogo o el respaldo de la ficha."
+    },
+    {
+      "function": "changeGallery",
+      "source": "app.js",
+      "from": 281,
+      "to": 287,
+      "sha256": "fd49f1d6e5dd4c94afbc9b4e354d9d3511f85f7da40575efa764a58ad7beb452",
+      "role": "Cambia la imagen y los indicadores de la galería."
+    },
+    {
+      "function": "showQuickView",
+      "source": "app.js",
+      "from": 288,
+      "to": 291,
+      "sha256": "87130c0c6dbeb93ab06d2d26ef379eedf063e6dbc3b93e35f7fb5abfe5e4b6e5",
+      "role": "Abre el resumen breve con enlace a la ficha completa."
+    },
+    {
+      "function": "goTo",
+      "source": "app.js",
+      "from": 303,
+      "to": 310,
+      "sha256": "f022582ca153179eb0ae66014e28bb24f748f2ed1a1ec92065c8ddcdd9241fab",
+      "role": "Cambia el destacado con fadeOut/fadeIn y actualiza los indicadores."
+    },
+    {
+      "function": "refreshCarouselTimer",
+      "source": "app.js",
+      "from": 311,
+      "to": 317,
+      "sha256": "74b4ead0131535f24ea2ae6945ec2e64575309ce859adb9cf1a4dc5495fa4a15",
+      "role": "Gestiona el intervalo del carrusel y sus pausas según visibilidad e interacción."
+    },
+    {
+      "function": "setManualPause",
+      "source": "app.js",
+      "from": 318,
+      "to": 320,
+      "sha256": "914f86b2091027d202c20b7cecd82b94738c831ef686e1aa6b0996d0d7ff824b",
+      "role": "Alterna la pausa manual y el texto del control."
+    },
+    {
+      "function": "cancelAutoAdvance",
+      "source": "app.js",
+      "from": 322,
+      "to": 324,
+      "sha256": "5d097bcc9bc4aea900044cf0178618efae5ac191cfb710046e3c0da7ccb753c3",
+      "role": "Cancela el temporizador opcional del formulario."
+    },
+    {
+      "function": "fieldFeedback",
+      "source": "app.js",
+      "from": 325,
+      "to": 330,
+      "sha256": "bd52ff66d8187fbcfbee1d70887ed5b669137f5e6418f897a47875df4344669c",
+      "role": "Muestra orientación progresiva o error del campo actual."
+    },
+    {
+      "function": "scheduleAutoAdvance",
+      "source": "app.js",
+      "from": 331,
+      "to": 337,
+      "sha256": "3fa1ef247f4a11d335b2ba37e1ab258da2acd043d8de2c60803bead728e6998d",
+      "role": "Avanza opcionalmente tras una pausa de escritura válida."
+    },
+    {
+      "function": "fieldValue",
+      "source": "app.js",
+      "from": 341,
+      "to": 344,
+      "sha256": "e0b11b0b19197cecc603ce0326a19643c5640e390184331b13031d8ed97d191d",
+      "role": "Obtiene el texto del campo, normalizándolo cuando corresponde."
+    },
+    {
+      "function": "validateField",
+      "source": "app.js",
+      "from": 345,
+      "to": 348,
+      "sha256": "18a5d45255574466c2764e72e049d3802c0a48b160ed2d6949ff111450fc379b",
+      "role": "Aplica la regla original del campo y actualiza mensajes y accesibilidad."
+    },
+    {
+      "function": "renderReview",
+      "source": "app.js",
+      "from": 349,
+      "to": 360,
+      "sha256": "056142a11bd1aaad424fcf0e8fb7a8430abf1dcd5e8cdc7fe6639504c1c371d3",
+      "role": "Presenta la revisión usando texto, sin interpretar las entradas como HTML."
+    },
+    {
+      "function": "showStep",
+      "source": "app.js",
+      "from": 361,
+      "to": 370,
+      "sha256": "71d4198d7a64940027c32f08f388b0e016e92e576d3999379430271bd6d893df",
+      "role": "Activa un paso y actualiza progreso y botones del asistente."
+    },
+    {
+      "function": "advanceStep",
+      "source": "app.js",
+      "from": 371,
+      "to": 379,
+      "sha256": "6351333627ed1f46603ca958fa911125886a27ffe27f3b2ecc7bbc31d56ad2e2",
+      "role": "Valida el paso actual antes de avanzar."
+    },
+    {
+      "function": "requestStep",
+      "source": "app.js",
+      "from": 380,
+      "to": 390,
+      "sha256": "c141c1c8c14d5ff3fc5164440922e71c3944db95e83f8f93e46ab6fda503bd30",
+      "role": "Permite volver o comprueba los pasos antes de saltar hacia delante."
+    },
+    {
+      "function": "resetWizard",
+      "source": "app.js",
+      "from": 391,
+      "to": 393,
+      "sha256": "27cf09acbe266f351e31e9e32b6c12baab55e0569bc5f5ef9ab27a86de2dab94",
+      "role": "Limpia el formulario y restablece el primer paso."
+    },
+    {
+      "function": "confirmForm",
+      "source": "app.js",
+      "from": 394,
+      "to": 406,
+      "sha256": "8c896aac01bb743c0c7003a675ecaa44178b69660bbd65602dbae11303d7b7f0",
+      "role": "Impide el envío tradicional, valida y confirma la demostración local."
+    },
+    {
+      "function": "focusSearch",
+      "source": "app.js",
+      "from": 425,
+      "to": 427,
+      "sha256": "f872bfb8fb058c6796886c11b1193bd9f2aa8bcb4cff18e02df3f618c61c32c8",
+      "role": "Abre el panel del catálogo antes de enfocar su buscador."
+    },
+    {
+      "function": "eventIsComposing",
+      "source": "app.js",
+      "from": 536,
+      "to": 538,
+      "sha256": "e6ee2aed9bf3d1180f7a9b583a376d75e7a2ad0ae1d25a67dc088d0709c3bc88",
+      "role": "Detecta composición de texto para no interferir con teclados IME."
+    },
+    {
+      "function": "viewport",
+      "source": "app.js",
+      "from": 582,
+      "to": 617,
+      "sha256": "74801537da7df44adbf854bb5671a58c4847e58728d55616318fdf40b0b83c1f",
+      "role": "Adapta la altura visible, orientación física, teclado y capacidad del catálogo."
+    }
+  ],
+  "events": [
+    {
+      "sourceLine": 109,
+      "sha256": "6891c4788d19598334517bcc9afb5ac278f6e1d0768261d7654b6730e8d312fc"
+    },
+    {
+      "sourceLine": 129,
+      "sha256": "d6f051fa64ee97054b6ccbb22f11296ddc297fbca87b5099f3f6387948ee7a89"
+    },
+    {
+      "sourceLine": 129,
+      "sha256": "feafb874547200150da75d6ffd9229489539e576e83f702188fda3b4419f44f6"
+    },
+    {
+      "sourceLine": 407,
+      "sha256": "784ecf6aa586d4369691ef4a8b19e96103008caea86383f882a15075b12ef309"
+    },
+    {
+      "sourceLine": 421,
+      "sha256": "6645b21b212eed59f259861d3a1e94dae63f0fa7ae6ebd9e021eef89cdcd615e"
+    },
+    {
+      "sourceLine": 424,
+      "sha256": "3a0b1e01d50b912c72685fbef2af8c3a25203b8bcf69f85b65050da293b44da3"
+    },
+    {
+      "sourceLine": 431,
+      "sha256": "9a7f1a39423ec08e0a2b65e1eb67daf434c88168c6690824f390d8509901bab6"
+    },
+    {
+      "sourceLine": 433,
+      "sha256": "24f03e6bea4f95af40096938f3063057102aa6acde57049662554dd7a0668adb"
+    },
+    {
+      "sourceLine": 435,
+      "sha256": "01b239c4ec502139c1b3e1723a4276f4a1686be94656bf284bac35aafc0ceb45"
+    },
+    {
+      "sourceLine": 437,
+      "sha256": "5e087e0e27f2e06a82f011b35c8a152d91918f1e78efc9a7b48d61577671b8f9"
+    },
+    {
+      "sourceLine": 440,
+      "sha256": "859ac6d72a09ccef34d9d7c91fa87cf86af5bc032487b43c9c971854460ea419"
+    },
+    {
+      "sourceLine": 442,
+      "sha256": "b3d08fed0a0482a10587ff37cdb6d80b5137cf69f80053b687f9593aed8e7a1f"
+    },
+    {
+      "sourceLine": 444,
+      "sha256": "964f7221c09027e7ad683eace29c1c84795b6c7cc29811a578c83c4b1cb1e21e"
+    },
+    {
+      "sourceLine": 449,
+      "sha256": "dc32503110a36c776508e516f13c359e1922ea9782559450a1b349b7b02e1fe1"
+    },
+    {
+      "sourceLine": 453,
+      "sha256": "71331af6e153fa1f32ed2a6b0065786e71381f320f770761fc364439ee526198"
+    },
+    {
+      "sourceLine": 455,
+      "sha256": "142e332435d8053de697831e04261cf3d107f9f7325ba26e3d3c7f361752c0f1"
+    },
+    {
+      "sourceLine": 460,
+      "sha256": "5273136e8c4d7a987865748b7ce54d6d3969817aece156751dde1b2a7f3a981f"
+    },
+    {
+      "sourceLine": 464,
+      "sha256": "8d62e25faa6ceff73ad91be2e5e03d7e51e1c8e711e60f0aa0c42eb3e179d501"
+    },
+    {
+      "sourceLine": 482,
+      "sha256": "4ef81f5e99147e6b895def8c236a7c337d911582df09294eca23097a94adb5a1"
+    },
+    {
+      "sourceLine": 488,
+      "sha256": "ea6a7dd1d91e9c16bc44eb2dfdab67a8943ddc227461dafd55ecff7ba4b69ff8"
+    },
+    {
+      "sourceLine": 491,
+      "sha256": "742e1eb384cae282b7cf1f50abe1b5913fa7429ec10ebddfa882c59ef61c6916"
+    },
+    {
+      "sourceLine": 491,
+      "sha256": "bbe309de53d865e360cb12515156bc0d880c0d1874891fbfe5eed726f071a338"
+    },
+    {
+      "sourceLine": 493,
+      "sha256": "4dde1800743d7b13cb12c6fc7f54fd1f25f22b419298d1bc09ef300a3fbc8def"
+    },
+    {
+      "sourceLine": 514,
+      "sha256": "b142fef1af44c7fdc766410c009ad34e132496f0eeafb01326c8c3068027c99a"
+    },
+    {
+      "sourceLine": 516,
+      "sha256": "06ac4eb5d990391898ca936040aed702b879faa01394ea36a64378b98669cea6"
+    },
+    {
+      "sourceLine": 516,
+      "sha256": "95a6827141da10a3ca10dcc2ff4459317377c4f48827f86d9a7aac95066aa135"
+    },
+    {
+      "sourceLine": 518,
+      "sha256": "9ec0894886ad1c76abe6ec27585eab2ada2e9307d37928f2ed1a0bb77629c900"
+    },
+    {
+      "sourceLine": 520,
+      "sha256": "4f79803b71dc6c302e35f153467fe5ddb729ed44afd3c9db5d7111aee0c216de"
+    },
+    {
+      "sourceLine": 522,
+      "sha256": "7f70f790de068d857f46dfee4c404a695990c2223f5deb6432828a3ad12af9fc"
+    },
+    {
+      "sourceLine": 539,
+      "sha256": "f2ca5448767b7922d8a3522e6790991a043edcbba11e3dcfc0010456c9d7f047"
+    },
+    {
+      "sourceLine": 541,
+      "sha256": "74d46571ebc195eba2d81c2ab4761dada1deac74bfcb490b2365c2a267908576"
+    },
+    {
+      "sourceLine": 541,
+      "sha256": "7de4109f915afecefec7d158ae278ec5d259b5ab8050299cd0110daace22e491"
+    },
+    {
+      "sourceLine": 543,
+      "sha256": "9ca532387c616b29f3409de67c59399fcff7c6e25a835439d7f68ff29dd5489a"
+    },
+    {
+      "sourceLine": 545,
+      "sha256": "5ae937d4a77e433c66b5481b0f053b55067324b0f56f5323834b9523641b5864"
+    },
+    {
+      "sourceLine": 550,
+      "sha256": "b5bdf873c4b5c52a322ee3745ff328a351c8b00b73eab9e900ebc54c48385e06"
+    },
+    {
+      "sourceLine": 555,
+      "sha256": "e1fd2487fdf3fec13c701cb1454e5e3ef97db08381b211a525f6f519fbce6b77"
+    },
+    {
+      "sourceLine": 564,
+      "sha256": "2a9f99da150a62ae9c1bd368644193a798da284dfc826535ae8310c703065e08"
+    },
+    {
+      "sourceLine": 574,
+      "sha256": "c9ea97579bbd3fa937be8c54f22056ae623317ea53e4cbfee2d1c15fc167ef1e"
+    },
+    {
+      "sourceLine": 576,
+      "sha256": "fb3738be822122a07d7fc7ceea0d1e6a6276144ea63f3fb678a714b09b0e6892"
+    },
+    {
+      "sourceLine": 618,
+      "sha256": "68e33e658ba1f67a73c65d4f1ae2937b5aaaca1a5aaac7fe6d24bd1104bcc8e9"
+    },
+    {
+      "sourceLine": 619,
+      "sha256": "a21550e7ad8931793c12540f8e2b3e095338b9642a6c21c9f3534e8de27cf987"
+    },
+    {
+      "sourceLine": 619,
+      "sha256": "47142b4ca150fdf1cd8b0fd02699955226d2628e2ca7ced53f51c09bea943112"
+    },
+    {
+      "sourceLine": 619,
+      "sha256": "f2dea9ac058a94a8a56b0d6a06c016523c3a789a055bf75962b74ea8356f6cbd"
+    },
+    {
+      "sourceLine": 619,
+      "sha256": "5a9ca6b153d3468393b586767eee6916eb0af249335d4d0b58a2d36530e26716"
+    },
+    {
+      "sourceLine": 619,
+      "sha256": "1188a5d34423bfc1f2d2cfefc8e16c0ec1d7e7da72bc64ba3aeb025d3d7042de"
+    },
+    {
+      "sourceLine": 621,
+      "sha256": "651536fec35b697eead8f09c29c28c86d11ebd71fc598ee60b2286ba213d90c6"
+    },
+    {
+      "sourceLine": 623,
+      "sha256": "5ee7a5472771b59bb93e785f63423e1ec9043ecf4df8289ad0953da7c0a1c544"
+    },
+    {
+      "sourceLine": 625,
+      "sha256": "2c10b187601db2b4b59d35c6dcbc83f2d7fd6651debbda58e0f00139fb946439"
+    },
+    {
+      "sourceLine": 625,
+      "sha256": "4c62863321ba5aeda779df37201c8b7645ce43b0883535fbcc6909f03013b13c"
+    },
+    {
+      "sourceLine": 625,
+      "sha256": "885fe7bb8f9ecd47da28ec3989388d21bc846a01bd821bba7c10374cf6f59bbb"
+    },
+    {
+      "sourceLine": 625,
+      "sha256": "7d71fbebb3a8fb892dfcd3fe3b58f55ed0a9407b4d55c0a76fe7c7d2bacf26a5"
+    },
+    {
+      "sourceLine": 625,
+      "sha256": "691e00114c9145b7d0d8877982cbf0b64ce111176948e5d1fb89072dcd1c8db7"
+    },
+    {
+      "sourceLine": 627,
+      "sha256": "28381836f8c956055acc576c84795bc25730625e34092ca40df5e2d4073636f6"
+    },
+    {
+      "sourceLine": 627,
+      "sha256": "cc830ecc967412bdd2503f539ea860eab1b02702fac26bdc9c852a6d5151fa90"
+    },
+    {
+      "sourceLine": 627,
+      "sha256": "3a45aaf27050950c5a212b1d745f391609d32d9b73714813ccf0f3b8124ee525"
+    },
+    {
+      "sourceLine": 630,
+      "sha256": "4612f571ed7d0b5776158346ff7c4317bbb70748fcacbdb5d282eb2af94773b8"
+    },
+    {
+      "sourceLine": 630,
+      "sha256": "15ff6dcd4cc3f7d303ed2bafc6983ee5e369d65808c61dd12ce5d04114bd98da"
+    },
+    {
+      "sourceLine": 630,
+      "sha256": "1d04208a037bb8c2b2e56b2e97fa6746d786302178876a6025499db43c7894f8"
+    }
+  ],
+  "mountingChanges": [
+    "Selección de vistas y ruta inicial local.",
+    "Claves localStorage separadas por carpeta.",
+    "Señal de cancelación en pagehide/pageshow para permitir desmontaje.",
+    "Interfaz mount/dispose que invoca la limpieza original."
+  ]
+}
