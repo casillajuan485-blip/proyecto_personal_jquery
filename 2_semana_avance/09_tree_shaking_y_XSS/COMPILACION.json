@@ -1,0 +1,17 @@
+{
+  "compiler": "esbuild 0.25.5",
+  "treeShaking": true,
+  "syntaxMinification": false,
+  "codeSplitting": true,
+  "bytesWithTreeShaking": 76274,
+  "bytesWithoutTreeShaking": 76262,
+  "inputs": [
+    "fuente/modules\\chunk-2DIKP4N2.js",
+    "fuente/modules\\data-KVRB3A4U.js",
+    "fuente/modules\\log-view-NZ2N4KNU.js",
+    "fuente/funciones.js",
+    "fuente/arranque.js"
+  ],
+  "note": "Se usa solo código original. La diferencia puede ser cero si no hay declaraciones eliminables; no se inventan funciones muertas.",
+  "savedBytes": -12
+}
