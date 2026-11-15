@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+
+<title>Atlas Pixel · Lazy loading y Fetch API</title>
+
+<meta name="description" content="Atlas Pixel: catálogo interactivo de videojuegos (proyecto académico).">
+
+<link rel="stylesheet" href="assets/vendor/bootstrap-icons.css">
+
+<link rel="stylesheet" href="estilo.css">
+
+
+
+<meta name="theme-color" content="#0d101a">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+
+
+
+<link rel="preload" as="font" href="assets/vendor/bootstrap-icons.woff2" type="font/woff2" crossorigin="">
+
+</head>
+
+<body data-functional-folder="08_lazy_loading_y_fetch_api">
+
+<a class="skip" href="#main">Saltar al contenido principal
+
+</a>
+
+<!-- Cabecera: marca, instalación, bitácora y tema. -->
+<header class="top" id="top">
+
+<a class="brand" href="#catalogo">
+
+<i class="bi bi-controller" aria-hidden="true">
+
+</i> ATLAS
+
+<span>PIXEL
+
+</span>
+
+</a>
+
+
+
+<nav id="nav" aria-label="Principal">
+
+
+
+<a href="#catalogo">Catálogo
+
+</a>
+
+<a href="#favoritos">Favoritos
+
+</a>
+
+
+
+
+
+
+
+
+
+</nav>
+
+<div class="tools">
+
+
+
+<button id="logBtn" class="icon" type="button" aria-label="Abrir bitácora de eventos">
+
+<i class="bi bi-journal-text" aria-hidden="true">
+
+</i>
+
+</button>
+
+<a class="icon" href="#favoritos" aria-label="Ir a favoritos">
+
+<i class="ic" aria-hidden="true">♥
+
+</i>
+
+<span id="favCount" class="badge">0
+
+</span>
+
+</a>
+
+<button id="themeBtn" class="icon" aria-pressed="false" aria-label="Activar tema claro">
+
+<i class="ic" aria-hidden="true">☀
+
+</i>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- Navegación lateral para tablet y laptop. -->
+<aside class="sidebar" aria-label="Explorar Atlas Pixel">
+
+<p class="side-label">TU UNIVERSO GAMING
+
+</p>
+
+<nav id="sideNav">
+
+
+
+<a href="#catalogo">
+
+<i class="bi bi-grid" aria-hidden="true">
+
+</i> Catálogo
+
+</a>
+
+<a href="#favoritos">
+
+<i class="bi bi-heart" aria-hidden="true">
+
+</i> Favoritos 
+
+<span id="sideFavCount">0
+
+</span>
+
+</a>
+
+
+
+
+
+
+
+
+
+</nav>
+
+<div class="side-card">
+
+<i class="bi bi-stars" aria-hidden="true">
+
+</i>
+
+<strong>Tu próximo mundo
+
+<br>te está esperando.
+
+</strong>
+
+<p>Explora. Descubre. Guarda.
+
+</p>
+
+</div>
+
+<span class="side-bottom">
+
+<span class="online-dot">
+
+</span> 24 mundos por descubrir
+
+</span>
+
+</aside>
+
+<div id="note" class="note" role="status" hidden>
+
+</div>
+
+<!-- Pantallas: solo una sección permanece visible. -->
+<main id="main" tabindex="-1" aria-busy="true">
+
+<div id="bootStatus" role="status">Preparando tu universo de juegos…
+
+</div>
+
+<!-- Inicio: destacado y juegos recomendados. -->
+
+
+<!-- Catálogo: búsqueda, filtros y tarjetas paginadas. -->
+<section id="catalogo" aria-labelledby="h-cat" class="view">
+
+<div class="section-heading">
+
+<div>
+
+<span class="eyebrow">ELIGE TU SIGUIENTE PARTIDA
+
+</span>
+
+<h2 id="h-cat" tabindex="-1">Explora el catálogo
+
+<span class="accent">.
+
+</span>
+
+</h2>
+
+</div>
+
+<span class="section-pill">24 juegos · infinitas aventuras
+
+</span>
+
+</div>
+
+<p>Ediciones de Steam · plataformas PC, Mac y Linux · año de esta edición. 
+
+<button class="link" id="helpBtn" aria-expanded="false" aria-controls="help">¿Cómo uso el catálogo?
+
+</button>
+
+</p>
+
+<div id="help" class="panel" hidden>Busca en la barra superior, elige un género y combina plataforma y año. Explora hasta 8 juegos por página. El corazón guarda favoritos y Ver detalles abre la información completa.
+
+</div>
+
+<div class="catalog-toolbar">
+
+<button class="btn" id="filtBtn" aria-expanded="false" aria-controls="filters">
+
+<i class="bi bi-sliders" aria-hidden="true">
+
+</i> 
+
+<span id="filterButtonLabel">Filtros
+
+</span>
+
+</button>
+
+<label class="genre-select">Género
+
+<select id="genreSelect">
+
+<option value="">Todos
+
+</option>
+
+</select>
+
+</label>
+
+<label for="sort" class="sr-only">Ordenar catálogo
+
+</label>
+
+<select id="sort">
+
+<option value="az">Nombre A–Z
+
+</option>
+
+<option value="za">Nombre Z–A
+
+</option>
+
+<option value="new">Más recientes
+
+</option>
+
+<option value="old">Más antiguos
+
+</option>
+
+</select>
+
+<button class="btn" id="clear" title="Limpiar filtros" aria-label="Limpiar filtros" type="button" hidden><i class="bi bi-x-circle" aria-hidden="true"></i><span class="sr-only">Limpiar filtros</span></button>
+
+</div>
+
+<div id="filters" class="filters" hidden>
+
+<label class="filter-search">
+
+<span class="sr-only">Buscar videojuegos
+
+</span>
+
+<input id="globalSearch" type="search" placeholder="Encuentra tu próxima aventura…" autocomplete="off" maxlength="120">
+
+</label>
+
+<button id="filtersClose" class="icon" type="button" aria-label="Cerrar filtros">×
+
+</button>
+
+<label>Plataforma
+
+<select id="plat">
+
+</select>
+
+</label>
+
+<label>Año
+
+<select id="year">
+
+</select>
+
+</label>
+
+</div>
+
+<div id="genres" class="chips" role="group" aria-label="Géneros">
+
+</div>
+
+<div id="activeFilters" class="active-filters" role="group" aria-label="Filtros aplicados">
+
+</div>
+
+<p id="count" class="count" aria-live="polite" aria-atomic="true">
+
+</p>
+
+<div id="grid" class="grid">
+
+</div>
+
+<div id="empty" class="empty" hidden>
+
+<div class="empty-art" aria-hidden="true">
+
+<i class="bi bi-search">
+
+</i>
+
+<span>?
+
+</span>
+
+</div>
+
+<p>Esta combinación todavía no tiene una aventura. Prueba otro filtro y descubre un nuevo mundo.
+
+</p>
+
+<button class="btn primary" id="clear2">Limpiar filtros
+
+</button>
+
+</div>
+
+<nav id="pagination" class="pagination" aria-label="Páginas del catálogo">
+
+</nav>
+
+</section>
+
+<!-- Favoritos guardados en el navegador. -->
+<section id="favoritos" aria-labelledby="h-fav" class="view" hidden>
+
+<span class="eyebrow">TU COLECCIÓN PERSONAL
+
+</span>
+
+<h2 id="h-fav" tabindex="-1">Tus favoritos 
+
+<span class="accent">(
+
+<span id="favCount2">0
+
+</span>)
+
+</span>
+
+</h2>
+
+<div id="favGrid" class="grid">
+
+</div>
+
+<div id="favEmpty" class="empty">
+
+<div class="empty-art" aria-hidden="true">
+
+<i class="bi bi-controller">
+
+</i>
+
+<span>♡
+
+</span>
+
+</div>
+
+<p>Tu colección está esperando su primer juego. Pulsa el corazón de una tarjeta para comenzar.
+
+</p>
+
+<a class="btn primary" href="#catalogo">Ir al catálogo
+
+</a>
+
+</div>
+
+<nav id="favPagination" class="pagination" aria-label="Páginas de favoritos">
+
+</nav>
+
+</section>
+
+<!-- Formulario guiado con validaciones progresivas. -->
+
+
+<!-- Información de la empresa ficticia. -->
+
+
+<!-- Horarios de demostración. -->
+
+
+<!-- Contactos y perfiles sociales de muestra. -->
+
+
+</main>
+
+<!-- Estado de conexión y preparación offline. -->
+<footer class="app-status">
+
+<span id="connectionStatus" role="status">Atlas Pixel</span>
+
+<span id="offlineStatus" role="status">Carpeta independiente</span>
+
+
+
+</footer>
+
+<div id="toast" class="toast" role="status">
+
+</div>
+
+<!-- Diálogo reutilizable con foco controlado. -->
+<div id="modal" class="modal" hidden>
+
+<div class="backdrop">
+
+</div>
+
+<div class="dlg" role="dialog" aria-modal="true" aria-labelledby="mTitle" tabindex="-1">
+
+<div class="dialog-close-bar">
+
+<button class="icon close" id="mClose" aria-label="Cerrar">
+
+<i class="ic" aria-hidden="true">✕
+
+</i>
+
+</button>
+
+</div>
+
+<div id="mBody">
+
+</div>
+
+</div>
+
+</div>
+
+<script src="assets/vendor/jquery-3.7.1.min.js"></script>
+
+<script type="module" src="app.js"></script>
+
+</body>
+
+</html>
