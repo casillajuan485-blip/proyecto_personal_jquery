@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d101a">
+  <title>Rendimiento, especificidad y DOMPurify · Atlas Pixel</title>
+  <link rel="icon" href="assets/atlas-pixel.png">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="assets/purify.min.js" defer></script>
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header><div class="wrap"><img src="assets/atlas-pixel.png" alt="" width="34" height="34"> <span>ATLAS <span class="brand-accent">PIXEL</span></span></div></header>
+  <main id="contenido" class="wrap" tabindex="-1">
+    <h1>Rendimiento, especificidad y DOMPurify</h1>
+    <p class="intro">Mide la carga del catálogo, compara dos reglas de CSS y sanea una ficha promocional antes de mostrarla.</p>
+    <section class="panel" aria-labelledby="pruebas">
+<h2 id="pruebas">Pruebas del catálogo</h2>
+<dl class="metricas"><div><dt>LCP</dt><dd id="lcp">Esperando medición</dd></div><div><dt>CLS</dt><dd id="cls">Esperando medición</dd></div><div><dt>INP</dt><dd id="inp">Interactúa con un control</dd></div></dl>
+<p>Mediciones locales de esta visita. LCP mide la carga visual, CLS los saltos de diseño e INP la respuesta a las interacciones.</p>
+<div class="controles"><button id="regla" type="button" aria-pressed="true">Regla con ID</button><button id="sanear" type="button">Sanear ficha promocional</button></div>
+<p id="especificidad"><span class="insignia">Oferta destacada</span></p>
+<p id="selector" role="status">Gana #especificidad .insignia (1,1,0) sobre .insignia (0,1,0).</p>
+<div id="resultado" role="status">La ficha saneada aparecerá aquí.</div>
+</section>
+    <section aria-labelledby="juegos"><h2 id="juegos">Catálogo de juegos</h2>
+      <div class="catalogo"><article class="tarjeta" aria-labelledby="juego-0">
+  <figure class="portada"><span aria-hidden="true">Tekken 8</span><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1778820/header.jpg" alt="" width="460" height="215" loading="eager" fetchpriority="high" decoding="async"></figure>
+  <div class="cuerpo"><h3 id="juego-0">Tekken 8</h3>
+    <div class="meta"><span>Peleas</span><span>2024</span></div>
+    <div class="meta"><span class="chip">PlayStation 5</span><span class="chip">Xbox Series X|S</span></div>
+    <details><summary>Ver ficha de Tekken 8</summary><p>Combates uno contra uno con el sistema Heat.</p></details>
+  </div>
+</article>
+<article class="tarjeta" aria-labelledby="juego-1">
+  <figure class="portada"><span aria-hidden="true">Tekken 7</span><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/389730/header.jpg" alt="" width="460" height="215" loading="lazy" decoding="async"></figure>
+  <div class="cuerpo"><h3 id="juego-1">Tekken 7</h3>
+    <div class="meta"><span>Peleas</span><span>2017</span></div>
+    <div class="meta"><span class="chip">PlayStation 4</span><span class="chip">Xbox One</span></div>
+    <details><summary>Ver ficha de Tekken 7</summary><p>Combates de artes marciales y la historia de la familia Mishima.</p></details>
+  </div>
+</article>
+<article class="tarjeta" aria-labelledby="juego-2">
+  <figure class="portada"><span aria-hidden="true">God of War</span><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg" alt="" width="460" height="215" loading="lazy" decoding="async"></figure>
+  <div class="cuerpo"><h3 id="juego-2">God of War</h3>
+    <div class="meta"><span>Acción</span><span>2018</span></div>
+    <div class="meta"><span class="chip">PlayStation 4</span></div>
+    <details><summary>Ver ficha de God of War</summary><p>Kratos y Atreus recorren los reinos de la mitología nórdica.</p></details>
+  </div>
+</article></div>
+    </section>
+  </main>
+</body>
+</html>

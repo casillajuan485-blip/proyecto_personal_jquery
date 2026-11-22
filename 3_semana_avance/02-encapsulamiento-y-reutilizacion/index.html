@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d101a">
+  <title>Encapsulamiento y reutilización · Atlas Pixel</title>
+  <link rel="icon" href="assets/atlas-pixel.png">
+  <link rel="stylesheet" href="estilos.css">
+  
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header><div class="wrap"><img src="assets/atlas-pixel.png" alt="" width="34" height="34"> <span>ATLAS <span class="brand-accent">PIXEL</span></span></div></header>
+  <main id="contenido" class="wrap" tabindex="-1">
+    <h1>Encapsulamiento y reutilización</h1>
+    <p class="intro">Marca un juego como favorito. Cada tarjeta administra su propio estado con la misma función JavaScript.</p>
+    
+    <section aria-labelledby="juegos"><h2 id="juegos">Catálogo de juegos</h2>
+      <div class="catalogo"><article class="tarjeta" aria-labelledby="juego-0">
+  <figure class="portada"><span aria-hidden="true">Tekken 8</span><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1778820/header.jpg" alt="" width="460" height="215" loading="eager" fetchpriority="high" decoding="async"></figure>
+  <div class="cuerpo"><h3 id="juego-0">Tekken 8</h3>
+    <div class="meta"><span>Peleas</span><span>2024</span></div>
+    <div class="meta"><span class="chip">PlayStation 5</span><span class="chip">Xbox Series X|S</span></div>
+    <button class="favorito" type="button" aria-pressed="false" aria-label="Agregar a favoritos · Tekken 8">Agregar a favoritos</button>
+  </div>
+</article>
+<article class="tarjeta" aria-labelledby="juego-1">
+  <figure class="portada"><span aria-hidden="true">Tekken 7</span><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/389730/header.jpg" alt="" width="460" height="215" loading="lazy" decoding="async"></figure>
+  <div class="cuerpo"><h3 id="juego-1">Tekken 7</h3>
+    <div class="meta"><span>Peleas</span><span>2017</span></div>
+    <div class="meta"><span class="chip">PlayStation 4</span><span class="chip">Xbox One</span></div>
+    <button class="favorito" type="button" aria-pressed="false" aria-label="Agregar a favoritos · Tekken 7">Agregar a favoritos</button>
+  </div>
+</article>
+<article class="tarjeta" aria-labelledby="juego-2">
+  <figure class="portada"><span aria-hidden="true">God of War</span><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg" alt="" width="460" height="215" loading="lazy" decoding="async"></figure>
+  <div class="cuerpo"><h3 id="juego-2">God of War</h3>
+    <div class="meta"><span>Acción</span><span>2018</span></div>
+    <div class="meta"><span class="chip">PlayStation 4</span></div>
+    <button class="favorito" type="button" aria-pressed="false" aria-label="Agregar a favoritos · God of War">Agregar a favoritos</button>
+  </div>
+</article></div>
+    </section>
+  </main>
+</body>
+</html>
