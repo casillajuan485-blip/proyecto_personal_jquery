@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es-BO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#faf6ef">
+  <meta name="description" content="Explora el catálogo DXN Ganoderma y consulta tus pedidos directamente por WhatsApp.">
+  <title>Catálogo DXN Ganoderma</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./img/icono-192.png">
+  <link rel="preload" as="image" href="https://eworld2.dxn2u.com/optimized/hero-img-v2-6.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/vistas.css">
+  <link rel="stylesheet" href="./css/responsivo.css">
+  <script id="jquery" defer src="./vendor/jquery.js"></script>
+  <script defer src="./vendor/dompurify.js"></script>
+  <script type="module" src="./js/inicio.js"></script>
+</head>
+<body class="app app--inicio">
+  <div class="splash" id="pantalla-carga" role="status" aria-label="Cargando Catálogo DXN Ganoderma">
+    <div class="splash__contenido">
+      <div class="splash__aro">
+        <img class="splash__logo" src="https://www.dxn2u.com/images/icon/dxn-logo.png" onerror="this.onerror=null;this.src='./img/logo-dxn.png'" alt="DXN Ganoderma">
+      </div>
+      <p class="splash__titulo">Catálogo DXN Ganoderma</p>
+      <p class="splash__subtitulo">Salud, bienestar y energía natural</p>
+      <div class="splash__barra" aria-hidden="true">
+        <span class="splash__progreso"></span>
+      </div>
+    </div>
+  </div>
+  <header class="cabecera">
+    <a class="marca" href="#inicio" aria-label="DXN, inicio">
+      <img src="https://www.dxn2u.com/images/icon/dxn-logo.png" onerror="this.onerror=null;this.src='./img/logo-dxn.png'" height="42" alt="DXN Ganoderma">
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a class="nav__enlace" href="#inicio" aria-current="page">
+        <svg class="nav__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/>
+        </svg>
+        <span>Inicio</span>
+      </a>
+      <a class="nav__enlace" href="#catalogo">
+        <svg class="nav__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.8"/>
+          <rect x="3" y="13.5" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.8"/>
+        </svg>
+        <span>Catálogo</span>
+      </a>
+      <a class="nav__enlace" href="#contacto">
+        <svg class="nav__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          <path d="M9.5 9.5c.3 1.8 1.7 3.2 3.5 3.5l1.1-1.1a.7.7 0 0 1 .7-.2l1.6.5a.7.7 0 0 1 .5.7v1.1a1.2 1.2 0 0 1-1.3 1.2A7 7 0 0 1 8.8 8.4 1.2 1.2 0 0 1 10 7.1h1.1a.7.7 0 0 1 .7.5l.5 1.6a.7.7 0 0 1-.2.7z" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>Contacto</span>
+      </a>
+    </nav>
+  </header>
+
+  <div class="avisos">
+    <div class="avisos__instalacion" id="aviso-instalacion" hidden>
+      <span>¿Quieres instalar el catálogo?</span>
+      <button class="boton boton--rojo" data-instalar>Instalar</button>
+      <button class="boton" id="cerrar-instalacion" aria-label="Cerrar aviso">×</button>
+    </div>
+    <p class="avisos__red" id="aviso-red" role="status" hidden>Sin conexión. Puedes consultar el catálogo guardado.</p>
+  </div>
+
+  <main class="contenido" id="contenido">
+    <section id="inicio" class="inicio" aria-labelledby="titulo-inicio">
+      <div class="inicio__portada">
+        <img class="inicio__foto" src="https://eworld2.dxn2u.com/optimized/hero-img-v2-6.jpg" width="1200" height="820" fetchpriority="high" alt="Productos DXN con Ganoderma">
+        <div class="inicio__texto">
+          <h1 class="titulo" id="titulo-inicio" tabindex="-1">Descubre los<br>productos DXN</h1>
+          <span class="acento-linea" aria-hidden="true"></span>
+          <p>Cafés, bebidas, alimentos y suplementos con Ganoderma. Explora las 45 presentaciones disponibles y realiza tu pedido por WhatsApp.</p>
+        </div>
+        <a class="boton boton--rojo inicio__accion" href="#catalogo">
+          <span>Ver catálogo</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+      </div>
+
+      <div class="inicio__categorias" aria-label="Categorías destacadas">
+        <a class="categoria" href="#catalogo/cafes">
+          <span class="categoria__icono" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <ellipse cx="18" cy="26" rx="9" ry="12" transform="rotate(-22 18 26)" fill="#7a4b2a"/>
+              <path d="M14 16c2 5 2 14 0 20" stroke="#4a2b15" stroke-width="2.2" stroke-linecap="round"/>
+              <ellipse cx="31" cy="21" rx="8.5" ry="11.5" transform="rotate(24 31 21)" fill="#96613b"/>
+              <path d="M35 12c-3 5-5 12-5 18" stroke="#5a361c" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="categoria__nombre">Cafés</span>
+        </a>
+        <a class="categoria" href="#catalogo/bebidas">
+          <span class="categoria__icono" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M13 18c0-6 5-10 11-10s11 4 11 10c0 9-5 19-11 22-6-3-11-13-11-22z" fill="#b86b2b"/>
+              <path d="M24 10c4 3 6 9 6 15s-2 11-6 14c-4-3-6-8-6-14s2-12 6-15z" fill="#e8b87d"/>
+              <circle cx="24" cy="20" r="2.2" fill="#6b3b17"/><circle cx="24" cy="26" r="2.2" fill="#6b3b17"/><circle cx="24" cy="32" r="2" fill="#6b3b17"/>
+              <path d="M16 14c-3-2-5-5-4-7 3 0 6 2 7 5" fill="#4f8c47"/>
+            </svg>
+          </span>
+          <span class="categoria__nombre">Bebidas</span>
+        </a>
+        <a class="categoria" href="#catalogo/suplementos">
+          <span class="categoria__icono" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M22 25h5l2 14c0 1.5-1.5 2-4.5 2s-4.5-.5-4.5-2l2-14z" fill="#8b3a22"/>
+              <path d="M8 23c0-8 7-14 16-14s16 6 16 14c0 3-4 5-16 5S8 26 8 23z" fill="#a42529"/>
+              <path d="M12 20c2-5 7-8 12-8s10 3 12 8c-4 1.5-8 2-12 2s-8-.5-12-2z" fill="#c94a38"/>
+              <path d="M10 23c3 1.5 8 2.2 14 2.2s11-.7 14-2.2" stroke="#f6d5b0" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="categoria__nombre">Suplementos</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="catalogo" class="catalogo" aria-label="Catálogo" hidden>
+      <h1 class="titulo" tabindex="-1">Catálogo</h1>
+      <p>Cargando catálogo…</p>
+    </section>
+
+    <section id="contacto" class="contacto" aria-label="Contacto" hidden>
+      <h1 class="titulo" tabindex="-1">Contacto</h1>
+    </section>
+  </main>
+
+  <noscript><p>Activa JavaScript para explorar el catálogo y consultar por WhatsApp.</p></noscript>
+
+  <template id="plantilla-producto">
+    <article class="tarjeta">
+      <div class="tarjeta__foto">
+        <img width="280" height="280" loading="lazy" decoding="async" alt="">
+        <span hidden>Foto por confirmar</span>
+      </div>
+      <div class="tarjeta__texto">
+        <h2 class="tarjeta__nombre"></h2>
+        <p class="tarjeta__beneficio"></p>
+        <p class="tarjeta__presentacion"></p>
+        <a class="boton boton--contorno tarjeta__accion">
+          <span>Ver detalle</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+      </div>
+    </article>
+  </template>
+</body>
+</html>

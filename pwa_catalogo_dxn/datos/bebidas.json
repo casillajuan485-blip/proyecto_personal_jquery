@@ -1,0 +1,216 @@
+{
+  "categoria": "bebidas",
+  "nota": "Cada entrada representa una presentación. Solo asignar imagen si corresponde a esa variante. Precios y disponibilidad se consultan con la vendedora.",
+  "productos": [
+    {
+      "id": "FB124",
+      "nombre": "Cocozhi",
+      "presentacion": "20 sobres de 32 g",
+      "descripcion": "Bebida en polvo de cacao con extracto de ganoderma.",
+      "preparacion": "Mezcla 1 sobre en 150–200 ml de agua caliente o leche tibia. Ideal para niños y adultos.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/ND/cocozhi.jpg",
+      "beneficio_corto": "Cacao nutritivo para toda la familia",
+      "ingredientes": "Cacao puro de alta calidad, malta, leche descremada y extracto de Ganoderma lucidum.",
+      "beneficios": [
+        "Rico en antioxidantes del cacao y nutrientes equilibrantes del Ganoderma.",
+        "Aporta energía saludable y favorece la concentración en niños y adultos.",
+        "Ayuda a fortalecer el sistema inmunológico de forma deliciosa."
+      ]
+    },
+    {
+      "id": "FB044",
+      "nombre": "NutriZhi",
+      "presentacion": "20 sobres de 30 g",
+      "descripcion": "Bebida en polvo en sobres.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/ND/nutrizhi.jpg",
+      "beneficio_corto": "Soya, malta y Melena de León",
+      "ingredientes": "Extracto de malta, soya, cacao y hongo Melena de León (Lion's Mane).",
+      "preparacion": "Disuelve 1 sobre en 200 ml de agua tibia o fría.",
+      "beneficios": [
+        "Bebida altamente nutritiva con proteínas vegetales y fibra.",
+        "La Melena de León apoya la función cognitiva y el bienestar gástrico.",
+        "Excelente complemento alimenticio para desayunos o meriendas."
+      ]
+    },
+    {
+      "id": "FB097",
+      "nombre": "Lingzhi Tea Latte",
+      "presentacion": "12 sobres de 30 g",
+      "descripcion": "Mezcla de té con lingzhi en formato latte.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/TE/tealatte.jpg",
+      "beneficio_corto": "Té cremoso antioxidante",
+      "ingredientes": "Té verde en polvo, crema no láctea y extracto de Ganoderma lucidum.",
+      "preparacion": "Mezcla 1 sobre en 150 ml de agua caliente para una bebida cremosa y aromática.",
+      "beneficios": [
+        "Combina las catequinas del té verde con los antioxidantes del Lingzhi.",
+        "Favorece la relajación alerta y el bienestar metabólico.",
+        "Suave, reconfortante y lleno de aroma."
+      ]
+    },
+    {
+      "id": "FB125",
+      "nombre": "Spirulina Cereal",
+      "presentacion": "30 sobres de 30 g",
+      "descripcion": "Mezcla de cereales con espirulina.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/ND/spirulina_cereal.jpg",
+      "beneficio_corto": "Desayuno rico en fibra y Spirulina",
+      "ingredientes": "Cereales integrales de trigo, cebada y microalga Spirulina orgánica.",
+      "preparacion": "Vierte 1 sobre en 200 ml de agua caliente o leche vegetal y mezcla hasta espesar.",
+      "beneficios": [
+        "Fuente completa de fibra, proteínas vegetales, vitaminas y minerales.",
+        "Favorece la salud digestiva y brinda saciedad prolongada.",
+        "Ideal como desayuno nutritivo o merienda ligera."
+      ]
+    },
+    {
+      "id": "FB155",
+      "nombre": "Lemonzhi",
+      "presentacion": "20 sobres de 22 g",
+      "descripcion": "Bebida de limón en polvo.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/TE/lemonzhi.jpg",
+      "beneficio_corto": "Refrescante vitamina C y Lingzhi",
+      "ingredientes": "Té en polvo, extracto de limón natural y extracto de Ganoderma lucidum.",
+      "preparacion": "Disuelve 1 sobre en 200 ml de agua fría con hielo o agua tibia.",
+      "beneficios": [
+        "Refrescante aporte antioxidante que apoya las defensas naturales.",
+        "Ayuda a hidratar y revitalizar el organismo en días calurosos.",
+        "Favorece una digestión ligera después de las comidas."
+      ]
+    },
+    {
+      "id": "FB206",
+      "nombre": "Apple Enzyme Drink",
+      "presentacion": "15 sobres de 50 ml",
+      "descripcion": "Bebida de manzana en porciones individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/FJ/bev_appleEnzyme-front.jpg",
+      "beneficio_corto": "Enzimas vivas para tu digestión",
+      "ingredientes": "Jugo fermentado de manzana rico en enzimas naturales.",
+      "preparacion": "Listo para tomar directamente o diluido en agua fría.",
+      "beneficios": [
+        "Apoya el equilibrio de la flora intestinal y una digestión saludable.",
+        "Favorece la absorción de nutrientes y el bienestar metabólico.",
+        "Práctico sobre individual para llevar a cualquier lugar."
+      ]
+    },
+    {
+      "id": "FB223",
+      "nombre": "Zhitea",
+      "presentacion": "Frasco de 100 g",
+      "descripcion": "Té en formato de frasco.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/TE/DXN-ZhiTea.jpg",
+      "beneficio_corto": "Té puro para digestión y calma",
+      "ingredientes": "Hojas seleccionadas de té procesadas con extracto de Ganoderma.",
+      "preparacion": "Agrega media cucharadita en una taza de agua caliente, deja reposar y disfruta.",
+      "beneficios": [
+        "Rico en polifenoles antioxidantes que ayudan a proteger las células.",
+        "Contribuye a una digestión ligera y sensación de calma.",
+        "Rendidor frasco de 100 g para preparar decenas de tazas."
+      ]
+    },
+    {
+      "id": "FB229",
+      "nombre": "Oocha",
+      "presentacion": "12 sobres de 30 g",
+      "descripcion": "Mezcla de té en sobres.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/TE/oocha_front.jpg",
+      "beneficio_corto": "Té tradicional antioxidante",
+      "ingredientes": "Mezcla selecta de té Oocha con notas tostadas y crema suave.",
+      "preparacion": "Disuelve 1 sobre en 150 ml de agua caliente.",
+      "beneficios": [
+        "Aporta antioxidantes naturales del té con un sabor reconfortante.",
+        "Ayuda a mantener el enfoque y el bienestar durante la tarde.",
+        "Alternativa saludable y práctica a las bebidas azucaradas."
+      ]
+    },
+    {
+      "id": "FB250",
+      "nombre": "Lion’s Mane Oocha",
+      "presentacion": "12 sobres de 30 g",
+      "descripcion": "Mezcla de té de la línea Lion’s Mane.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/TE/FB250_LionsManeOocha.jpg",
+      "beneficio_corto": "Té Oocha con Melena de León",
+      "ingredientes": "Té Oocha aromático enriquecido con extracto de hongo Lion's Mane.",
+      "preparacion": "Mezcla 1 sobre en 150 ml de agua caliente.",
+      "beneficios": [
+        "Apoya la claridad mental y la concentración mientras disfrutas un té suave.",
+        "Contribuye al cuidado digestivo y equilibrio nervioso.",
+        "Rico en compuestos bioactivos naturales."
+      ]
+    },
+    {
+      "id": "FB285",
+      "nombre": "Neph-V",
+      "presentacion": "Botella de 285 ml",
+      "descripcion": "Bebida en presentación embotellada.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/ND/FB285_Neph-V.jpg",
+      "beneficio_corto": "Hidratación y bienestar renal",
+      "ingredientes": "Bebida botánica formulada con extractos herbales seleccionados.",
+      "preparacion": "Consúmela bien fría directamente de la botella.",
+      "beneficios": [
+        "Apoya la hidratación saludable y la función depurativa natural.",
+        "Refrescante bebida lista para llevar.",
+        "Complemento ideal para el cuidado diario del organismo."
+      ]
+    },
+    {
+      "id": "FB307",
+      "nombre": "Florathemum",
+      "presentacion": "Frasco de 60 g",
+      "descripcion": "Presentación DXN en frasco.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/TE/FB307_DXN_Florathemum.jpg",
+      "beneficio_corto": "Infusión floral relajante",
+      "ingredientes": "Extracto floral natural (crisantemo) con notas suaves y refrescantes.",
+      "preparacion": "Disuelve una pequeña porción en agua caliente o fría según tu gusto.",
+      "beneficios": [
+        "Ayuda a refrescar el cuerpo y promover la relajación natural.",
+        "Tradicionalmente valorado para el bienestar visual y la calma.",
+        "Libre de cafeína, ideal para tomar en la noche."
+      ]
+    },
+    {
+      "id": "FB315",
+      "nombre": "Lion’s Mane Lemon Matcha",
+      "presentacion": "20 sobres de 22 g",
+      "descripcion": "Mezcla de matcha y limón de la línea Lion’s Mane.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/TE/FB315_Lion-Mane_Lemon_Matcha.jpg",
+      "beneficio_corto": "Matcha, limón y claridad mental",
+      "ingredientes": "Té verde Matcha, extracto de limón y hongo Melena de León (Lion's Mane).",
+      "preparacion": "Mezcla 1 sobre en 200 ml de agua fría o tibia y agita bien.",
+      "beneficios": [
+        "El Matcha aporta antioxidantes (EGCG) y energía sostenida sin picos.",
+        "La Melena de León respalda la memoria, el enfoque y el sistema nervioso.",
+        "El toque cítrico de limón brinda frescura y vitalidad."
+      ]
+    },
+    {
+      "id": "FB362",
+      "nombre": "Oolong Tea Powder",
+      "presentacion": "Frasco de 30 g",
+      "descripcion": "Té oolong en polvo.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/TE/FB362_Oolong_Tea_Powder30g.jpg",
+      "beneficio_corto": "Té Oolong puro en polvo",
+      "ingredientes": "100% té Oolong seleccionado en polvo soluble.",
+      "preparacion": "Disuelve media cucharadita en 150 ml de agua caliente o fría.",
+      "beneficios": [
+        "Apoya el metabolismo natural y el control saludable de grasas.",
+        "Alto contenido de polifenoles antioxidantes.",
+        "Versátil para preparar infusiones calientes o té helado."
+      ]
+    },
+    {
+      "id": "FB396",
+      "nombre": "Lion’s Mane Oocha Latte",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Mezcla de té tipo latte.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/TE/FB396_DXN_LionManeOocha_Latte_Box_1.jpg",
+      "beneficio_corto": "Latte de té con Melena de León",
+      "ingredientes": "Té Oocha cremoso enriquecido con extracto de Lion's Mane.",
+      "preparacion": "Disuelve 1 sobre en 150 ml de agua caliente.",
+      "beneficios": [
+        "Combina la suavidad de un latte con el apoyo cognitivo de la Melena de León.",
+        "Ideal para estudiar, trabajar o relajarse con enfoque.",
+        "Agradable sabor y digestión ligera."
+      ]
+    }
+  ]
+}

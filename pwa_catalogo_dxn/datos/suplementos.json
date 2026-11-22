@@ -1,0 +1,53 @@
+{
+  "categoria": "suplementos",
+  "nota": "Cada entrada representa una presentación. Solo asignar imagen si corresponde a esa variante. Precios y disponibilidad se consultan con la vendedora.",
+  "productos": [
+    {
+      "id": "RG",
+      "nombre": "Reishi Gano",
+      "presentacion": "Consultar presentación",
+      "descripcion": "Suplemento DXN de ganoderma de la línea RG.",
+      "imagen": "https://www.dxn2u.com/product/images/HDS/GN/rg.jpg",
+      "referencia": "Catálogo internacional DXN. Consulta la presentación local.",
+      "beneficio_corto": "Desintoxicación y defensa celular",
+      "ingredientes": "100% cuerpo fructífero maduro de Ganoderma lucidum (Reishi Gano) cosechado a los 90 días.",
+      "preparacion": "Toma según indicación del envase con un vaso de agua tibia, preferiblemente en ayunas.",
+      "beneficios": [
+        "Reconocido mundialmente por apoyar la limpieza natural y desintoxicación del organismo.",
+        "Rico en triterpenoides y polisacáridos que fortalecen el sistema inmunológico.",
+        "Contribuye al equilibrio metabólico y bienestar integral."
+      ]
+    },
+    {
+      "id": "HF047",
+      "nombre": "MycoVita",
+      "presentacion": "30 sobres de 24 g",
+      "descripcion": "Suplemento en polvo de la línea DXN MycoVita.",
+      "imagen": "https://www.dxn2u.com/product/images/HDS/GN/mycovita.jpg",
+      "beneficio_corto": "Fórmula maestra con 6 hongos",
+      "ingredientes": "Mezcla de micelio y cuerpo fructífero de Ganoderma y extractos de hongos funcionales.",
+      "preparacion": "Disuelve 1 sobre en agua tibia o tu bebida favorita y consume diariamente.",
+      "beneficios": [
+        "Concentrado nutricional de alta potencia para reforzar las defensas.",
+        "Apoya la vitalidad celular, recuperación física y resistencia al estrés.",
+        "Ideal para quienes buscan el máximo respaldo de la micoterapia DXN."
+      ]
+    },
+    {
+      "id": "GL",
+      "nombre": "Ganocelium",
+      "presentacion": "Consultar presentación",
+      "descripcion": "Suplemento DXN de la línea GL.",
+      "imagen": "https://www.dxn2u.com/product/images/HDS/GN/gl.jpg",
+      "referencia": "Catálogo internacional DXN. Consulta la presentación local.",
+      "beneficio_corto": "Oxigenación y regeneración",
+      "ingredientes": "100% micelio joven de Ganoderma lucidum cosechado a los 14 días (Ganocelium).",
+      "preparacion": "Consume según indicación del envase con agua tibia; ideal combinarlo con RG.",
+      "beneficios": [
+        "Rico en germanio orgánico que favorece la oxigenación celular y cerebral.",
+        "Apoya la regeneración de tejidos y el equilibrio del sistema nervioso.",
+        "Excelente complemento diario junto a Reishi Gano (RG) para salud integral."
+      ]
+    }
+  ]
+}

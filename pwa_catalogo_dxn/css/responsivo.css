@@ -1,0 +1,341 @@
+/* Adaptación responsiva para Tablets (<=1024px) y Celulares (<=640px) */
+
+/* --- TABLET --- */
+@media (max-width: 1024px) {
+  .inicio__portada {
+    grid-template-columns: 1fr;
+    min-height: 360px;
+  }
+  .inicio__foto {
+    width: 72%;
+  }
+  .inicio__portada::after {
+    background: linear-gradient(90deg, #f6efe3 35%, rgba(246, 239, 227, 0.88) 54%, transparent 86%);
+  }
+
+  .catalogo__rejilla {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .detalle__cuerpo {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 24px;
+  }
+  .detalle__info-extra {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto__panel {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+  .contacto__media {
+    height: 240px;
+  }
+}
+
+/* --- CELULAR --- */
+@media (max-width: 640px) {
+  .app {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  }
+  .app--teclado {
+    padding-bottom: 0;
+  }
+  .app--teclado .nav {
+    display: none;
+  }
+
+  .cabecera {
+    position: static;
+    border-bottom: 0;
+    background: transparent;
+    backdrop-filter: none;
+    padding: 10px 14px 6px;
+  }
+
+  .nav {
+    position: fixed;
+    z-index: 15;
+    inset: auto 0 0;
+    justify-content: space-around;
+    gap: 0;
+    padding: 4px 8px calc(6px + env(safe-area-inset-bottom));
+    background: var(--musgo);
+    border-top: 1px solid var(--borde);
+  }
+
+  .nav__enlace {
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+    padding: 5px 8px 6px;
+    font-size: 0.76rem;
+    border-radius: 0;
+  }
+
+  .nav__enlace[aria-current="page"]::after {
+    left: 26%;
+    right: 26%;
+    bottom: 0;
+    height: 3px;
+  }
+
+  /* Inicio móvil compacto, sin espacios vacíos */
+  .inicio {
+    padding: 2px 14px 12px;
+    gap: 10px;
+    min-height: calc(100dvh - 122px);
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .inicio__portada {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    align-content: stretch;
+    justify-items: stretch;
+    min-height: 0;
+    height: 100%;
+    padding: 18px 16px 18px;
+    border-radius: 22px;
+    background: #efe4d2;
+    box-shadow: var(--sombra-suave);
+  }
+
+  .inicio__texto {
+    grid-row: 1;
+    max-width: 100%;
+  }
+
+  .inicio__texto .titulo {
+    font-size: clamp(2rem, 9vw, 2.65rem);
+  }
+
+  .inicio__texto .acento-linea {
+    margin-top: 8px;
+  }
+
+  .inicio__texto p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    max-width: 28ch;
+    color: var(--tinta);
+    font-weight: 500;
+  }
+
+  .inicio__foto {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: 78% 40%;
+    border-radius: 22px;
+  }
+
+  .inicio__portada::after {
+    inset: 0;
+    border-radius: 22px;
+    background: linear-gradient(
+      180deg,
+      rgba(250, 246, 239, 0.94) 0%,
+      rgba(250, 246, 239, 0.78) 34%,
+      rgba(250, 246, 239, 0.15) 64%,
+      rgba(21, 44, 33, 0.25) 100%
+    );
+  }
+
+  .inicio__accion {
+    grid-row: 3;
+    justify-self: center;
+    width: min(270px, 90%);
+    padding: 0.76rem 1.4rem;
+  }
+
+  .inicio__categorias {
+    gap: 8px;
+  }
+
+  .categoria {
+    padding: 10px 6px;
+    border-radius: 15px;
+    gap: 4px;
+  }
+
+  .categoria__icono {
+    width: 36px;
+    height: 36px;
+  }
+
+  .categoria__icono svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .categoria__nombre {
+    font-size: 0.82rem;
+  }
+
+  /* Catálogo móvil */
+  .catalogo,
+  .contacto {
+    padding: 4px 14px 18px;
+  }
+
+  .catalogo__cabecera {
+    gap: 10px;
+  }
+
+  .catalogo__busqueda {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .catalogo__barra {
+    margin-block: 12px 14px;
+    gap: 8px;
+  }
+
+  .catalogo__formato {
+    width: 100%;
+  }
+
+  .catalogo__selector {
+    width: 100%;
+  }
+
+  .catalogo__rejilla {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .tarjeta {
+    padding: 8px;
+    border-radius: 16px;
+    gap: 8px;
+  }
+
+  .tarjeta__foto {
+    padding: 6px;
+  }
+
+  .tarjeta__nombre {
+    font-size: 0.88rem;
+  }
+
+  .tarjeta__beneficio {
+    font-size: 0.7rem;
+    padding: 2px 7px;
+  }
+
+  .tarjeta__presentacion {
+    display: none;
+  }
+
+  .tarjeta__accion {
+    min-height: 44px;
+    font-size: 0.82rem;
+  }
+
+  /* Detalle móvil (imagen contenida sin superponerse al título) */
+  .detalle__barra {
+    margin-bottom: 10px;
+  }
+
+  .detalle__volver {
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .detalle__volver-texto {
+    display: none;
+  }
+
+  .detalle__cuerpo {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .detalle__foto {
+    height: clamp(210px, 32dvh, 280px);
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .detalle__texto {
+    gap: 12px;
+  }
+
+  .detalle__texto .titulo {
+    font-size: clamp(1.75rem, 7.5vw, 2.3rem);
+  }
+
+  .detalle__orden {
+    padding: 13px;
+  }
+
+  .detalle__total-pill {
+    margin-inline-start: 0;
+  }
+
+  .detalle__beneficios,
+  .detalle__ficha-item {
+    padding: 15px;
+    border-radius: 16px;
+  }
+
+  /* Contacto móvil */
+  .contacto__panel {
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    gap: 14px;
+  }
+
+  .contacto__contenido {
+    gap: 12px;
+  }
+
+  .contacto__wa-grande {
+    width: 72px;
+    height: 72px;
+  }
+
+  .contacto__tarjeta {
+    padding: 12px 14px;
+    font-size: 0.92rem;
+  }
+
+  .contacto__media {
+    height: 130px;
+    border-radius: 16px;
+    margin-top: 4px;
+  }
+
+  .contacto__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #faf6ef 0%, transparent 45%);
+  }
+}
+
+/* Horizontal de baja altura */
+@media (orientation: landscape) and (max-height: 500px) {
+  .app {
+    padding-bottom: 0;
+  }
+  .nav {
+    position: static;
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+  .catalogo__rejilla {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

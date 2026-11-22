@@ -1,0 +1,156 @@
+{
+  "categoria": "alimentos",
+  "nota": "Cada entrada representa una presentación. Solo asignar imagen si corresponde a esa variante. Precios y disponibilidad se consultan con la vendedora.",
+  "productos": [
+    {
+      "id": "FB237",
+      "nombre": "Apple Fermented Jam",
+      "presentacion": "20 sobres de 15 g",
+      "descripcion": "Mermelada de manzana fermentada en porciones.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/FD/FB237-Apple-Fermented-Jam.jpg",
+      "beneficio_corto": "Mermelada fermentada probiótica",
+      "ingredientes": "Manzana fermentada natural en sobres individuales listos para untar.",
+      "preparacion": "Úntala en pan integral, galletas o agrégala a tu yogur y avena.",
+      "beneficios": [
+        "Aporta enzimas de fermentación que favorecen la salud digestiva.",
+        "Alternativa natural y práctica para desayunos saludables.",
+        "Porciones individuales que conservan su frescura."
+      ]
+    },
+    {
+      "id": "FB300",
+      "nombre": "Spirudle",
+      "presentacion": "4 paquetes de 75 g",
+      "descripcion": "Fideos de la línea Spirudle.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/FD/FB173_FB300_FB319_DXN_Spirudle_Series.jpg",
+      "beneficio_corto": "Fideos nutritivos con Spirulina",
+      "ingredientes": "Harina de trigo seleccionada enriquecida con microalga Spirulina, secados sin fritura.",
+      "preparacion": "Hierve en agua durante 3–4 minutos, agrega el condimento incluido y tus verduras favoritas.",
+      "beneficios": [
+        "Elaborados sin aceite frito, más ligeros y fáciles de digerir.",
+        "Enriquecidos con Spirulina para aportar nutrientes y color verde natural.",
+        "Comida rápida, nutritiva y apta para toda la familia."
+      ]
+    },
+    {
+      "id": "FB328",
+      "nombre": "Zhi Honey",
+      "presentacion": "Frasco de 460 g",
+      "descripcion": "Miel en frasco.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/FD/FB328_Zhi_Honey.jpg",
+      "beneficio_corto": "Miel pura con propiedades naturales",
+      "ingredientes": "Miel natural multifloral seleccionada de alta pureza.",
+      "preparacion": "Úsala para endulzar infusiones, desayunos o toma una cucharadita diaria.",
+      "beneficios": [
+        "Fuente natural de energía rápida, enzimas y antioxidantes.",
+        "Suaviza la garganta y apoya las defensas de forma natural.",
+        "Endulzante saludable para reemplazar el azúcar refinado."
+      ]
+    },
+    {
+      "id": "FB336",
+      "nombre": "Multipurpose Seasoning",
+      "presentacion": "Frasco de 120 g",
+      "descripcion": "Condimento de uso culinario.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/FD/FB336_Mulitpurpose_Seasoning.jpg",
+      "beneficio_corto": "Sazón natural libre de químicos",
+      "ingredientes": "Mezcla culinaria de extractos vegetales y hongos naturales.",
+      "preparacion": "Espolvorea al gusto sobre sopas, guisos, arroces, carnes o verduras.",
+      "beneficios": [
+        "Realza el sabor natural de tus comidas sin glutamato artificial.",
+        "Aporta un toque gourmet saludable a la cocina diaria.",
+        "Fácil de dosificar en cualquier receta."
+      ]
+    },
+    {
+      "id": "FB337",
+      "nombre": "Jujube Fruits",
+      "presentacion": "300 g",
+      "descripcion": "Frutos de jujube.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/FD/jujube.jpg",
+      "beneficio_corto": "Fruto tradicional para la vitalidad",
+      "ingredientes": "Frutos enteros deshidratados de Jujube (dátil rojo).",
+      "preparacion": "Disfrútalos como snack saludable o hiérvelos en infusiones y sopas.",
+      "beneficios": [
+        "Ricos en vitamina C, hierro, fibra y antioxidantes naturales.",
+        "Tradicionalmente usados para apoyar el descanso, la sangre y la energía.",
+        "Dulzor natural sin azúcares añadidos."
+      ]
+    },
+    {
+      "id": "FB345",
+      "nombre": "Goji Berries",
+      "presentacion": "350 g",
+      "descripcion": "Bayas de goji.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/FD/gojiberry.jpg",
+      "beneficio_corto": "Superalimento antioxidante y visual",
+      "ingredientes": "Bayas de Goji deshidratadas 100% naturales.",
+      "preparacion": "Consúmelas solas como snack, en yogur, ensaladas o infusiones.",
+      "beneficios": [
+        "Concentrado natural de betacarotenos que apoyan la salud visual.",
+        "Alto poder antioxidante que protege las células y fortalece defensas.",
+        "Aporta aminoácidos, minerales y energía natural."
+      ]
+    },
+    {
+      "id": "FB360",
+      "nombre": "DXN Sugar",
+      "presentacion": "30 sobres de 5 g",
+      "descripcion": "Azúcar en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/FD/FB360_DXN_Sugar.jpg",
+      "beneficio_corto": "Porción exacta y práctica",
+      "ingredientes": "Azúcar seleccionada en sobres individuales higiénicos de 5 g.",
+      "preparacion": "Agrega 1 sobre a tu café, té o bebida favorita según tu preferencia.",
+      "beneficios": [
+        "Permite controlar exactamente la cantidad que consumes en cada taza.",
+        "Presentación higiénica ideal para el hogar, oficina o viajes.",
+        "Mantiene la frescura en cada sobre individual."
+      ]
+    },
+    {
+      "id": "FB361",
+      "nombre": "Non Dairy Creamer",
+      "presentacion": "30 sobres de 5 g",
+      "descripcion": "Crema en polvo para bebidas en sobres.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/FD/FB361_DXN_Non_Dairy_Creamer.jpg",
+      "beneficio_corto": "Cremosidad vegetal sin lactosa",
+      "ingredientes": "Crema en polvo de origen no lácteo en sobres individuales.",
+      "preparacion": "Mezcla 1 sobre en tu café negro o té caliente para darle textura cremosa.",
+      "beneficios": [
+        "Apta para quienes evitan la lactosa y buscan cremosidad al instante.",
+        "Realza el sabor de cafés negros y tés DXN.",
+        "Sobres individuales fáciles de llevar."
+      ]
+    },
+    {
+      "id": "FB384",
+      "nombre": "Spirulina Crostini",
+      "presentacion": "200 g",
+      "descripcion": "Tostadas crocantes de espirulina.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/FD/DXN_Spirulina_Crostini%28combined%29.jpg",
+      "beneficio_corto": "Snack crocante con Spirulina",
+      "ingredientes": "Tostadas crocantes horneadas con harina selecta y Spirulina.",
+      "preparacion": "Listas para disfrutar solas o acompañadas de mermelada, queso o aguacate.",
+      "beneficios": [
+        "Snack horneado, ligero y enriquecido con nutrientes de la Spirulina.",
+        "Ideal para calmar el antojo entre comidas de forma saludable.",
+        "Textura crocante perfecta para desayunos y meriendas."
+      ]
+    },
+    {
+      "id": "FB385",
+      "nombre": "Zhi Crostini",
+      "presentacion": "200 g",
+      "descripcion": "Tostadas crocantes de la línea Zhi.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/FD/DXN_ZhiCrostini%28combined%29.jpg",
+      "beneficio_corto": "Snack horneado con toque Zhi",
+      "ingredientes": "Tostadas crocantes horneadas de la línea nutricional DXN Zhi.",
+      "preparacion": "Disfrútalas directamente del paquete o con tus dips favoritos.",
+      "beneficios": [
+        "Opción práctica y ligera para compartir en casa o la oficina.",
+        "Horneadas para conservar una textura crujiente y agradable.",
+        "Combinan excelente con bebidas calientes DXN."
+      ]
+    }
+  ]
+}

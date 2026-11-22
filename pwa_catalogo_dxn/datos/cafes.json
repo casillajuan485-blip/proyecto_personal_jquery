@@ -1,0 +1,276 @@
+{
+  "categoria": "cafes",
+  "nota": "Cada entrada representa una presentación. Solo asignar imagen si corresponde a esa variante. Precios y disponibilidad se consultan con la vendedora.",
+  "productos": [
+    {
+      "id": "FB122",
+      "nombre": "Lingzhi Black Coffee",
+      "presentacion": "20 sobres de 4,5 g",
+      "descripcion": "Café negro soluble con extracto de ganoderma.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/black_coffee.jpg",
+      "beneficio_corto": "Energía limpia y defensas",
+      "ingredientes": "Café instantáneo selecto y extracto puro de Ganoderma lucidum (Lingzhi), sin azúcar añadida.",
+      "preparacion": "Disuelve 1 sobre en 150 ml de agua caliente y disfruta sin necesidad de azúcar.",
+      "beneficios": [
+        "Aporta energía sostenida con menor acidez estomacal que el café tradicional.",
+        "Favorece las defensas naturales gracias a los antioxidantes del Ganoderma.",
+        "Ideal para quienes cuidan su consumo de azúcar y buscan vitalidad diaria."
+      ]
+    },
+    {
+      "id": "FB109",
+      "nombre": "Lingzhi Coffee 3 en 1",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Mezcla instantánea de café con lingzhi.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/3in1.jpg",
+      "beneficio_corto": "Vitalidad y sabor cremoso",
+      "ingredientes": "Café arábica, crema no láctea de origen vegetal, azúcar de caña y extracto de Ganoderma lucidum.",
+      "preparacion": "Vierte 1 sobre en una taza de agua caliente (150 ml), mezcla bien y disfruta.",
+      "beneficios": [
+        "Combina el placer de un café cremoso con el respaldo nutricional del Lingzhi.",
+        "Ayuda a combatir la fatiga diaria y mantiene el estado de alerta.",
+        "Suave para el sistema digestivo y rico en antioxidantes naturales."
+      ]
+    },
+    {
+      "id": "FB056",
+      "nombre": "Cordyceps Coffee 3 en 1",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Café instantáneo con cordyceps.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/cordyceps.jpg",
+      "beneficio_corto": "Resistencia y vigor físico",
+      "ingredientes": "Café instantáneo, crema no láctea, azúcar y extracto de Cordyceps sinensis.",
+      "preparacion": "Mezcla 1 sobre en 150 ml de agua caliente antes de tu jornada o actividad física.",
+      "beneficios": [
+        "Apoya la resistencia física, el rendimiento y la vitalidad general.",
+        "Favorece la oxigenación y ayuda a reducir la sensación de cansancio.",
+        "Excelente aliado para mañanas activas y rutinas exigentes."
+      ]
+    },
+    {
+      "id": "FB126",
+      "nombre": "Zhi Mocha",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Mezcla de bebida tipo moka.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/zhimocha.jpg",
+      "beneficio_corto": "Energía con cacao y Ganoderma",
+      "ingredientes": "Café en polvo, cacao natural, leche descremada/crema vegetal y extracto de Ganoderma.",
+      "preparacion": "Disuelve 1 sobre en 150 ml de agua caliente o fría con hielo.",
+      "beneficios": [
+        "Une los antioxidantes del cacao con las propiedades equilibrantes del Ganoderma.",
+        "Brinda energía agradable y mejora el estado de ánimo.",
+        "Opción reconfortante para disfrutar caliente o como bebida fría."
+      ]
+    },
+    {
+      "id": "FB128",
+      "nombre": "Vita Café",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Mezcla instantánea de café de la línea Vita.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB128_VitaCafe_Bag.jpg",
+      "beneficio_corto": "Vigor y bienestar integral",
+      "ingredientes": "Café selecto con extracto de Ganoderma, Ginseng y Tongkat Ali.",
+      "preparacion": "Disuelve 1 sobre en 150 ml de agua caliente y remueve hasta integrar.",
+      "beneficios": [
+        "Fórmula 6 en 1 diseñada para potenciar la energía física y mental.",
+        "El Ginseng y el Ganoderma ayudan a manejar el estrés y la fatiga.",
+        "Contribuye a mantener la concentración y el dinamismo durante el día."
+      ]
+    },
+    {
+      "id": "FB215",
+      "nombre": "Lion’s Mane Coffee",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Café de la línea Lion’s Mane.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB215_LionsManeCoffee_Box.jpg",
+      "beneficio_corto": "Enfoque mental y memoria",
+      "ingredientes": "Café instantáneo, crema vegetal y extracto de hongo Melena de León (Lion's Mane).",
+      "preparacion": "Mezcla 1 sobre en 150 ml de agua caliente para iniciar tu jornada de estudio o trabajo.",
+      "beneficios": [
+        "La Melena de León es reconocida por apoyar la concentración, memoria y claridad mental.",
+        "Brinda energía equilibrada sin nerviosismo excesivo.",
+        "Apoya el bienestar del sistema nervioso y digestivo."
+      ]
+    },
+    {
+      "id": "FB364",
+      "nombre": "Zhi Roasted Coffee",
+      "presentacion": "30 sobres de 4 g",
+      "descripcion": "Café tostado en porciones individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB364_DXN_ZhiRoastCoffee.jpg",
+      "beneficio_corto": "Aroma puro y antioxidantes",
+      "ingredientes": "Café tostado molido fino con extracto de Ganoderma lucidum, sin azúcar.",
+      "preparacion": "Vierte 1 sobre en 150 ml de agua caliente, remueve y disfruta su aroma intenso.",
+      "beneficios": [
+        "Conserva el sabor auténtico del café tostado enriquecido con Ganoderma.",
+        "Alto aporte de polifenoles y antioxidantes naturales.",
+        "Libre de azúcar añadida, ideal para un estilo de vida saludable."
+      ]
+    },
+    {
+      "id": "FB369",
+      "nombre": "Ootea Lingzhi Coffee Mix 3 en 1",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Mezcla de café en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB369_DXN_Ootea_Lingzhi_Coffee_Mix_3in1.jpg",
+      "beneficio_corto": "Café con té Oolong y Lingzhi",
+      "ingredientes": "Café, extracto de té Oolong, crema vegetal, azúcar y extracto de Ganoderma.",
+      "preparacion": "Disuelve 1 sobre en 150 ml de agua caliente y mezcla suavemente.",
+      "beneficios": [
+        "Fusión única de café, té Oolong y Ganoderma para energía y bienestar.",
+        "Los polifenoles del té Oolong apoyan el metabolismo y la digestión.",
+        "Contribuye a fortalecer las defensas con un sabor suave y aromático."
+      ]
+    },
+    {
+      "id": "FB370",
+      "nombre": "Ootea Lingzhi Coffee Mix 3 en 1 Lite",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Mezcla de café en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB370_DXN_Ootea_Linzghi_Mix_3in1_Lite.jpg",
+      "beneficio_corto": "Ligero, cremoso y equilibrado",
+      "ingredientes": "Café, té Oolong, crema ligera, extracto de Ganoderma lucidum.",
+      "preparacion": "Mezcla 1 sobre en 150 ml de agua caliente.",
+      "beneficios": [
+        "Versión más ligera y suave para disfrutar en cualquier momento del día.",
+        "Aporta antioxidantes del Ganoderma y del té Oolong.",
+        "Ayuda a mantener la vitalidad sin resultar pesado."
+      ]
+    },
+    {
+      "id": "FB371",
+      "nombre": "Ootea Lingzhi Coffee Mix 2 en 1",
+      "presentacion": "20 sobres de 11 g",
+      "descripcion": "Mezcla de café en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB371_DXN_Ootea_Lingzhi_Coffee_Mix_2in1.jpg",
+      "beneficio_corto": "Menos dulzor, más vitalidad",
+      "ingredientes": "Café instantáneo, extracto de té Oolong, azúcar moderada y extracto de Ganoderma.",
+      "preparacion": "Disuelve 1 sobre en 150 ml de agua caliente.",
+      "beneficios": [
+        "Ideal para quienes prefieren el café sin crema y con sabor más intenso.",
+        "Apoya el metabolismo gracias a la sinergia del té Oolong y Lingzhi.",
+        "Favorece la concentración y el bienestar diario."
+      ]
+    },
+    {
+      "id": "FB372",
+      "nombre": "Ootea Cordyceps Coffee Mix 3 en 1",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Mezcla de café en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB372_DXN_Ootea_Cordyceps_Coffee_Mix.jpg",
+      "beneficio_corto": "Té Oolong, café y Cordyceps",
+      "ingredientes": "Café, extracto de té Oolong, crema vegetal y Cordyceps sinensis.",
+      "preparacion": "Vierte 1 sobre en 150 ml de agua caliente y mezcla bien.",
+      "beneficios": [
+        "Impulsa el rendimiento físico y ayuda a reducir el agotamiento.",
+        "Combina el estímulo del café con los antioxidantes del té Oolong.",
+        "Ideal para jornadas largas de trabajo o entrenamiento."
+      ]
+    },
+    {
+      "id": "FB373",
+      "nombre": "Ootea Zhi Mocha Mix",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Mezcla de café en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB373_DXN_Ootea_ZhiMocha_Mix.jpg",
+      "beneficio_corto": "Moka antioxidante con Oolong",
+      "ingredientes": "Café, cacao, té Oolong, crema vegetal y extracto de Ganoderma.",
+      "preparacion": "Disuelve 1 sobre en 150 ml de agua caliente o con hielo.",
+      "beneficios": [
+        "Delicioso equilibrio entre cacao, café y té Oolong con Ganoderma.",
+        "Rico en antioxidantes que protegen las células del estrés oxidativo.",
+        "Brinda energía reconfortante y apoyo inmunológico."
+      ]
+    },
+    {
+      "id": "FB374",
+      "nombre": "Ootea White Coffee Zhino Mix",
+      "presentacion": "12 sobres de 28 g",
+      "descripcion": "Mezcla de café en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB374_DXN_Ootea_White_Coffee_Zhino_Mix.jpg",
+      "beneficio_corto": "Espumoso, suave y antioxidante",
+      "ingredientes": "Café blanco tostado suavemente, té Oolong, crema espumosa y extracto de Ganoderma.",
+      "preparacion": "Mezcla 1 sobre en 150 ml de agua caliente para obtener una espuma cremosa.",
+      "beneficios": [
+        "Tostado suave que cuida el estómago y ofrece una textura aterciopelada.",
+        "Aporta los beneficios adaptógenos del Ganoderma y polifenoles del Oolong.",
+        "Perfecto para disfrutar una pausa relajante con energía."
+      ]
+    },
+    {
+      "id": "FB375",
+      "nombre": "Ootea Lingzhi Black Coffee Mix",
+      "presentacion": "20 sobres de 4,5 g",
+      "descripcion": "Mezcla de café en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB375_DXN_Ootea_LingzhiBlack_Coffee_Mix.jpg",
+      "beneficio_corto": "Café negro con Oolong y Lingzhi",
+      "ingredientes": "Café negro, extracto de té Oolong y Ganoderma lucidum, sin azúcar.",
+      "preparacion": "Disuelve 1 sobre en 150 ml de agua caliente.",
+      "beneficios": [
+        "Sin azúcar ni crema, ideal para planes de control de peso y bienestar.",
+        "Apoya la digestión y el metabolismo con té Oolong y Ganoderma.",
+        "Energía natural y limpia desde la primera taza."
+      ]
+    },
+    {
+      "id": "FB376",
+      "nombre": "Ootea Vita Café Mix",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Mezcla de café en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB376_DXN_Ootea_Vita_Cafe_Mix.jpg",
+      "beneficio_corto": "Ginseng, Oolong y Ganoderma",
+      "ingredientes": "Café, té Oolong, extracto de Ginseng, Tongkat Ali y Ganoderma.",
+      "preparacion": "Vierte 1 sobre en 150 ml de agua caliente y mezcla.",
+      "beneficios": [
+        "Potencia la vitalidad física y ayuda a combatir el cansancio mental.",
+        "Combina hierbas tradicionales con antioxidantes del té Oolong.",
+        "Contribuye al equilibrio y rendimiento diario."
+      ]
+    },
+    {
+      "id": "FB377",
+      "nombre": "Ootea Eu Café Mix",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Mezcla de café en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB377_DXN_Ootea_EuCafe_Mix.jpg",
+      "beneficio_corto": "Energía y bienestar tradicional",
+      "ingredientes": "Café instantáneo, té Oolong, extracto de Eurycoma longifolia y crema vegetal.",
+      "preparacion": "Mezcla 1 sobre en 150 ml de agua caliente.",
+      "beneficios": [
+        "Apoya el vigor físico y la resistencia frente al ritmo diario.",
+        "Enriquecido con té Oolong para un perfil antioxidante superior.",
+        "Sabor equilibrado y reconfortante."
+      ]
+    },
+    {
+      "id": "FB395",
+      "nombre": "Lion’s Mane Coffee Latte",
+      "presentacion": "20 sobres de 15 g",
+      "descripcion": "Mezcla de café en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB395_DXN_Lion%27sManeCoffee_Latte_BOX_1_MYS.jpg",
+      "beneficio_corto": "Latte suave para tu enfoque",
+      "ingredientes": "Café latte cremoso con extracto de Melena de León (Lion's Mane).",
+      "preparacion": "Disuelve 1 sobre en 150 ml de agua caliente y disfruta su suavidad.",
+      "beneficios": [
+        "Apoya la claridad mental, memoria y concentración diaria.",
+        "Textura latte suave y agradable al paladar.",
+        "Contribuye al bienestar digestivo y nervioso."
+      ]
+    },
+    {
+      "id": "FB397",
+      "nombre": "Spirulina Coffee",
+      "presentacion": "20 sobres de 21 g",
+      "descripcion": "Mezcla de café en sobres individuales.",
+      "imagen": "https://www.dxn2u.com/product/images/FFB/CF/FB397_Spirulina_Coffee_1.jpg",
+      "beneficio_corto": "Nutrición verde y energía",
+      "ingredientes": "Café instantáneo con microalga Spirulina y crema vegetal.",
+      "preparacion": "Mezcla 1 sobre en 150 ml de agua caliente.",
+      "beneficios": [
+        "Aporta proteínas, vitaminas y minerales naturales de la Spirulina.",
+        "Brinda energía nutritiva para empezar el día con vitalidad.",
+        "Apoya las defensas y el equilibrio nutricional."
+      ]
+    }
+  ]
+}
