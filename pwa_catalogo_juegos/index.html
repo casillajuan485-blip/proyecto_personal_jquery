@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://cdn.cloudflare.steamstatic.com https://polymarket-upload.s3.us-east-2.amazonaws.com; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+
+<title>Atlas Pixel · Catálogo de videojuegos</title>
+
+<meta name="description" content="Atlas Pixel: catálogo de juegos para PlayStation, Xbox y Nintendo Switch.">
+
+<link rel="stylesheet" href="assets/vendor/bootstrap-icons.css">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/componentes-base.css">
+<link rel="stylesheet" href="css/componentes.css">
+<link rel="stylesheet" href="css/responsivo.css">
+<link rel="stylesheet" href="css/ajustes-atlas.css">
+<link rel="stylesheet" href="css/tarjetas.css">
+
+<link rel="manifest" href="manifest.webmanifest">
+
+<meta name="theme-color" content="#0d101a">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+
+<!-- Conexión anticipada con el proveedor de la portada destacada. -->
+<link rel="preconnect" href="https://cdn.cloudflare.steamstatic.com">
+<link rel="icon" href="assets/icons/icon-192.png">
+
+<link rel="preload" as="font" href="assets/vendor/bootstrap-icons.woff2" type="font/woff2" crossorigin>
+
+</head>
+
+<body>
+
+<a class="skip" href="#main">Saltar al contenido principal
+
+</a>
+
+<!-- Cabecera: marca, instalación, bitácora y tema. -->
+<header class="site-header" id="top">
+
+<a class="site-header__brand" href="#inicio">
+
+<i class="bi bi-controller" aria-hidden="true">
+
+</i> ATLAS
+
+<span>PIXEL
+
+</span>
+
+</a>
+
+<button id="menuBtn" class="icon" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+
+<i class="ic" aria-hidden="true">☰
+
+</i>
+
+</button>
+
+<nav id="nav" aria-label="Principal">
+
+<a href="#inicio" aria-current="page">Inicio
+
+</a>
+
+<a href="#catalogo">Catálogo
+
+</a>
+
+<a href="#favoritos">Favoritos
+
+</a>
+
+
+
+
+
+
+
+<a href="#contactos">
+
+<i class="bi bi-chat-dots" aria-hidden="true">
+
+</i>
+
+<span>Contacto
+
+</span>
+
+</a>
+
+</nav>
+
+<div class="site-header__tools">
+<button id="catalogSearchBtn" class="icon" type="button" aria-label="Buscar en el catálogo"><i class="bi bi-search" aria-hidden="true"></i></button>
+
+<button id="installBtn" class="btn primary" type="button" aria-label="Instalar Atlas Pixel">
+
+<i class="bi bi-download" aria-hidden="true">
+
+</i>
+
+<span>Instalar
+
+</span>
+
+</button>
+
+<button id="logBtn" class="icon" type="button" aria-label="Abrir bitácora de eventos">
+
+<i class="bi bi-journal-text" aria-hidden="true">
+
+</i>
+
+</button>
+
+<a class="icon" href="#favoritos" aria-label="Ir a favoritos">
+
+<i class="ic" aria-hidden="true">♥
+
+</i>
+
+<span id="favCount" class="badge">0
+
+</span>
+
+</a>
+
+<button id="themeBtn" class="icon" aria-pressed="false" aria-label="Activar tema claro">
+
+<i class="ic" aria-hidden="true">☀
+
+</i>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- Navegación lateral para tablet y laptop. -->
+<aside class="site-sidebar" aria-label="Explorar Atlas Pixel">
+
+<p class="side-label">TU UNIVERSO GAMING
+
+</p>
+
+<nav id="sideNav">
+
+<a href="#inicio">
+
+<i class="bi bi-house-door" aria-hidden="true">
+
+</i> Inicio
+
+</a>
+
+<a href="#catalogo">
+
+<i class="bi bi-grid" aria-hidden="true">
+
+</i> Catálogo
+
+</a>
+
+<a href="#favoritos">
+
+<i class="bi bi-heart" aria-hidden="true">
+
+</i> Favoritos 
+
+<span id="sideFavCount">0
+
+</span>
+
+</a>
+
+
+
+
+
+
+
+<a href="#contactos">
+
+<i class="bi bi-chat-dots" aria-hidden="true">
+
+</i>
+
+<span>Contacto
+
+</span>
+
+</a>
+
+</nav>
+
+<div class="site-sidebar__card">
+
+<i class="bi bi-stars" aria-hidden="true">
+
+</i>
+
+<strong>Tu próximo mundo
+
+<br>te está esperando.
+
+</strong>
+
+<p>Explora. Descubre. Guarda.
+
+</p>
+
+</div>
+
+<span class="side-bottom">
+
+<span class="online-dot">
+
+</span> 13 mundos por descubrir
+
+</span>
+
+</aside>
+
+<div id="note" class="note" role="status" hidden="">
+
+</div>
+
+<!-- Pantallas: solo una sección permanece visible. -->
+<main id="main" tabindex="-1" aria-busy="true">
+
+<div id="bootStatus" role="status">Preparando tu universo de juegos…
+
+</div>
+
+<!-- Inicio: destacado y juegos recomendados. -->
+<section id="inicio" class="hero view" aria-labelledby="h-inicio">
+
+<!-- Presentación, búsqueda y destacado en un mismo bloque. -->
+<div class="hero-layout">
+<div class="hero-intro">
+
+<span class="eyebrow">
+
+<span class="online-dot">
+
+</span> TU PRÓXIMA AVENTURA EMPIEZA AQUÍ
+
+</span>
+
+<h1 id="h-inicio" tabindex="-1">Juegos para tu consola</h1>
+
+<p>PlayStation, Xbox y Nintendo Switch.</p>
+
+<div class="hero-intro__actions">
+  <a class="btn primary" href="#catalogo">Explorar catálogo</a>
+  <div id="homeWhatsApp"></div>
+</div>
+</div>
+
+<div class="carousel" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Juegos destacados">
+
+<div id="slides">
+<!-- Primer destacado prerenderizado. Su botón recibe el evento delegado durante la hidratación. -->
+<div class="carousel__slide" data-id="tekken8"><img class="carousel__image" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1778820/header.jpg" fetchpriority="high" alt="" width="460" height="215"><div class="carousel__content"><span class="featured-label">DESTACADO</span><h3>Tekken 8</h3><p>Combates uno contra uno con el sistema Heat.</p><button class="btn primary detail" type="button">Explorar →</button></div></div>
+</div>
+
+<div class="carousel__controls" role="group" aria-label="Controles del carrusel">
+<div class="carousel__playback">
+
+<button class="icon" id="prev" aria-label="Anterior"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+
+<button class="icon" id="pp" aria-label="Pausar avance automático"><i class="bi bi-pause" aria-hidden="true"></i></button>
+
+<button class="icon" id="next" aria-label="Siguiente"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+
+</div>
+
+<div id="dots" class="carousel__dots">
+
+</div>
+
+<span id="carouselClock" class="carousel__clock" role="timer" aria-live="off">6 s
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="collections" class="collections" role="group" aria-label="Consolas"></div>
+
+<div id="homeGrid" class="grid" aria-label="Juegos destacados">
+
+</div>
+
+</section>
+
+<!-- Catálogo: búsqueda, filtros y tarjetas paginadas. -->
+<section id="catalogo" aria-labelledby="h-cat" class="view" hidden="">
+
+<div class="section-heading">
+
+<div>
+
+<span class="eyebrow">ELIGE TU SIGUIENTE PARTIDA
+
+</span>
+
+<h2 id="h-cat" tabindex="-1">Explora el catálogo
+
+<span class="accent">.
+
+</span>
+
+</h2>
+
+</div>
+
+<span class="section-pill">13 juegos · consolas disponibles
+
+</span>
+
+</div>
+
+<p>Juegos para PlayStation 3, 4 y 5, Xbox y Nintendo Switch · año de lanzamiento.
+
+<button class="link" id="helpBtn" aria-expanded="false" aria-controls="help">¿Cómo uso el catálogo?
+
+</button>
+
+</p>
+
+<div id="help" class="panel" hidden="">Busca en la barra superior, elige un género y combina plataforma y año. Explora hasta 8 juegos por página. El corazón guarda favoritos y Ver detalles abre la información completa.
+
+</div>
+
+<div class="catalog-filters__toolbar">
+
+<button class="btn" id="filtBtn" aria-expanded="false" aria-controls="filters">
+
+<i class="bi bi-sliders" aria-hidden="true">
+
+</i> 
+
+<span id="filterButtonLabel">Filtros
+
+</span>
+
+</button>
+
+<label class="genre-select">Género
+
+<select id="genreSelect">
+
+<option value="">Todos
+
+</option>
+
+</select>
+
+</label>
+
+<label for="sort" class="sr-only">Ordenar catálogo
+
+</label>
+
+<select id="sort">
+
+<option value="az">Nombre A–Z
+
+</option>
+
+<option value="za">Nombre Z–A
+
+</option>
+
+<option value="new">Más recientes
+
+</option>
+
+<option value="old">Más antiguos
+
+</option>
+
+</select>
+
+<button class="btn" id="clear" title="Limpiar filtros" aria-label="Limpiar filtros" type="button" hidden=""><i class="bi bi-x-circle" aria-hidden="true"></i><span class="sr-only">Limpiar filtros</span></button>
+
+</div>
+
+<div id="filters" class="catalog-filters" hidden="">
+
+<label class="catalog-filters__search">
+
+<span class="sr-only">Buscar videojuegos
+
+</span>
+
+<input id="globalSearch" type="search" placeholder="Encuentra tu próxima aventura…" autocomplete="off" maxlength="120">
+
+</label>
+
+<button id="filtersClose" class="icon" type="button" aria-label="Cerrar filtros">×
+
+</button>
+
+<label>Consola
+
+<select id="plat">
+
+</select>
+
+</label>
+
+<label>Año
+
+<select id="year">
+
+</select>
+
+</label>
+
+</div>
+
+<div id="genres" class="chips" role="group" aria-label="Géneros">
+
+</div>
+
+<div id="activeFilters" class="active-filters" role="group" aria-label="Filtros aplicados">
+
+</div>
+
+<p id="count" class="count" aria-live="polite" aria-atomic="true">
+
+</p>
+
+<div id="grid" class="grid">
+
+</div>
+
+<div id="empty" class="empty" hidden="">
+
+<div class="empty-art" aria-hidden="true">
+
+<i class="bi bi-search">
+
+</i>
+
+<span>?
+
+</span>
+
+</div>
+
+<p>Esta combinación todavía no tiene una aventura. Prueba otro filtro y descubre un nuevo mundo.
+
+</p>
+
+<button class="btn primary" id="clear2">Limpiar filtros
+
+</button>
+
+</div>
+
+<nav id="pagination" class="pagination" aria-label="Páginas del catálogo">
+
+</nav>
+
+</section>
+
+<!-- Favoritos guardados en el navegador. -->
+<section id="favoritos" aria-labelledby="h-fav" class="view" hidden="">
+
+<span class="eyebrow">TU COLECCIÓN PERSONAL
+
+</span>
+
+<h2 id="h-fav" tabindex="-1">Tus favoritos 
+
+<span class="accent">(
+
+<span id="favCount2">0
+
+</span>)
+
+</span>
+
+</h2>
+
+<div id="favGrid" class="grid">
+
+</div>
+
+<div id="favEmpty" class="empty">
+
+<div class="empty-art" aria-hidden="true">
+
+<i class="bi bi-controller">
+
+</i>
+
+<span>♡
+
+</span>
+
+</div>
+
+<p>Tu colección está esperando su primer juego. Pulsa el corazón de una tarjeta para comenzar.
+
+</p>
+
+<a class="btn primary" href="#catalogo">Ir al catálogo
+
+</a>
+
+</div>
+
+<nav id="favPagination" class="pagination" aria-label="Páginas de favoritos">
+
+</nav>
+
+</section>
+
+<!-- Contacto directo por WhatsApp. -->
+<section id="contactos" class="view" aria-labelledby="h-contactos" hidden>
+  <h2 id="h-contactos" tabindex="-1">Contacto</h2>
+  <article class="social-card">
+    <h3><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp</h3>
+    <p>Consulta directamente al vendedor por juegos, precios y disponibilidad.</p>
+    <div id="contactoWhatsApp"></div>
+  </article>
+</section>
+
+</main>
+
+<!-- Estado de conexión y preparación offline. -->
+<footer class="site-header__status">
+
+<span id="connectionStatus" role="status">Comprobando conexión…
+
+</span>
+
+<span id="offlineStatus" role="status">Preparando offline…
+
+</span>
+
+<button id="updateBtn" class="link" type="button" hidden>Actualizar versión
+
+</button>
+
+</footer>
+
+<div id="toast" class="toast" role="status">
+
+</div>
+
+<!-- Diálogo reutilizable con foco controlado. -->
+<div id="modal" class="modal" hidden="">
+
+<div class="dialog__backdrop">
+
+</div>
+
+<div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mTitle" tabindex="-1">
+
+<div class="dialog-close-bar">
+
+<button class="icon close" id="mClose" aria-label="Cerrar">
+
+<i class="ic" aria-hidden="true">✕
+
+</i>
+
+</button>
+
+</div>
+
+<div id="mBody">
+
+</div>
+
+</div>
+
+</div>
+
+<script src="assets/vendor/jquery-3.7.1.min.js"></script>
+
+<script src="assets/vendor/purify.min.js"></script>
+<script type="module" src="js/app.js"></script>
+
+<!-- Instalación: aviso flotante que conserva la posición del contenido. -->
+<aside id="avisoInstalar" class="install-notice" aria-label="Instalación de Atlas Pixel" hidden>
+  <span role="status">¿Quieres instalar Atlas Pixel?</span>
+  <button id="accionInstalar" class="btn primary" type="button">Instalar</button>
+  <button id="cerrarAvisoInstalar" class="btn icon" type="button" aria-label="Cerrar aviso">×</button>
+</aside>
+</body>
+
+</html>
+

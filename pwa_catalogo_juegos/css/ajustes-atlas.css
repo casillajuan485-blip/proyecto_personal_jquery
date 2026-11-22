@@ -1,0 +1,86 @@
+/* Especificidad: el contador es el único span alineado a la derecha del menú. */
+#sideNav #sideFavCount { margin-inline-start: auto; font-size: 10px; }
+
+/* Destacado: el degradado queda entre la imagen y el texto interactivo. */
+.carousel .carousel__slide::after { z-index: 1; pointer-events: none; }
+.carousel .carousel__slide .carousel__content { position: relative; z-index: 2; }
+.carousel .carousel__slide .btn.primary { opacity: 1; }
+
+/* Aviso de instalación. Su posición fija evita desplazar el contenido al aparecer. */
+.install-notice {
+  position: fixed;
+  z-index: 80;
+  inset: max(8px, env(safe-area-inset-top)) 8px auto auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100% - 16px);
+  padding: 8px 12px;
+  background: #101827;
+  color: #fff;
+  border: 1px solid #63efff;
+  border-radius: 12px;
+}
+.install-notice[hidden] { display: none; }
+.install-notice .btn { min-height: 44px; min-width: 44px; }
+
+/* El punto conserva su aspecto visual dentro de un botón táctil más grande. */
+@media (pointer: coarse) {
+  #carousel .carousel__controls { display: flex; flex-wrap: wrap; gap: 2px; }
+  #carousel #dots { display: flex; flex: 1 1 auto; min-width: 44px; max-width: 100%; overflow-x: auto; }
+
+
+  :where(header, main, footer, .site-sidebar, .dialog) :is(button, select, a.btn, #nav a, #sideNav a) {
+    min-inline-size: 44px !important;
+    min-block-size: 44px !important;
+  }
+}
+
+/* Landscape estándar. La navegación y las tarjetas se adaptan también por CSS. */
+@media (orientation: landscape) and (max-height: 500px) {
+  html:not([data-device-orientation]) .site-header { min-block-size: 44px; }
+  html:not([data-device-orientation]) #nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+  }
+  html:not([data-device-orientation]) :is(#grid, #favGrid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  }
+  body[data-mobile-shell="true"] :where(main) { min-block-size: 0; }
+  body[data-mobile-shell="true"] :where(.game-card) {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    align-items: stretch;
+  }
+  body[data-mobile-shell="true"] :where(.game-card__body) { min-inline-size: 0; }
+  .install-notice { inset-inline-end: 8px; }
+}
+
+/* Carrusel BEM: una sola regla para el área táctil y el punto centrado de 6 × 6 px. */
+.carousel__dots {
+  display: flex;
+  flex-wrap: nowrap;
+  max-inline-size: 100%;
+  overflow-x: auto;
+}
+.carousel__dots button {
+  display: grid;
+  flex: 0 0 44px;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.carousel__dots button::after { width: 6px; height: 6px; }
+.dialog__phone { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* Portada remota caída: se conserva el título y el acceso al destacado. */
+.carousel__slide--sin-imagen .carousel__content { display: block; }

@@ -1,0 +1,55 @@
+{
+  "quick": {
+    "title": "PlayStation",
+    "icon": "controller",
+    "description": "Juegos para PS3, PS4 y PS5",
+    "ids": [
+      "tekken8",
+      "tekken7",
+      "godofwar",
+      "gta6",
+      "gta5",
+      "portal2",
+      "skyrim",
+      "bioshock",
+      "hades",
+      "hollow",
+      "cuphead",
+      "stardew",
+      "forza"
+    ]
+  },
+  "adventure": {
+    "title": "Xbox",
+    "icon": "xbox",
+    "description": "Xbox 360, One y Series X|S",
+    "ids": [
+      "tekken8",
+      "tekken7",
+      "gta6",
+      "gta5",
+      "portal2",
+      "skyrim",
+      "bioshock",
+      "hades",
+      "hollow",
+      "cuphead",
+      "stardew",
+      "forza"
+    ]
+  },
+  "indie": {
+    "title": "Nintendo Switch",
+    "icon": "nintendo-switch",
+    "description": "Juegos para Nintendo Switch",
+    "ids": [
+      "portal2",
+      "skyrim",
+      "bioshock",
+      "hades",
+      "hollow",
+      "cuphead",
+      "stardew"
+    ]
+  }
+}

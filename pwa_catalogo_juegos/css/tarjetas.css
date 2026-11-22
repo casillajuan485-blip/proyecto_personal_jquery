@@ -1,0 +1,533 @@
+/* Encapsulamiento CSS: las reglas de contenido solo alcanzan la tarjeta y sus descendientes. */
+@scope (.game-card) to (.game-card) {
+  .game-card__title { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; }
+  .game-card__cover { min-inline-size: 0; }
+  .game-card__actions { display: grid; grid-template-columns: minmax(0, 1fr) 44px; gap: 6px; }
+}
+
+/* La rejilla se desplaza antes de reducir la portada o esconder las acciones. */
+#inicio:not([hidden]) {
+  grid-template-rows: clamp(185px, 31vh, 265px) 44px auto;
+  align-content: start;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+#inicio #homeGrid { height: auto; overflow: visible; align-content: start; }
+html[data-device-orientation] #inicio:not([hidden]) #homeGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: auto;
+}
+@media (max-width: 1100px) {
+  html[data-device-orientation] #inicio:not([hidden]) #homeGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 680px), (max-height: 499px) {
+  html[data-device-orientation] #inicio:not([hidden]) #homeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+#grid, #favGrid {
+  grid-template-rows: none !important;
+  grid-auto-rows: max-content;
+  align-content: start;
+  overflow-y: auto;
+}
+html[data-device-orientation] body[data-mobile-shell] :is(#homeGrid,#grid,#favGrid) .game-card {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-self: start;
+  gap: 0;
+}
+:is(#homeGrid,#grid,#favGrid) .game-card .game-card__cover {
+  width: 100%;
+  min-height: 95px;
+  max-height: none;
+  height: auto;
+  aspect-ratio: 460 / 215;
+}
+@media (min-width: 1000px) and (min-height: 600px) {
+  :is(#homeGrid,#grid,#favGrid) .game-card .game-card__cover { min-height: 135px; }
+}
+:is(#homeGrid,#grid,#favGrid) .game-card__cover img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center 20%;
+}
+:is(#homeGrid,#grid,#favGrid) .game-card__cover--poster {
+  background: radial-gradient(ellipse at 50% 35%, #463452, #14192a 75%);
+}
+:is(#homeGrid,#grid,#favGrid) .game-card__cover--poster img {
+  object-fit: contain;
+  object-position: center;
+}
+.game-card .game-card__cover::after {
+  content: "";
+  position: absolute;
+  inset: 58% 0 0;
+  pointer-events: none;
+  background: linear-gradient(transparent, #10162696);
+}
+html[data-device-orientation] body[data-mobile-shell] :is(#homeGrid,#grid,#favGrid) .game-card .game-card__body {
+  grid-template-rows: auto auto auto 44px !important;
+  align-content: start;
+}
+html[data-device-orientation] body[data-mobile-shell] :is(#homeGrid,#grid,#favGrid) .card-meta {
+  display: flex !important;
+  min-height: 24px !important;
+  height: auto;
+}
+.console-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+.console-chip, .cover-stock {
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 1px 6px;
+  font-size: 10px;
+  line-height: 1.35;
+}
+.console-chip--playstation { color: #c2d8ff; background: #18376a; }
+.console-chip--xbox { color: #c8f5ce; background: #1a432e; }
+.console-chip--switch { color: #ffd2dd; background: #641f36; }
+.cover-stock {
+  position: absolute;
+  inset: 6px auto auto 6px;
+  z-index: 4;
+  color: #c9ffda;
+  background: #153e2a;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  :is(#homeGrid,#grid,#favGrid) .game-card:hover {
+    border-color: #77e6f5;
+    box-shadow: 0 0 15px #57d8fa44, inset 0 0 10px #9070ff33;
+  }
+  :is(#homeGrid,#grid,#favGrid) .game-card:hover .game-card__cover img { transform: scale(1.05); }
+  :is(#homeGrid,#grid,#favGrid) .game-card:hover .game-card__cover--poster img { transform: none; }
+}
+.dialog #mBody:has(.quick-actions) {
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+.dialog #mBody:has(.quick-actions) .game-card__cover {
+  margin: 0;
+  height: clamp(150px, 40vh, 310px);
+  aspect-ratio: auto;
+  flex: 0 0 auto;
+  max-height: 310px;
+  background: radial-gradient(ellipse, #30314c, #111628);
+}
+.dialog #mBody:has(.quick-actions) .game-card__cover img {
+  position: absolute;
+  inset: 0;
+  object-fit: contain;
+  object-position: center;
+}
+.quick-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.quick-actions .btn { min-height: 44px; }
+@media (prefers-reduced-motion: reduce) {
+  #inicio:not([hidden]) { scroll-behavior: auto; }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  html[data-device-orientation="landscape"] #inicio:not([hidden]) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 175px 44px auto;
+  }
+  html[data-device-orientation="landscape"] #inicio :is(.carousel, .collections, #homeGrid) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+/* El desplazamiento pertenece al documento. La paginación no fija el alto de cada fila. */
+html:has(body[data-view]) { height: auto; }
+body[data-view][data-mobile-shell] {
+  height: auto;
+  min-height: 100dvh;
+  grid-template-rows: var(--header) minmax(0, 1fr) auto;
+  overflow: visible;
+}
+body[data-view][data-mobile-shell] main,
+body[data-view][data-mobile-shell] main > .view:not([hidden]) {
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
+body[data-view][data-mobile-shell] #inicio:not([hidden]) { overflow: visible; }
+html[data-device-orientation] body[data-view][data-mobile-shell] #catalogo:not([hidden]) {
+  display: flex !important;
+  flex-direction: column;
+}
+html[data-device-orientation] body[data-view][data-mobile-shell] #catalogo > .section-heading {
+  position: static;
+  width: auto;
+  height: auto;
+}
+html[data-device-orientation] body[data-view][data-mobile-shell] #catalogo .catalog-filters__toolbar {
+  margin-left: 0;
+  width: 100% !important;
+}
+
+/* Las mismas columnas se usan en Inicio, Catálogo y Favoritos. */
+html[data-device-orientation] body[data-view] :is(#grid, #favGrid, #homeGrid) {
+  --columnas-catalogo: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--columnas-catalogo), minmax(0, 1fr)) !important;
+  grid-template-rows: none !important;
+  grid-auto-rows: auto;
+  align-content: start;
+  flex: none;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
+html[data-device-orientation] body[data-view] :is(#grid, #favGrid):empty { display: none; }
+@media (min-width: 360px) {
+  html[data-device-orientation] body[data-view] :is(#grid, #favGrid, #homeGrid) { --columnas-catalogo: 2; }
+}
+@media (min-width: 901px) {
+  html[data-device-orientation] body[data-view] :is(#grid, #favGrid, #homeGrid) { --columnas-catalogo: 3; }
+}
+@media (min-width: 1100px) {
+  html[data-device-orientation] body[data-view] :is(#grid, #favGrid, #homeGrid) { --columnas-catalogo: 4; }
+}
+html[data-device-orientation] body[data-view][data-mobile-shell] :is(#grid, #favGrid, #homeGrid) .game-card {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+}
+html[data-device-orientation] body[data-view] :is(#grid, #favGrid, #homeGrid) .game-card__cover {
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 460 / 215;
+}
+@media (max-width: 359px) {
+  html[data-device-orientation] body[data-view] :is(#grid, #favGrid, #homeGrid) .game-card__cover {
+    max-height: 150px;
+  }
+}
+
+/* La imagen conserva su proporción y permanece completa incluso al pasar el cursor. */
+html[data-device-orientation] body[data-view] :is(.game-card__cover img, .carousel__image, .detail-scene, .dialog__gallery-image) {
+  object-fit: contain !important;
+  object-position: center;
+  transform: none !important;
+  background: #0d1322;
+}
+html[data-device-orientation] body[data-view] .dialog #mBody :is(.detail-scene, .dialog__gallery-image) {
+  max-width: 100%;
+  min-width: 0;
+}
+
+
+/* Inicio: la introducción y el destacado ocupan columnas independientes. */
+html[data-device-orientation] body[data-view][data-mobile-shell] #inicio:not([hidden]) {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(4, auto);
+  align-content: start;
+  gap: 14px;
+}
+#inicio .hero-layout {
+  display: grid;
+  grid-template-columns: minmax(230px, .85fr) minmax(0, 1.15fr);
+  gap: clamp(12px, 2vw, 24px);
+  align-items: start;
+  min-width: 0;
+}
+html[data-device-orientation] #inicio .hero-intro {
+  position: static;
+  width: auto;
+  max-width: none;
+  pointer-events: auto;
+  padding: clamp(10px, 2vw, 24px) 0;
+}
+html[data-device-orientation] #inicio .hero-intro p { display: block; }
+.hero-intro__actions, .hero-intro__search {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.hero-intro__actions .btn, .hero-intro__search .btn, #homeAllGames { min-height: 44px; }
+#homeWhatsApp .btn {
+  color: var(--tx);
+  background: transparent;
+  border: 1px solid var(--bd);
+  box-shadow: none;
+}
+#homeSearch {
+  flex: 1 1 145px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 10px;
+  color: inherit;
+  background: var(--surf, #101725);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+}
+
+/* El banner, los controles y la información del juego conservan su propio espacio. */
+html[data-device-orientation] #inicio #carousel {
+  display: flex;
+  flex-direction: column;
+  grid-row: auto;
+  grid-column: auto;
+  height: auto;
+  min-width: 0;
+}
+#inicio #slides { flex: none; height: clamp(175px, 27vw, 310px); }
+html[data-device-orientation] #inicio .carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  z-index: 4;
+  position: relative;
+  height: auto;
+  min-height: 44px;
+  padding: 4px 8px;
+}
+.carousel__playback {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.carousel__playback > button { width: 44px; min-width: 44px; height: 44px; }
+html[data-device-orientation] #inicio #dots {
+  display: flex !important;
+  flex: 1 1 220px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  gap: 0;
+}
+#inicio .carousel__clock { margin: 0; text-align: right; }
+html[data-device-orientation] #inicio :is(.collections, #homeGrid) { grid-row: auto; grid-column: auto; }
+#inicio .home-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+#inicio .home-heading h2 { margin: 0; font-size: clamp(17px, 2vw, 23px); }
+#homeAllGames { display: inline-flex; align-items: center; white-space: nowrap; }
+
+/* El relleno alrededor de las portadas completas usa un degradado en vez de franjas planas. */
+html[data-device-orientation] body[data-view] .game-card__cover {
+  background: radial-gradient(ellipse at 50% 36%, #334057 0%, #202841 45%, #0d1322 100%);
+}
+html[data-device-orientation] body[data-view] .game-card__cover img { background: transparent; }
+
+@media (max-width: 680px) {
+  #inicio .hero-layout { grid-template-columns: minmax(0, 1fr); }
+  #inicio #slides { height: clamp(160px, 53vw, 260px); }
+  html[data-device-orientation] #inicio #dots { order: 3; flex-basis: 100%; }
+  #homeSearch { font-size: 16px; }
+}
+
+/* El pie termina por encima de la navegación fija y de la zona segura del teléfono. */
+html[data-device-orientation] body[data-view][data-mobile-shell="true"] {
+  padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom, 0px) + 28px);
+}
+html[data-device-orientation] body[data-view][data-mobile-shell="true"] .site-header__status {
+  display: flex !important;
+  flex-wrap: wrap;
+  min-height: 24px;
+}
+
+
+/* Inicio mantiene las tres franjas dentro de la altura útil del dispositivo. */
+html:has(body[data-view="inicio"]) { height: 100%; overflow: hidden; }
+html[data-device-orientation] body[data-view="inicio"][data-mobile-shell] {
+  height: 100dvh;
+  min-height: 0;
+  padding-bottom: var(--nav-height);
+  grid-template-rows: var(--header) minmax(0, 1fr) 24px;
+  overflow: hidden;
+}
+html[data-device-orientation] body[data-view="inicio"][data-mobile-shell] main {
+  min-height: 0;
+  overflow: hidden;
+}
+html[data-device-orientation] body[data-view="inicio"][data-mobile-shell] #inicio:not([hidden]) {
+  height: 100%;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  align-content: stretch;
+  gap: clamp(5px, 1vh, 12px);
+  overflow: hidden;
+}
+#catalogSearchBtn {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+#inicio .hero-layout {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+}
+html[data-device-orientation] #inicio .hero-intro { padding-block: 0; }
+#inicio .hero-intro h1 { margin: 0 0 6px; }
+#inicio .hero-intro p { margin: 0; }
+#inicio .hero-intro__actions { margin-top: 8px; flex-wrap: nowrap; }
+#inicio .hero-intro__actions .btn { white-space: nowrap; }
+#inicio #slides { height: clamp(140px, 28vh, 200px); }
+html[data-device-orientation] #inicio .carousel__controls {
+  height: 44px;
+  padding: 0 3px;
+  flex-wrap: nowrap !important;
+  gap: 4px;
+}
+html[data-device-orientation] #inicio #dots {
+  order: 0;
+  flex: 1 1 220px;
+  min-width: 44px;
+  flex-wrap: nowrap;
+  justify-content: safe center;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+#inicio .carousel__clock { flex-shrink: 0; white-space: nowrap; }
+#inicio .carousel__slide::after { background: linear-gradient(to top, #0b1024ee, transparent 62%); }
+html[data-device-orientation] #inicio .carousel__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  inset: auto 0 0;
+  max-width: none;
+  padding: 3px 9px;
+  gap: 5px;
+  z-index: 2;
+}
+#inicio .carousel__content :is(.featured-label, p) { display: none; }
+#inicio .carousel__content h3 { margin: 0; font-size: clamp(12px, 1.6vw, 20px); }
+#inicio .carousel__content .btn { min-height: 44px; flex-shrink: 0; }
+
+/* Los accesos de consola comparten la altura táctil y conservan su identidad por color. */
+#inicio .collections {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+  height: 44px;
+  min-height: 44px;
+}
+#inicio .collection-tile {
+  height: 44px;
+  min-height: 44px;
+  padding: 3px 6px;
+  border-color: var(--consola, var(--cy));
+}
+#inicio .collection-tile[data-collection="quick"] { --consola: #518df4; }
+#inicio .collection-tile[data-collection="adventure"] { --consola: #3bbc69; }
+#inicio .collection-tile[data-collection="indie"] { --consola: #fc697f; }
+html[data-device-orientation] #inicio .collection-tile > .bi { display: inline-block; color: var(--consola); }
+@media (hover: hover) {
+  #inicio .collection-tile:hover { box-shadow: inset 0 0 14px color-mix(in srgb, var(--consola) 38%, transparent); }
+}
+
+/* Una fila de tarjetas. Solo la portada cambia de altura para liberar espacio a los botones. */
+html[data-device-orientation] body[data-view="inicio"] #inicio #homeGrid {
+  --inicio-columnas: 4;
+  grid-template-columns: repeat(var(--inicio-columnas), minmax(0, 1fr)) !important;
+  grid-template-rows: minmax(0, 1fr) !important;
+  align-content: stretch;
+  height: 100%;
+  min-height: 0;
+  gap: 6px;
+}
+html[data-device-orientation] body[data-view="inicio"][data-mobile-shell] #homeGrid .game-card {
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-self: stretch;
+  min-height: 0;
+}
+html[data-device-orientation] body[data-view="inicio"][data-mobile-shell] #homeGrid .game-card__cover {
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+}
+html[data-device-orientation] body[data-view="inicio"][data-mobile-shell] #homeGrid .game-card .game-card__body {
+  grid-template-rows: auto auto auto 44px !important;
+  gap: 3px;
+  padding: 3px 0 0 !important;
+}
+html[data-device-orientation] body[data-view="inicio"] #homeGrid .card-meta { min-height: 16px !important; }
+#homeGrid .console-chips { flex-wrap: nowrap; overflow: hidden; }
+#homeGrid .console-chip { white-space: nowrap; }
+@media (max-width: 1099px) {
+  html[data-device-orientation] body[data-view="inicio"] #inicio #homeGrid { --inicio-columnas: 3; }
+}
+@media (max-width: 680px) {
+  html[data-device-orientation] body[data-view="inicio"] #inicio #homeGrid { --inicio-columnas: 2; }
+  #inicio .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  #inicio .hero-intro { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
+  html[data-device-orientation] #inicio .hero-intro :is(p, .eyebrow) { display: none; }
+  #inicio .hero-intro h1 { margin: 0; font-size: clamp(12px, 4vw, 20px); }
+  #inicio .hero-intro__actions { margin: 0; gap: 3px; }
+  #inicio .hero-intro__actions .btn { padding: 3px 6px; font-size: 10px; }
+  #inicio #slides { height: clamp(105px, 22dvh, 180px); }
+  #inicio .collection-tile { gap: 4px; }
+  #inicio .collection-tile strong { font-size: 10px; white-space: normal; }
+  body[data-view="inicio"][data-mobile-shell="true"] #installBtn span { display: none; }
+  body[data-view="inicio"][data-mobile-shell="true"] #installBtn { width: 44px; padding-inline: 0; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  html[data-device-orientation] body[data-view="inicio"][data-mobile-shell="true"] { --header: 48px; }
+  html[data-device-orientation] body[data-view="inicio"][data-mobile-shell="true"] header.site-header {
+    height: var(--header);
+  }
+  html[data-device-orientation] body[data-view="inicio"][data-mobile-shell="true"] #top > :is(.site-header__tools, .site-header__brand) { display: flex !important; }
+  html[data-device-orientation] body[data-view="inicio"] #inicio #homeGrid { --inicio-columnas: 2; }
+  #inicio #slides { height: clamp(64px, 20dvh, 105px); }
+  #inicio .hero-intro .eyebrow { display: none; }
+  html[data-device-orientation] body[data-view="inicio"][data-mobile-shell] #homeGrid .game-card {
+    grid-template-columns: minmax(44px, 35%) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    gap: 5px;
+  }
+  html[data-device-orientation] body[data-view="inicio"][data-mobile-shell] #homeGrid .game-card .game-card__body {
+    grid-template-rows: auto auto 44px !important;
+    gap: 1px;
+  }
+  html[data-device-orientation] body[data-view="inicio"] #homeGrid .card-meta { display: none !important; }
+}
+
+/* Reserva una fila real para la cabecera y deja que la tercera franja se estire. */
+html[data-device-orientation] body[data-view="inicio"][data-mobile-shell="true"] #top > :is(.site-header__tools, .site-header__brand) { display: flex !important; }
+html[data-device-orientation] body[data-view="inicio"][data-mobile-shell] main {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  align-self: stretch;
+}
+html[data-device-orientation] body[data-view="inicio"][data-mobile-shell] main > #inicio {
+  align-self: stretch;
+  height: auto;
+}
+/* En pantallas bajas se reduce el banner antes de comprimir las tarjetas. */
+@media (max-width: 680px) and (max-height: 600px) {
+  #inicio #slides { height: clamp(70px, 15dvh, 90px); }
+}
+/* En horizontal corto las acciones quedan a un lado del título y las consolas. */
+@media (max-height: 500px) and (orientation: landscape) {
+  html[data-device-orientation] body[data-view="inicio"][data-mobile-shell="true"] {
+    grid-template-rows: var(--header) minmax(0, 1fr) 18px;
+  }
+  html[data-device-orientation] body[data-view="inicio"][data-mobile-shell="true"] .site-header__status { min-height: 18px; }
+  #inicio #slides { height: clamp(62px, 16dvh, 78px); }
+  html[data-device-orientation] body[data-view="inicio"][data-mobile-shell] #homeGrid .game-card .game-card__body {
+    grid-template-columns: minmax(0, 1fr) minmax(94px, 48%);
+    grid-template-rows: auto auto !important;
+    align-content: center;
+    column-gap: 4px;
+  }
+  #homeGrid .game-card__actions { grid-row: 1 / 3; grid-column: 2; }
+}
