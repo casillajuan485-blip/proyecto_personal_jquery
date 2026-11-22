@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fdf7ea">
+<meta name="description" content="Elige tu tamaño de huevos y arma tu pedido por maple en El Pollito.">
+<title>El Pollito · Huevos por maple</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./img/icono-192.png">
+<link rel="icon" href="./img/icono-192.png">
+<link rel="preload" as="image" href="./img/granja.webp">
+<link rel="preload" href="./datos/primera.json" as="fetch" crossorigin>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/catalogo.css">
+<link rel="stylesheet" href="./css/responsivo.css">
+<script defer src="./vendor/jquery.js"></script>
+<script defer src="./vendor/dompurify.js"></script>
+<script type="module" src="./js/app.js"></script>
+</head>
+<body class="pollito">
+<!-- Pantalla de carga inicial (3 segundos) a pantalla completa con el logo del negocio. -->
+<div id="pantalla-carga" class="pantalla-carga" role="status" aria-label="Cargando El Pollito">
+  <div class="pantalla-carga__contenido">
+    <img src="./img/logo.webp" width="96" height="96" alt="Logo El Pollito" class="pantalla-carga__logo">
+    <strong class="pantalla-carga__titulo">El Pollito</strong>
+    
+  </div>
+</div>
+
+<!-- Aviso superior de instalación PWA (visible 5 segundos, sin desplazar el contenido / CLS 0). -->
+<aside id="aviso-instalar" class="aviso" aria-label="Instalación de la PWA" hidden>
+  <span>¿Quieres instalar <strong>El Pollito</strong> en tu dispositivo?</span>
+  <button id="instalar-aviso" class="boton" type="button" disabled>Instalar</button>
+</aside>
+
+<div class="app">
+  <!-- Cabecera con botones hidratados (inician disabled hasta cargar el JS). -->
+  <header class="cabecera">
+    <a href="./" class="cabecera__marca">
+      <img src="./img/logo.webp" width="42" height="42" alt="">
+      <span>El Pollito</span>
+    </a>
+    <div class="cabecera__acciones">
+      <span class="insignia-frescura" aria-label="Producto fresco">Frescos del día</span>
+      <button id="contacto" class="boton boton--claro" type="button" disabled>Info</button>
+      <button id="btn-carrito" class="boton boton--carrito" type="button" disabled aria-label="Abrir carrito de compras">
+        <svg class="icono-carrito" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="carrito-texto">Carrito</span>
+        <span id="carrito-insignia" class="carrito-insignia" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="catalogo">
+    <section id="carrusel" class="carrusel" aria-roledescription="carrusel" aria-label="Galería El Pollito">
+      <div class="carrusel__pista">
+        <figure class="carrusel__slide carrusel__slide--activo">
+          <img src="./img/granja.webp" alt="Granja de huevos frescos El Pollito" decoding="async" fetchpriority="high">
+          <figcaption class="carrusel__texto">
+            <h1 id="titulo">Huevos por maple</h1>
+            <p id="unidades">30 huevos por maple · Elige tamaño</p>
+          </figcaption>
+        </figure>
+        <figure class="carrusel__slide">
+          <img src="./img/carrusel-maples.jpg" alt="Maples de huevos frescos seleccionados" loading="lazy" decoding="async">
+          <figcaption class="carrusel__texto">
+            <strong>De Primera a Quinta</strong>
+            <p>Calidad seleccionada · Tamaños XL a XS</p>
+          </figcaption>
+        </figure>
+        <figure class="carrusel__slide">
+          <img src="./img/carrusel-canasta.jpg" alt="Canasta con huevos frescos de granja" loading="lazy" decoding="async">
+          <figcaption class="carrusel__texto">
+            <strong>Pedido directo</strong>
+            <p>Arma tu carrito y pídelo por WhatsApp</p>
+          </figcaption>
+        </figure>
+      </div>
+      <p id="estado" class="carrusel__estado" role="status" hidden></p>
+      <button class="carrusel__flecha carrusel__flecha--prev" type="button" aria-label="Imagen anterior">‹</button>
+      <button class="carrusel__flecha carrusel__flecha--sig" type="button" aria-label="Imagen siguiente">›</button>
+      <div class="carrusel__puntos" role="tablist" aria-label="Seleccionar imagen">
+        <button class="carrusel__punto carrusel__punto--activo" type="button" role="tab" aria-selected="true" aria-label="Imagen 1" data-slide="0"></button>
+        <button class="carrusel__punto" type="button" role="tab" aria-selected="false" aria-label="Imagen 2" data-slide="1"></button>
+        <button class="carrusel__punto" type="button" role="tab" aria-selected="false" aria-label="Imagen 3" data-slide="2"></button>
+      </div>
+    </section>
+
+    <div class="catalogo__cuerpo">
+      <section id="productos" class="productos" aria-label="Tamaños disponibles" aria-busy="true"></section>
+
+      <aside class="pedido" aria-label="Resumen del pedido">
+        <form id="pedido" class="pedido__form">
+          <div class="pedido__cabecera">
+            <h2 class="pedido__titulo">Resumen del pedido</h2>
+            <button id="vaciar-desktop" class="boton boton--claro pedido__vaciar-link" type="button" hidden>Limpiar</button>
+          </div>
+          <ul id="lineas" class="pedido__lineas"></ul>
+          <div class="pedido__resumen">
+            <p id="total" class="pedido__total" aria-live="polite">Toca un tamaño o + para armar tu pedido</p>
+          </div>
+          <ul class="pedido__ventajas" aria-label="Garantía">
+            <li>✓ 30 huevos frescos por maple</li>
+            <li>✓ Selección de Primera (XL) a Quinta (XS)</li>
+            <li>✓ Retiro en tienda o delivery</li>
+          </ul>
+          <button id="enviar" class="boton boton--verde pedido__enviar" type="submit" disabled>Confirmar pedido</button>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="pie" aria-label="Información rápida">
+    <span><strong>El Pollito</strong> · Huevos frescos del día</span>
+    <span>30 huevos por maple · Venta directa por WhatsApp</span>
+  </footer>
+</div>
+
+<noscript>Activa JavaScript para consultar los tamaños y preparar tu pedido.</noscript>
+
+<template id="plantilla-producto">
+  <article class="producto">
+    <button class="producto__detalle" data-accion="detalle" type="button" disabled>
+      <span class="producto__media">
+        <img class="producto__imagen" width="320" height="240" alt="" decoding="async">
+        <span class="producto__talla" aria-hidden="true"></span>
+        <span class="producto__badge-cant" hidden>0</span>
+      </span>
+      <span class="producto__texto">
+        <strong class="producto__nombre"></strong>
+        <span class="producto__tamano"></span>
+        <span class="producto__precios">
+          <span class="producto__precio"></span>
+          <span class="producto__subtotal" hidden></span>
+        </span>
+      </span>
+    </button>
+    <div class="producto__cantidad">
+      <button class="boton producto__paso" data-accion="menos" type="button" disabled>−</button>
+      <output class="producto__numero">0</output>
+      <button class="boton producto__paso" data-accion="mas" type="button" disabled>+</button>
+    </div>
+  </article>
+</template>
+
+<!-- Modal de detalle del producto (muestra toda la info y permite agregar al carrito) -->
+<dialog id="detalle" class="dialogo" aria-labelledby="detalle-titulo">
+  <div class="dialogo__interior">
+    <header class="dialogo__cabecera">
+      <h2 id="detalle-titulo"></h2>
+      <button class="boton boton--claro" type="button" data-cerrar aria-label="Cerrar">×</button>
+    </header>
+    <div class="dialogo__producto">
+      <img id="detalle-foto" width="640" height="480" alt="">
+      <dl class="dialogo__datos">
+        <div><dt>Tamaño</dt><dd id="detalle-tamano"></dd></div>
+        <div><dt>Referencia</dt><dd id="detalle-talla"></dd></div>
+        <div><dt>Contenido</dt><dd id="detalle-unidades"></dd></div>
+        <div><dt>Precio</dt><dd id="detalle-precio"></dd></div>
+        <div id="fila-peso" hidden><dt>Peso por huevo</dt><dd id="detalle-peso"></dd></div>
+      </dl>
+    </div>
+    <div class="detalle__compra">
+      <div class="detalle__stepper" aria-label="Cantidad de maples">
+        <button id="detalle-menos" class="boton producto__paso" type="button" aria-label="Quitar uno">−</button>
+        <output id="detalle-cantidad" class="detalle__numero">1</output>
+        <button id="detalle-mas" class="boton producto__paso" type="button" aria-label="Agregar uno">+</button>
+      </div>
+      <button id="agregar" class="boton boton--verde detalle__agregar" type="button">Agregar al carrito</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- Modal del Carrito: 1) Revisar/modificar/descartar -> 2) Confirmar -> Aparece Pedir por WhatsApp -->
+<dialog id="carrito" class="dialogo" aria-labelledby="carrito-titulo">
+  <form id="form-carrito" class="dialogo__interior">
+    <header class="dialogo__cabecera">
+      <h2 id="carrito-titulo">Tu carrito</h2>
+      <button class="boton boton--claro" type="button" data-cerrar aria-label="Cerrar">×</button>
+    </header>
+
+    <div id="carrito-vacio" class="carrito-vacio" hidden>
+      <p>Tu carrito está vacío. Toca cualquier tamaño para ver sus detalles y agregar maples.</p>
+    </div>
+
+    <ul id="carrito-lista" class="carrito-lista"></ul>
+
+    <div id="carrito-totales" class="carrito-totales">
+      <span id="carrito-resumen-texto">0 maples</span>
+      <strong id="carrito-total-bs">Bs 0</strong>
+    </div>
+
+    <!-- Paso 2: visible al confirmar productos -->
+    <div id="carrito-datos-entrega" class="carrito-entrega" hidden>
+      <label class="campo">Tu nombre (opcional)
+        <input id="cliente-nombre" type="text" maxlength="48" placeholder="Ej. María">
+      </label>
+      <div class="campo">Modalidad de entrega
+        <div class="opciones-seg" role="radiogroup" aria-label="Modalidad de entrega">
+          <label class="opcion-seg"><input type="radio" name="entrega" value="Retiro en tienda" checked><span>Retiro en tienda</span></label>
+          <label class="opcion-seg"><input type="radio" name="entrega" value="Delivery"><span>Delivery</span></label>
+        </div>
+      </div>
+      <label id="campo-direccion" class="campo" hidden>Zona o dirección de entrega
+        <input id="cliente-direccion" type="text" maxlength="90" placeholder="Ej. Zona Sur, calle 10 #45">
+      </label>
+      <div class="campo">Forma de pago
+        <div class="opciones-seg" role="radiogroup" aria-label="Forma de pago">
+          <label class="opcion-seg"><input type="radio" name="pago" value="Efectivo" checked><span>Efectivo</span></label>
+          <label class="opcion-seg"><input type="radio" name="pago" value="QR"><span>QR</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialogo__acciones">
+      <button id="carrito-seguir" type="button" class="boton boton--claro" data-cerrar>Seguir viendo</button>
+      <button id="carrito-confirmar-btn" type="button" class="boton">Confirmar productos</button>
+      <button id="carrito-whatsapp-btn" type="submit" class="boton boton--verde" hidden>Pedir por WhatsApp</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Modal de información del negocio -->
+<dialog id="info" class="dialogo" aria-labelledby="info-titulo">
+  <section class="dialogo__interior">
+    <header class="dialogo__cabecera">
+      <h2 id="info-titulo">El Pollito</h2>
+      <button class="boton boton--claro" type="button" data-cerrar aria-label="Cerrar">×</button>
+    </header>
+    <dl class="dialogo__datos">
+      <div><dt>Producto</dt><dd>Huevos frescos del día (30 por maple)</dd></div>
+      <div><dt>Tamaños</dt><dd>Primera (XL) a Quinta (XS)</dd></div>
+      <div><dt>Horario</dt><dd id="info-horario">Lunes a sábado · 08:00 a 19:00</dd></div>
+      <div><dt>Entregas</dt><dd id="info-zona">Retiro en tienda y delivery</dd></div>
+    </dl>
+    <div class="dialogo__acciones">
+      <button type="button" class="boton boton--claro" data-cerrar>Cerrar</button>
+      <button id="info-whatsapp" class="boton boton--verde" type="button">Consultar por WhatsApp</button>
+    </div>
+  </section>
+</dialog>
+
+<!-- Modal de ayuda / alertas -->
+<dialog id="ayuda" class="dialogo" aria-labelledby="ayuda-titulo">
+  <section class="dialogo__interior">
+    <header class="dialogo__cabecera">
+      <h2 id="ayuda-titulo"></h2>
+      <button class="boton boton--claro" data-cerrar type="button" aria-label="Cerrar">×</button>
+    </header>
+    <p id="ayuda-mensaje"></p>
+    <button id="ayuda-extra" class="boton boton--claro" type="button" aria-expanded="false" aria-controls="ayuda-pasos">Ver pasos</button>
+    <p id="ayuda-pasos" hidden></p>
+  </section>
+</dialog>
+</body>
+</html>

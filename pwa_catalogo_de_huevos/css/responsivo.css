@@ -1,0 +1,105 @@
+/* Tablet y Laptop: tarjetas rectangulares compactas con pop-out 3D y sin espacios vacíos. */
+@media(min-width:650px) and (min-height:501px){
+ .app{height:auto;min-height:100dvh;overflow:visible;padding:12px 24px 16px;gap:14px;grid-template-rows:auto minmax(0,1fr) auto}
+ .catalogo{gap:16px;grid-template-rows:auto minmax(0,1fr)}
+ .carrusel{height:clamp(190px,28dvh,250px);border-radius:22px}
+ .carrusel__texto{padding:14px 28px 14px 58px;max-width:66%}
+ .carrusel__flecha{width:38px;height:38px;font-size:1.45rem}
+ .carrusel__flecha--prev{left:12px}
+ .carrusel__flecha--sig{right:12px}
+ .carrusel__puntos{right:18px;bottom:14px;gap:7px;padding:5px 9px}
+ .carrusel__punto{width:8px;height:8px}
+ .carrusel__punto--activo{width:24px}
+
+ .catalogo__cuerpo{grid-template-rows:auto auto;gap:16px;align-content:start}
+ .productos{grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:none;align-items:stretch;justify-items:stretch;gap:14px;padding:6px 0 0;background:none}
+ .productos::before{display:none}
+ .producto{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;gap:8px;padding:10px;border:1.5px solid var(--borde);border-radius:var(--radio);background:var(--papel);box-shadow:var(--sombra);transition:border-color .22s ease,background-color .22s ease,box-shadow .26s cubic-bezier(.22,1,.36,1),transform .26s cubic-bezier(.22,1,.36,1)}
+ .producto:nth-child(3){grid-column:span 2}
+ .producto:nth-child(4){grid-column:2/span 2}
+ .producto:nth-child(5){grid-column:4/span 2}
+ .producto--elegido{border-color:#d79603;background:linear-gradient(135deg,#fff9e6 0%,#fff0c7 100%)}
+ .producto__detalle{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;gap:9px;text-align:center;padding:0}
+ .producto__media{width:100%!important;padding:0;background:#f1dfc0;aspect-ratio:4/3;border-radius:12px;border:0;overflow:hidden;box-shadow:0 3px 8px rgba(42,25,15,.14)}
+ .producto__imagen{border-radius:12px;border:0}
+ .producto__talla{top:5px;left:5px}
+ .producto__badge-cant{display:none}
+ .producto__tamano{display:block;font-size:.82rem;color:var(--tinta-suave)}
+ .producto__nombre{font-size:1.05rem}
+ .producto__nombre::after{content:' ›';display:inline-block;color:#b06d00;transition:transform .2s ease}
+ .producto__precio{font-size:.98rem;color:var(--cafe);background:none;padding:0;box-shadow:none}
+ .producto--elegido .producto__precio{background:none;color:var(--cafe);box-shadow:none}
+ .producto__subtotal{display:inline-block;font-size:.74rem;font-weight:850;color:var(--verde);background:var(--verde-suave);padding:1px 6px;border-radius:6px;border:1px solid rgba(17,100,63,.16)}
+ .producto__subtotal[hidden]{display:none}
+ .producto__cantidad{display:flex;align-items:center;justify-content:center;gap:6px}
+ .producto__paso{min-width:44px;min-height:44px;padding:0;font-size:1.2rem;border-radius:11px}
+ .producto__numero{min-width:2ch;text-align:center;font-size:.92rem;font-weight:900}
+ .producto--elegido .producto__numero{color:var(--verde)}
+
+ @media(hover:hover){
+  .producto:hover{z-index:3;transform:translateY(-4px);border-color:#e2a51b;box-shadow:0 14px 28px rgba(42,25,15,.13)}
+  .producto:hover .producto__media{transform:translateY(-12px) scale(1.07) rotate(-1deg);box-shadow:0 16px 26px rgba(42,25,15,.26)}
+  .producto:hover .producto__imagen{transform:scale(1.05)}
+  .producto:hover .producto__nombre::after{transform:translateX(3px)}
+ }
+
+ .pedido{display:block;min-width:0;background:linear-gradient(135deg,#ffe9b3 0%,#ffd87d 100%);border:1px solid #e4b954;border-radius:20px;padding:12px 16px;box-shadow:0 4px 14px rgba(215,150,3,.18)}
+ .pedido__form{display:flex;align-items:center;justify-content:space-between;gap:10px}
+ .pedido__cabecera,.pedido__lineas,.pedido__ventajas{display:none}
+ .pedido__total{font-size:.96rem;font-weight:900}
+ .pie{display:flex;align-items:center;justify-content:space-between;padding:8px 4px 0;border-top:1px solid var(--borde);font-size:.82rem;color:var(--tinta-suave)}
+}
+
+@media(min-width:1100px) and (min-height:501px){
+ .carrusel{height:clamp(250px,36dvh,330px)}
+ .carrusel__texto h1,.carrusel__texto strong{font-size:clamp(1.7rem,2.6vw,2.35rem)}
+ .carrusel__texto p{font-size:1.02rem}
+ .catalogo__cuerpo{grid-template-columns:minmax(0,1fr) 300px;grid-template-rows:none;gap:18px;align-items:stretch}
+ .productos{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-content:center}
+ .producto:nth-child(n){grid-column:auto}
+ .pedido{padding:16px;display:flex;flex-direction:column;justify-content:center}
+ .pedido__form{display:grid;gap:12px;justify-content:stretch}
+ .pedido__cabecera{display:flex;align-items:center;justify-content:space-between;gap:6px}
+ .pedido__titulo{display:block;font-size:1.15rem;font-weight:950}
+ .pedido__lineas{display:grid;gap:7px;margin:0;padding:10px 0;border-top:1px solid rgba(42,25,15,.14);border-bottom:1px solid rgba(42,25,15,.14);list-style:none;font-size:.9rem}
+ .pedido__lineas:empty{display:none}
+ .pedido__lineas li{display:flex;justify-content:space-between;gap:6px}
+ .pedido__total{white-space:normal;font-size:1.02rem}
+ .pedido__ventajas{display:grid;gap:4px;margin:0;padding:8px 10px;list-style:none;background:rgba(255,255,255,.58);border-radius:12px;font-size:.78rem;color:var(--cafe);font-weight:650}
+ .pedido__enviar{width:100%;min-height:44px;font-size:.94rem}
+}
+
+@media(max-width:649px){
+ .dialogo{margin:auto auto 0;width:min(100%,490px);border-radius:19px 19px 0 0;padding-bottom:env(safe-area-inset-bottom)}
+}
+
+@media(max-width:380px){
+ .cabecera__marca img{width:34px;height:34px}
+ .insignia-frescura,.carrito-texto{display:none}
+ .cabecera__acciones .boton{padding-inline:9px;font-size:.78rem}
+ .producto__media{width:clamp(84px,14.5dvh,104px)}
+ .producto:nth-child(3) .producto__media{width:clamp(92px,16dvh,112px)}
+}
+
+@media(orientation:portrait) and (max-height:640px){
+ .carrusel{height:118px}
+ .app,.catalogo{gap:4px}
+ .producto__media{width:80px}
+ .producto:nth-child(3) .producto__media{width:88px}
+}
+
+/* Modo horizontal (Landscape) en celulares y tablets bajas */
+@media(orientation:landscape) and (max-height:500px){
+ .app{padding-block:4px;gap:4px}
+ .cabecera__marca{min-height:44px}
+ .cabecera__marca img{width:34px;height:34px}
+ .catalogo{gap:4px;grid-template-rows:minmax(0,1fr)}
+ .carrusel{display:none}
+ .productos{grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:6px;background:none}
+ .productos::before{display:none}
+ .producto:nth-child(3){grid-column:auto}
+ .producto__media{width:clamp(58px,16dvh,76px)}
+ .dialogo__producto{grid-template-columns:1fr 1fr;align-items:center}
+}
+
+.pollito--teclado .dialogo[open]{margin-top:6px;margin-bottom:auto;max-height:calc(var(--alto-visible) - 12px)}

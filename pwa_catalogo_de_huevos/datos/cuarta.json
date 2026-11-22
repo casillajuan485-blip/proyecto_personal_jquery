@@ -1,0 +1,9 @@
+{
+  "_comentario": "Precio en centavos de boliviano. Peso opcional, por ejemplo un rango en gramos confirmado por la vendedora.",
+  "id": "cuarta",
+  "nombre": "Cuarta",
+  "tamano": "Pequeños",
+  "precioCentavos": 3300,
+  "unidades": 30,
+  "peso": ""
+}

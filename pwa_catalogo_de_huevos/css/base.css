@@ -1,0 +1,19 @@
+/* Base acotada a la aplicación. Los componentes usan clases BEM con baja especificidad. */
+.pollito{--crema:#fdf7ea;--papel:#ffffff;--papel-suave:#fff9ee;--cafe:#2a190f;--tinta-suave:#6b5240;--yema:#ffbf2e;--yema-hover:#f5b014;--borde:#eadbc4;--verde:#11643f;--verde-hover:#0d5233;--verde-suave:#e6f4ec;--sombra:0 4px 16px rgba(42,25,15,.07);--radio:18px;margin:0;background:radial-gradient(circle at 18% 0%,#fff0cc 0%,#fdf7ea 45%,#f8ecd6 100%);color:var(--cafe);font:500 1rem/1.3 system-ui,-apple-system,sans-serif}
+.pollito :where(*, *::before, *::after){box-sizing:border-box}
+.pollito :where(h1,h2,p,dl,dd,ul,figure){margin:0}
+.pollito :where(button,input,select){font:inherit;color:inherit}
+.pollito :where(button,a,input,select):focus-visible{outline:3px solid var(--verde);outline-offset:2px}
+.pollito :where([hidden]){display:none}
+.boton{min-width:44px;min-height:44px;display:inline-flex;justify-content:center;align-items:center;border:1px solid transparent;border-radius:12px;padding:6px 12px;background:var(--yema);font-weight:820;cursor:pointer;transition:transform .16s cubic-bezier(.22,1,.36,1),opacity .15s ease,background-color .15s ease,box-shadow .18s ease;text-decoration:none;color:var(--cafe)}
+.boton:hover:not(:disabled){background:var(--yema-hover);box-shadow:0 4px 12px rgba(245,176,20,.32)}
+.boton--claro{background:var(--papel);border-color:var(--borde)}
+.boton--claro:hover:not(:disabled){background:var(--papel-suave);border-color:#d8c3a3;box-shadow:0 2px 8px rgba(42,25,15,.08)}
+.boton--verde{background:linear-gradient(135deg,#137449 0%,#0e5636 100%);color:#fff;box-shadow:0 4px 14px rgba(17,100,63,.28)}
+.boton--verde:hover:not(:disabled){background:linear-gradient(135deg,#158050 0%,#10613d 100%);box-shadow:0 6px 18px rgba(17,100,63,.38);transform:translateY(-1px)}
+.boton:active:not(:disabled){transform:scale(.95)}
+.boton:disabled{opacity:.48;cursor:default;box-shadow:none}
+.boton[hidden]{display:none}
+.campo{display:grid;gap:4px;font-weight:750;font-size:.9rem}
+.campo :where(input,select){width:100%;min-height:42px;border:1px solid var(--borde);background:var(--papel);border-radius:10px;padding:6px 10px;font-size:16px;font-weight:500}
+@media(prefers-reduced-motion:reduce){.pollito :where(*){animation-duration:0s!important;transition-duration:0s!important}}

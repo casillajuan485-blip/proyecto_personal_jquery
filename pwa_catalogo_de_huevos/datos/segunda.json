@@ -1,0 +1,9 @@
+{
+  "_comentario": "Precio en centavos de boliviano. Peso opcional, por ejemplo un rango en gramos confirmado por la vendedora.",
+  "id": "segunda",
+  "nombre": "Segunda",
+  "tamano": "Grandes",
+  "precioCentavos": 3700,
+  "unidades": 30,
+  "peso": ""
+}
