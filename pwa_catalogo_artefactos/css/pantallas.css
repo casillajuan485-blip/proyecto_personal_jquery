@@ -1,0 +1,861 @@
+/* ==========================================================================
+   ARCHIVO: css/pantallas.css
+   RESPONSABILIDAD:
+    - Estilos modulares con metodología BEM para cada sección:
+      Bienvenida, Cabecera, Inicio (Carrusel + Categorías), Catálogo, Ficha y Contacto.
+    - Uso de Flexbox para barras/controles y CSS Grid para cuadrículas.
+    - Animaciones eficientes basadas en transform y opacity.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PANTALLA DE BIENVENIDA (3 SEGUNDOS)
+   -------------------------------------------------------------------------- */
+.bienvenida {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(circle at 50% 38%, #223b5e 0%, #14243a 52%, #0c1726 100%);
+  color: var(--blanco);
+  text-align: center;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.bienvenida--salida {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+.bienvenida__contenido {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  max-width: 340px;
+  animation: bienvenidaEntrada 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.bienvenida__icono {
+  display: grid;
+  place-items: center;
+  width: 108px;
+  height: 108px;
+  border-radius: 28px;
+  background: #ffffff14;
+  border: 1px solid #ffbf4755;
+  box-shadow: 0 0 42px #ffbf4744;
+  animation: bienvenidaPulso 1.8s ease-in-out infinite alternate;
+}
+
+.bienvenida__icono img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.bienvenida__marca {
+  font-size: clamp(1.9rem, 6vw, 2.6rem);
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  color: var(--blanco);
+}
+
+.bienvenida__lema {
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+.bienvenida__barra {
+  width: 190px;
+  height: 5px;
+  border-radius: 999px;
+  background: #ffffff24;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.bienvenida__barra span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffbf47, #ffe08a);
+  animation: bienvenidaProgreso 3s linear forwards;
+}
+
+@keyframes bienvenidaEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes bienvenidaPulso {
+  from {
+    box-shadow: 0 0 28px #ffbf4738;
+  }
+  to {
+    box-shadow: 0 0 54px #ffbf477a;
+  }
+}
+
+@keyframes bienvenidaProgreso {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. CABECERA Y NAVEGACIÓN PRINCIPAL (FLEXBOX)
+   -------------------------------------------------------------------------- */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--azul);
+  color: var(--blanco);
+  transition: box-shadow 0.25s ease;
+}
+
+.cabecera--sombra {
+  box-shadow: 0 6px 18px #0b152047;
+}
+
+.cabecera__interior {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: var(--cabecera);
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 780;
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  min-height: 44px;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+.navegacion,
+.cabecera__acciones {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navegacion a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-bottom: 3px solid transparent;
+  font-weight: 700;
+}
+
+.navegacion a[aria-current] {
+  border-color: var(--ambar);
+}
+
+.navegacion span,
+.cabecera__lupa {
+  display: none;
+}
+
+.cabecera__lupa {
+  background: transparent;
+  color: inherit;
+  border: 0;
+  font-weight: 700;
+}
+
+.cabecera__lupa svg {
+  vertical-align: middle;
+}
+
+.contenedor {
+  max-width: 1320px;
+  margin: auto;
+  padding: 16px 20px calc(20px + var(--pie) + var(--teclado));
+}
+
+.pantalla > h1 {
+  margin: 6px 0 18px;
+}
+
+/* --------------------------------------------------------------------------
+   3. SECCIÓN INICIO: CARRUSEL Y CATEGORÍAS (CSS GRID)
+   -------------------------------------------------------------------------- */
+.portada {
+  display: grid;
+  align-items: center;
+  min-height: clamp(315px, 42vw, 430px);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radio);
+  background: linear-gradient(135deg, #fff6e8 0%, #efd9bd 100%);
+  box-shadow: 0 10px 28px #14243a18;
+  border: 1px solid #ead8be;
+  isolation: isolate;
+}
+
+.portada__foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-position: 70% center;
+  z-index: -2;
+}
+
+.portada__foto--producto {
+  object-fit: contain;
+  object-position: 84% center;
+  background: transparent;
+  padding-left: 40%;
+}
+
+.portada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #f8efe4 0%, #f8efe4 33%, #f8efe400 73%);
+  z-index: -1;
+}
+
+.portada__texto {
+  padding: clamp(20px, 4vw, 55px);
+  padding-bottom: 72px;
+  max-width: 660px;
+  min-width: 0;
+  transition: opacity 0.22s ease;
+}
+
+.portada__etiqueta {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--azul);
+  color: var(--ambar);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.portada__texto h1 {
+  font-size: clamp(2rem, 4.8vw, 4rem);
+}
+
+.portada__texto p {
+  margin: 10px 0 18px;
+  max-width: 38ch;
+}
+
+.portada__enlace {
+  background: linear-gradient(135deg, #ffca5c 0%, #f5a623 100%);
+  box-shadow: 0 6px 16px #f5a6234d;
+}
+
+.portada__controles {
+  position: absolute;
+  left: clamp(16px, 4vw, 55px);
+  bottom: 13px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+  align-items: center;
+}
+
+.portada__controles button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #ffffffd9;
+  border: 1px solid #14243a24;
+  font-weight: 750;
+  font-size: 0.9rem;
+  transition: transform 0.16s, background 0.16s;
+}
+
+.portada__controles button:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+.portada__controles button[aria-pressed="true"] {
+  background: var(--ambar);
+  border-color: transparent;
+  box-shadow: 0 2px 8px #ffbf4766;
+}
+
+.categorias,
+.productos {
+  display: grid;
+  gap: 12px;
+}
+
+.categorias {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.categoria {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-width: 0;
+  min-height: 44px;
+  border-radius: var(--radio);
+  overflow: hidden;
+  background: var(--azul);
+  color: white;
+  box-shadow: 0 6px 16px #14243a1f;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.categoria img {
+  width: 100%;
+  height: clamp(100px, 15vw, 190px);
+  transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.categoria--activa {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px #14243a33;
+}
+
+.categoria--activa img {
+  transform: scale(1.07);
+}
+
+.categoria strong {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 22px 15px 11px;
+  background: linear-gradient(transparent, #0b1520e6);
+  font-size: clamp(1rem, 2.5vw, 1.55rem);
+}
+
+/* --------------------------------------------------------------------------
+   4. SECCIÓN CATÁLOGO: FILTROS, TARJETAS REUTILIZABLES Y PAGINACIÓN
+   -------------------------------------------------------------------------- */
+.filtros {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filtros__buscador {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex: 1 1 260px;
+  min-width: 0;
+  padding: 0 12px;
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+}
+
+.filtros__buscador input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+}
+
+.filtros__grupo {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 0;
+  gap: 6px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.filtros__grupo label {
+  position: relative;
+  cursor: pointer;
+}
+
+.filtros__grupo input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.filtros__grupo span {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 24px;
+  border: 1px solid var(--borde);
+  font-weight: 650;
+}
+
+.filtros__grupo input:checked + span {
+  background: var(--ambar);
+  border-color: transparent;
+}
+
+.filtros__grupo input:focus-visible + span {
+  outline: 3px solid #2266ad;
+}
+
+.filtros__subgrupo {
+  flex-basis: 100%;
+  margin-top: 2px;
+}
+
+.filtros__subgrupo span {
+  min-height: 44px;
+  font-size: 0.88rem;
+  background: #fff;
+}
+
+.filtros__subgrupo input:checked + span {
+  background: var(--azul);
+  color: var(--blanco);
+}
+
+.productos {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 22px;
+}
+
+.producto,
+.contacto__dato,
+.contacto__mapa {
+  min-width: 0;
+  background: white;
+  padding: 8px;
+  border-radius: var(--radio);
+  box-shadow: 0 2px 5px #14243a14;
+}
+
+/* Tarjeta reutilizable con efecto pop-out al pasar el cursor */
+.producto {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  border: 1px solid #e5e9ef;
+  box-shadow: 0 4px 14px #14243a12;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.producto--activo {
+  transform: translateY(-3px);
+  border-color: #ffbf47;
+  box-shadow: 0 14px 26px #14243a26;
+}
+
+.producto__marco {
+  min-width: 0;
+  position: relative;
+  border-radius: 10px;
+  background: #fff;
+  overflow: visible;
+}
+
+.producto__foto,
+.ficha img {
+  object-fit: contain;
+  background: #fff;
+}
+
+.producto__foto {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  padding: 6px;
+  border-radius: 9px;
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.28s ease;
+}
+
+.producto--activo .producto__foto {
+  position: relative;
+  z-index: 2;
+  transform: translateY(-12px) scale(1.12);
+  filter: drop-shadow(0 12px 14px rgba(20, 36, 58, 0.28));
+}
+
+.producto__cuerpo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px 4px 4px;
+  min-width: 0;
+}
+
+/* Prevención de desbordamiento en textos largos */
+.producto__nombre,
+.producto__dato {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.producto__nombre {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: 0.98rem;
+}
+
+.producto__dato {
+  white-space: nowrap;
+  color: var(--gris);
+  font-size: 0.87rem;
+}
+
+.producto__codigo {
+  display: inline-block;
+  align-self: start;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #fff4dc;
+  color: #8a5600;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.producto__acciones {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding-top: 4px;
+}
+
+.producto__acciones .boton {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #ffca5c 0%, #f5a623 100%);
+  transition: transform 0.16s, box-shadow 0.2s, filter 0.2s;
+}
+
+.producto--activo .producto__acciones .boton {
+  filter: brightness(1.04);
+  box-shadow: 0 4px 12px #ffbf4777;
+}
+
+.foto--respaldo .producto__marco {
+  position: relative;
+}
+
+.producto__marco.foto--respaldo::after,
+.ficha.foto--respaldo #ficha-codigo::after {
+  content: " · Foto ilustrativa";
+  font-size: 0.72rem;
+  color: var(--gris);
+}
+
+.producto__marco.foto--respaldo::after {
+  content: "Foto ilustrativa";
+  position: absolute;
+  bottom: 3px;
+  right: 4px;
+  border-radius: 4px;
+  padding: 1px 4px;
+  background: #fffd;
+  z-index: 2;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.paginacion button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: transform 0.16s, background 0.16s;
+}
+
+.paginacion button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #fff3d6;
+}
+
+.paginacion button[aria-current="page"] {
+  background: var(--ambar);
+  border-color: transparent;
+}
+
+.paginacion button:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+   5. SECCIÓN CONTACTO Y MODAL DE DETALLE (FICHA)
+   -------------------------------------------------------------------------- */
+.contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.contacto__panel {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.contacto__dato {
+  padding: 13px;
+  overflow-wrap: anywhere;
+}
+
+.contacto__dato p {
+  color: var(--gris);
+}
+
+.contacto__dato a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.contacto__mapa img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.contacto__mapa--movil {
+  display: none;
+}
+
+.ficha {
+  max-width: min(520px, calc(100% - 24px));
+  max-height: min(90dvh, 720px);
+  width: 100%;
+  border: 0;
+  border-radius: 20px;
+  padding: 16px;
+  color: var(--azul);
+  background: var(--blanco);
+  box-shadow: 0 24px 48px #09142155;
+  overscroll-behavior: contain;
+}
+
+.ficha::backdrop {
+  background: #091421c4;
+  backdrop-filter: blur(3px);
+}
+
+.ficha__cierre {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: end;
+  margin: 0;
+}
+
+.ficha__cierre button {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  background: #ffffffeb;
+  box-shadow: 0 2px 10px #14243a24;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.ficha__marco {
+  margin-top: -32px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f9f6f0 0%, #eee7da 100%);
+  padding: 10px;
+  border: 1px solid #e6dfd2;
+}
+
+.ficha img {
+  width: 100%;
+  height: auto;
+  max-height: 190px;
+  border-radius: 10px;
+  background: transparent;
+  padding: 8px;
+  transition: transform 0.28s ease;
+}
+
+.ficha img:hover {
+  transform: scale(1.05);
+}
+
+.ficha > * + * {
+  margin-top: 10px;
+}
+
+.ficha__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#ficha-codigo {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--azul);
+  color: var(--ambar);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+#ficha-titulo {
+  font-size: 1.22rem;
+  line-height: 1.2;
+}
+
+#ficha-descripcion {
+  color: var(--gris);
+  font-size: 0.94rem;
+}
+
+#ficha-datos {
+  display: grid;
+  gap: 7px;
+}
+
+.ficha__fila {
+  background: #f8f7f3;
+  border-left: 3px solid var(--ambar);
+  border-radius: 10px;
+  padding: 8px 11px;
+}
+
+.ficha dt {
+  font-weight: 750;
+  font-size: 0.82rem;
+  color: var(--azul);
+}
+
+.ficha dd {
+  overflow-wrap: anywhere;
+  font-size: 0.92rem;
+  color: #334155;
+  margin-top: 2px;
+}
+
+.ficha__pie {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 6px;
+  border-top: 1px solid #e8ecf1;
+}
+
+.ficha__pie .boton--whatsapp {
+  flex: 1 1 100%;
+}
+
+#ficha-contacto-pendiente {
+  font-size: 0.85rem;
+  color: var(--gris);
+  font-weight: 650;
+}
+
+/* --------------------------------------------------------------------------
+   6. AVISOS DE ESTADO Y BOTÓN VOLVER ARRIBA
+   -------------------------------------------------------------------------- */
+.aviso {
+  position: fixed;
+  z-index: 5;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 16px);
+  border-radius: 10px;
+  padding: 6px 10px;
+  box-shadow: 0 3px 10px #14243a44;
+}
+
+.aviso--red {
+  bottom: calc(var(--pie) + 8px + var(--teclado));
+  background: var(--azul);
+  color: white;
+}
+
+#estado-catalogo:not(:empty) {
+  padding-block: 8px;
+}
+
+.subir {
+  position: fixed;
+  right: 16px;
+  bottom: calc(var(--pie) + 16px + var(--teclado));
+  z-index: 4;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px #14243a3d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .producto,
+  .producto__foto,
+  .categoria,
+  .categoria img,
+  .ficha img,
+  .portada__controles button {
+    transition: none;
+  }
+  .producto--activo,
+  .producto--activo .producto__foto,
+  .categoria--activa,
+  .categoria--activa img {
+    transform: none;
+    filter: none;
+  }
+}

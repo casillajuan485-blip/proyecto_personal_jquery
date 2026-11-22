@@ -1,0 +1,126 @@
+/* ==========================================================================
+   ARCHIVO: css/base.css
+   RESPONSABILIDAD:
+    - Variables globales de color, tipografía y espaciado.
+    - Reglas base con especificidad mínima usando :where() para evitar colisiones.
+    - Garantizar área táctil mínima de 44 × 44 px en botones y controles.
+    - Uso de 100dvh para compatibilidad con teclado virtual móvil.
+   ========================================================================== */
+
+:root {
+  --azul: #14243a;
+  --ambar: #ffbf47;
+  --fondo: #f8f7f3;
+  --blanco: #fff;
+  --gris: #475569;
+  --verde: #087b31;
+  --borde: #d6dce2;
+  --radio: 14px;
+  --cabecera: 64px;
+  --pie: 0px;
+  --teclado: 0px;
+}
+
+/* Reset ligero con :where() (especificidad 0) */
+:where(*, *::before, *::after) {
+  box-sizing: border-box;
+}
+
+:where(body) {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--fondo);
+  color: var(--azul);
+  font: 1rem/1.45 system-ui, sans-serif;
+}
+
+:where(h1, h2, p, dl, dd) {
+  margin: 0;
+}
+
+:where(h1) {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+:where(h2) {
+  font-size: 1.14rem;
+  line-height: 1.25;
+}
+
+:where(a) {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(img) {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+:where(button, input) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(button) {
+  cursor: pointer;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+:where(button, a, input) {
+  scroll-margin-block: 80px;
+}
+
+:where(:focus-visible) {
+  outline: 3px solid #2266ad;
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Componente reutilizable de botón (metodología BEM) */
+.boton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 750;
+  text-align: center;
+  background: var(--ambar);
+  color: var(--azul);
+  transition: transform 0.16s, opacity 0.16s;
+}
+
+.boton:active {
+  transform: scale(0.98);
+}
+
+.boton--whatsapp {
+  background: var(--verde);
+  color: var(--blanco);
+}
+
+.boton--secundario {
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+}
+
+/* Accesibilidad: desactiva transiciones si el usuario prefiere movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .boton {
+    transition: none;
+  }
+}

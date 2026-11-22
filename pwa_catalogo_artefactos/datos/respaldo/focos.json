@@ -1,0 +1,182 @@
+﻿[
+    {
+        "id":  "f01",
+        "codigo":  "F01",
+        "nombre":  "Philips LED A60 E27 13 W",
+        "precio":  27,
+        "precioReferencial":  true,
+        "resumen":  "13 W · Rosca normal E27 · Luz cálida",
+        "imagen":  "imagenes/productos/f01.jpg",
+        "fuente":  "https://www.ceneo.pl/192279966",
+        "respaldo":  "imagenes/focos.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Foco LED clásico tipo bulbo A60 de alta luminosidad ideal para salas, dormitorios y oficinas.",
+        "especificaciones":  {
+                                 "Potencia y equivalencia":  "13 W · alumbra como 100 W incandescente antiguo (1.521 lm)",
+                                 "Color de luz":  "Cálida / amarilla (2700 K)",
+                                 "Tipo de rosca":  "Rosca normal (E27)"
+                             }
+    },
+    {
+        "id":  "f02",
+        "codigo":  "F02",
+        "nombre":  "Philips LED Filamento P45 E14",
+        "precio":  25,
+        "precioReferencial":  true,
+        "resumen":  "4,3 W · Rosca fina E14 · Luz cálida",
+        "imagen":  "imagenes/productos/f02.jpg",
+        "fuente":  "https://www.top-led.ro/cumpara/bec-led-philips-classic-filament-led-4-3-40w-p45-e14-827-alb-cald-3036",
+        "respaldo":  "imagenes/focos.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Foco decorativo de filamento LED con vidrio transparente, ideal para arañas y lámparas de rosca fina.",
+        "especificaciones":  {
+                                 "Potencia y equivalencia":  "4,3 W · alumbra como 40 W incandescente antiguo (470 lm)",
+                                 "Color de luz":  "Cálida / amarilla (2700 K)",
+                                 "Tipo de rosca":  "Rosca fina (E14)"
+                             }
+    },
+    {
+        "id":  "f03",
+        "codigo":  "F03",
+        "nombre":  "Philips LED Reflector GU10",
+        "precio":  32,
+        "precioReferencial":  true,
+        "resumen":  "4,7 W · Base GU10 · Luz cálida",
+        "imagen":  "imagenes/productos/f03.jpg",
+        "fuente":  "https://www.casamusa.cl/ampolleta-led-4-7w-400lm-gu10-2700k-36-philips/p",
+        "respaldo":  "imagenes/focos.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Foco dicroico LED direccional para ojos de buey, rieles y vitrinas comerciales.",
+        "especificaciones":  {
+                                 "Potencia y equivalencia":  "4,7 W · alumbra como 50 W halógeno antiguo (400 lm)",
+                                 "Color de luz":  "Cálida / amarilla (2700 K)",
+                                 "Tipo de rosca":  "GU10 (dos pines con giro)"
+                             }
+    },
+    {
+        "id":  "f04",
+        "codigo":  "F04",
+        "nombre":  "Philips Twister Espiral E27",
+        "precio":  36,
+        "precioReferencial":  true,
+        "resumen":  "23 W · Rosca normal E27 · Luz cálida",
+        "imagen":  "imagenes/productos/f04.jpg",
+        "fuente":  "https://www.heathfieldled.co.uk/philips-economy-twister-23w-240v-es-e27/",
+        "respaldo":  "imagenes/focos.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Foco espiral compacto de alto rendimiento luminoso para iluminación general de ambientes amplios.",
+        "especificaciones":  {
+                                 "Potencia y equivalencia":  "23 W · alumbra como 105 W incandescente antiguo (1.570 lm)",
+                                 "Color de luz":  "Cálida / amarilla (2700 K)",
+                                 "Tipo de rosca":  "Rosca normal (E27)"
+                             }
+    },
+    {
+        "id":  "f05",
+        "codigo":  "F05",
+        "nombre":  "Lightway LED Tres Tonos E27",
+        "precio":  35,
+        "precioReferencial":  true,
+        "resumen":  "9 W · Cambia de color al apagar y prender",
+        "imagen":  "imagenes/productos/f05.jpg",
+        "fuente":  "https://www.gluehbirne.de/Lightway-LED-Leuchtmittel-Birnenform-A60-9W-60W-E27-matt-Scene-Switch-2700K-4000K-6500K-per-Schalter",
+        "respaldo":  "imagenes/focos.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Foco inteligente por interruptor: cambia el tono de luz cada vez que apagas y prendes sin necesidad de dimmer.",
+        "especificaciones":  {
+                                 "Potencia y equivalencia":  "9 W · alumbra como 60 W incandescente antiguo (806 lm)",
+                                 "Color de luz":  "3 tonos (cálida 2700 K, neutra 4000 K y fría 6500 K al apagar y prender)",
+                                 "Tipo de rosca":  "Rosca normal (E27)"
+                             }
+    },
+    {
+        "id":  "f06",
+        "codigo":  "F06",
+        "nombre":  "Philips TrueForce LED Tubular E27",
+        "precio":  55,
+        "precioReferencial":  true,
+        "resumen":  "20 W · Rosca normal E27 · Luz fría",
+        "imagen":  "imagenes/productos/f06.jpg",
+        "fuente":  "https://www.trendyol.com/philips/trueforce-core-led-ampul-20w-e27-6500k-beyaz-isik-p-104051737",
+        "respaldo":  "imagenes/focos.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Foco LED tipo T80 de alta potencia ideal para tiendas, talleres, depósitos y cocinas.",
+        "especificaciones":  {
+                                 "Potencia y equivalencia":  "20 W · alumbra como 150 W incandescente antiguo (2.000 lm)",
+                                 "Color de luz":  "Fría / blanca (6500 K)",
+                                 "Tipo de rosca":  "Rosca normal (E27)"
+                             }
+    },
+    {
+        "id":  "f07",
+        "codigo":  "F07",
+        "nombre":  "Philips LED Disco UFO E27 24 W",
+        "precio":  59,
+        "precioReferencial":  true,
+        "resumen":  "24 W · Rosca normal E27 · Luz fría",
+        "imagen":  "imagenes/productos/f07.jpg",
+        "fuente":  "https://shopsm.com/products/philips-ufo-led-bulb-24w",
+        "respaldo":  "imagenes/focos.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Foco plano tipo disco UFO de amplia cobertura luminosa para techos altos, garajes y comercios.",
+        "especificaciones":  {
+                                 "Potencia y equivalencia":  "24 W · alumbra como 180 W incandescente antiguo (2.400 lm)",
+                                 "Color de luz":  "Fría / blanca (6500 K)",
+                                 "Tipo de rosca":  "Rosca normal (E27)"
+                             }
+    },
+    {
+        "id":  "f08",
+        "codigo":  "F08",
+        "nombre":  "Philips LED Globo G95 Filamento E27",
+        "precio":  48,
+        "precioReferencial":  true,
+        "resumen":  "7 W · Globo decorativo · Luz cálida",
+        "imagen":  "imagenes/productos/f08.jpg",
+        "fuente":  "https://www.philips.com",
+        "respaldo":  "imagenes/focos.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Foco globo grande estilo vintage de 95 mm, perfecto para lámparas colgantes abiertas y cafeterías.",
+        "especificaciones":  {
+                                 "Potencia y equivalencia":  "7 W · alumbra como 60 W incandescente antiguo (806 lm)",
+                                 "Color de luz":  "Cálida / amarilla (2700 K)",
+                                 "Tipo de rosca":  "Rosca normal (E27)"
+                             }
+    },
+    {
+        "id":  "f09",
+        "codigo":  "F09",
+        "nombre":  "Philips Smart WiFi LED G95 E27",
+        "precio":  89,
+        "precioReferencial":  true,
+        "resumen":  "7 W · Regulable WiFi · Cálida a fría",
+        "imagen":  "imagenes/productos/f09.jpg",
+        "fuente":  "https://www.philips.es",
+        "respaldo":  "imagenes/focos.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Foco inteligente WiFi controlable desde el celular; permite regular intensidad y cambiar temperatura de luz.",
+        "especificaciones":  {
+                                 "Potencia y equivalencia":  "7 W · alumbra como 60 W incandescente antiguo (806 lm)",
+                                 "Color de luz":  "Regulable desde cálida (2700 K) hasta fría (6500 K)",
+                                 "Tipo de rosca":  "Rosca normal (E27)"
+                             }
+    },
+    {
+        "id":  "f10",
+        "codigo":  "F10",
+        "nombre":  "Philips LED Reflector PAR38 E27",
+        "precio":  68,
+        "precioReferencial":  true,
+        "resumen":  "14 W · Reflector exterior/interior · E27",
+        "imagen":  "imagenes/productos/f10.jpg",
+        "fuente":  "https://www.philips.com",
+        "respaldo":  "imagenes/focos.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Foco reflector resistente de haz concentrado para fachadas, jardines, patios y locales comerciales.",
+        "especificaciones":  {
+                                 "Potencia y equivalencia":  "14 W · alumbra como 120 W halógeno antiguo (1.200 lm)",
+                                 "Color de luz":  "Cálida / amarilla (2700 K)",
+                                 "Tipo de rosca":  "Rosca normal (E27)"
+                             }
+    }
+]

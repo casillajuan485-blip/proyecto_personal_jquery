@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Metadatos esenciales y configuración PWA -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#14243A">
+  <title>LUMINATECH · Iluminación y materiales eléctricos</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./iconos/icono-192.png">
+  <link rel="apple-touch-icon" href="./iconos/icono-192.png">
+
+  <!-- Hojas de estilo separadas por responsabilidad -->
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/pantallas.css">
+  <link rel="stylesheet" href="./css/responsivo.css">
+
+  <!-- Precarga de la imagen principal para mejorar LCP (Largest Contentful Paint) -->
+  <link rel="preload" as="image" href="./imagenes/portada.webp" imagesrcset="./imagenes/portada-movil.webp 520w, ./imagenes/portada.webp 1000w" imagesizes="100vw">
+
+  <!-- Punto de entrada principal en módulo ES -->
+  <script type="module" src="./js/inicio.js"></script>
+</head>
+<body>
+  <!-- 1. Pantalla de bienvenida (3 segundos) -->
+  <div class="bienvenida" id="bienvenida" role="status" aria-live="polite" aria-label="Bienvenida a LUMINATECH">
+    <div class="bienvenida__contenido">
+      <div class="bienvenida__icono" aria-hidden="true"><img src="./iconos/icono-192.png" width="84" height="84" alt=""></div>
+      <p class="bienvenida__marca">LUMINATECH</p>
+      <p class="bienvenida__lema">Iluminación y materiales eléctricos</p>
+      <div class="bienvenida__barra" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+
+  <!-- 2. Cabecera y barra de navegación común (el CSS adapta su posición según pantalla) -->
+  <header class="cabecera">
+    <div class="cabecera__interior">
+      <a class="marca" href="#inicio"><img src="./iconos/icono-192.png" width="40" height="40" alt="">LUMINATECH</a>
+      <nav class="navegacion" aria-label="Principal">
+        <a href="#inicio" aria-current="page"><span aria-hidden="true"><svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg></span>Inicio</a>
+        <a href="#catalogo"><span aria-hidden="true"><svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z"/></svg></span>Catálogo</a>
+        <a href="#contacto"><span aria-hidden="true"><svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-9 9 9 9 0 0 1-4-.9L3 21l1.4-4.7A9 9 0 1 1 21 11.5Z"/></svg></span>Contacto</a>
+      </nav>
+      <div class="cabecera__acciones">
+        <button class="cabecera__lupa" type="button" aria-label="Buscar productos" data-buscar><svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21l-5-5M18 10.5a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Aviso de estado de red (online / offline) -->
+  <p class="aviso aviso--red" id="estado-red" role="status" hidden></p>
+
+  <main class="contenedor">
+    <!-- 3. Pantalla Inicio: carrusel de 3 diapositivas y accesos por categoría -->
+    <section id="inicio" class="pantalla" aria-labelledby="titulo-inicio">
+      <div class="portada" id="carrusel" role="region" aria-label="Productos destacados">
+        <img class="portada__foto" src="./imagenes/portada.webp" srcset="./imagenes/portada-movil.webp 520w, ./imagenes/portada.webp 1000w" sizes="100vw" width="1000" height="300" fetchpriority="high" data-slide alt="Lámpara de techo iluminada">
+        <img class="portada__foto portada__foto--producto" src="./imagenes/focos.webp" width="360" height="260" data-slide hidden loading="lazy" alt="Foco LED">
+        <img class="portada__foto portada__foto--producto" src="./imagenes/cables.webp" width="360" height="260" data-slide hidden loading="lazy" alt="Cable eléctrico enrollado">
+        <div class="portada__texto">
+          <span class="portada__etiqueta">Iluminación y energía para tu espacio</span>
+          <h1 id="titulo-inicio" tabindex="-1">Iluminación y materiales eléctricos</h1>
+          <p class="portada__descripcion">Lámparas, focos y cables para tu hogar o negocio</p>
+          <a class="boton portada__enlace" href="#catalogo">Ver catálogo</a>
+        </div>
+        <div class="portada__controles" aria-label="Controles del carrusel">
+          <button type="button" data-anterior aria-label="Anterior">‹</button>
+          <button type="button" data-pagina="0" aria-label="Mostrar lámparas" aria-pressed="true">1</button>
+          <button type="button" data-pagina="1" aria-label="Mostrar focos" aria-pressed="false">2</button>
+          <button type="button" data-pagina="2" aria-label="Mostrar cables" aria-pressed="false">3</button>
+          <button type="button" data-siguiente aria-label="Siguiente">›</button>
+          <button type="button" data-pausa aria-label="Pausar carrusel">Ⅱ</button>
+        </div>
+      </div>
+
+      <div class="categorias" aria-label="Categorías">
+        <a class="categoria" href="#catalogo/lamparas"><img src="./imagenes/lamparas.webp" width="360" height="170" alt="" decoding="async"><strong>Lámparas</strong></a>
+        <a class="categoria" href="#catalogo/focos"><img src="./imagenes/focos.webp" width="360" height="170" alt="" decoding="async"><strong>Focos</strong></a>
+        <a class="categoria" href="#catalogo/cables"><img src="./imagenes/cables.webp" width="360" height="170" alt="" decoding="async"><strong>Cables</strong></a>
+      </div>
+    </section>
+
+    <!-- 4. Pantalla Catálogo: buscador, filtros por categoría/subcategoría y paginación -->
+    <section id="catalogo" class="pantalla" aria-labelledby="titulo-catalogo" hidden>
+      <h1 id="titulo-catalogo" tabindex="-1">Catálogo</h1>
+      <form class="filtros" id="form-busqueda" role="search">
+        <label class="filtros__buscador"><span aria-hidden="true">⌕</span><input id="busqueda" type="search" autocomplete="off" maxlength="100" placeholder="Buscar productos" aria-label="Buscar productos"></label>
+        <fieldset class="filtros__grupo" aria-label="Categoría">
+          <label><input name="categoria" value="todos" type="radio" checked><span>Todos</span></label>
+          <label><input name="categoria" value="lamparas" type="radio"><span>Lámparas</span></label>
+          <label><input name="categoria" value="focos" type="radio"><span>Focos</span></label>
+          <label><input name="categoria" value="cables" type="radio"><span>Cables</span></label>
+        </fieldset>
+        <fieldset class="filtros__grupo filtros__subgrupo" id="filtros-lamparas" aria-label="Tipo de lámpara" hidden>
+          <label><input name="subcategoria" value="todas" type="radio" checked><span>Todas</span></label>
+          <label><input name="subcategoria" value="techo" type="radio"><span>De techo</span></label>
+          <label><input name="subcategoria" value="portatil" type="radio"><span>Portátiles</span></label>
+        </fieldset>
+      </form>
+      <p id="estado-catalogo" role="status"></p>
+      <button class="boton" id="limpiar" type="button" hidden>Limpiar filtros</button>
+      <button class="boton" id="reintentar" type="button" hidden>Reintentar</button>
+      <div class="productos" id="productos"></div>
+      <nav class="paginacion" id="paginacion" aria-label="Páginas del catálogo" hidden></nav>
+    </section>
+
+    <!-- 5. Pantalla Contacto: WhatsApp, ubicación, horarios y mapa -->
+    <section id="contacto" class="pantalla" aria-labelledby="titulo-contacto" hidden>
+      <h1 id="titulo-contacto" tabindex="-1">Contacto</h1>
+      <div class="contacto">
+        <div class="contacto__panel">
+          <a class="boton boton--whatsapp" id="whatsapp-general" hidden>Escríbenos por WhatsApp</a>
+          <button class="boton boton--whatsapp" id="whatsapp-pendiente" type="button" disabled>WhatsApp por confirmar</button>
+          <div class="contacto__mapa contacto__mapa--movil"><img src="./imagenes/mapa.webp" width="500" height="250" loading="lazy" alt="Ilustración de un mapa"></div>
+          <div class="contacto__dato"><h2>Ubicación</h2><p id="direccion">La Paz, El Alto · Zona Santiago Segundo</p><a id="ruta-mapa" hidden>Cómo llegar ↗</a></div>
+          <div class="contacto__dato"><h2>Horarios</h2><p id="horario">Lunes a viernes de 7:30 AM a 10:00 PM</p></div>
+          <div class="contacto__dato"><h2>Sobre nosotros</h2><p id="descripcion">LUMINATECH · Iluminación y materiales eléctricos para tu hogar o negocio en El Alto y La Paz.</p></div>
+        </div>
+        <div class="contacto__mapa contacto__mapa--amplio"><img src="./imagenes/mapa.webp" width="500" height="250" loading="lazy" alt="Ilustración de un mapa"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. Plantilla reutilizable para tarjetas de producto -->
+  <template id="plantilla-producto">
+    <article class="producto">
+      <div class="producto__marco"><img class="producto__foto" width="360" height="260" alt="" decoding="async"></div>
+      <div class="producto__cuerpo">
+        <h2 class="producto__nombre"></h2>
+        <p class="producto__dato"></p>
+        <p class="producto__codigo"></p>
+        <div class="producto__acciones">
+          <button class="boton" type="button" data-detalle>Ver detalle</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <!-- 7. Modal de detalle de producto -->
+  <dialog class="ficha" id="ficha" aria-labelledby="ficha-titulo">
+    <form method="dialog" class="ficha__cierre"><button type="submit" aria-label="Cerrar ficha" autofocus>×</button></form>
+    <div class="ficha__marco"><img id="ficha-foto" width="360" height="260" alt=""></div>
+    <div class="ficha__cabecera"><span id="ficha-codigo"></span></div>
+    <h2 id="ficha-titulo"></h2>
+    <p id="ficha-descripcion"></p>
+    <button class="boton boton--secundario" type="button" data-especificaciones aria-expanded="true" aria-controls="ficha-datos">Especificaciones técnicas</button>
+    <dl id="ficha-datos"></dl>
+    <div class="ficha__pie">
+      <a class="boton boton--whatsapp" id="whatsapp-producto" hidden target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
+      <p id="ficha-contacto-pendiente">WhatsApp por confirmar</p>
+    </div>
+  </dialog>
+
+  <button class="boton subir" id="subir" type="button" aria-label="Volver arriba" hidden>↑</button>
+  <noscript>Activa JavaScript para usar la búsqueda y abrir las fichas.</noscript>
+</body>
+</html>

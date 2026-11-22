@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "LUMINATECH · Iluminación y materiales eléctricos",
+  "short_name": "LUMINATECH",
+  "lang": "es-BO",
+  "description": "Catálogo de lámparas, focos y cables",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#14243A",
+  "background_color": "#F8F7F3",
+  "icons": [
+    {
+      "src": "./iconos/icono-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./iconos/icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

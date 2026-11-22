@@ -1,0 +1,333 @@
+/* ==========================================================================
+   ARCHIVO: css/responsivo.css
+   RESPONSABILIDAD:
+    - Adaptar el diseño base a celulares, tablets, laptops y modo horizontal.
+    - Gestionar barra inferior fija con área segura (env(safe-area-inset-bottom)).
+    - Ocultar barra inferior cuando el teclado virtual móvil está activo.
+    - Mantener áreas táctiles mínimas de 44 × 44 px y evitar scroll en Inicio.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TABLET Y CELULAR (<= 1023 px): barra de navegación inferior y 3 columnas
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  :root {
+    --pie: calc(64px + env(safe-area-inset-bottom));
+  }
+
+  .navegacion {
+    position: fixed;
+    inset: auto 0 0;
+    justify-content: space-evenly;
+    padding: 5px 5px calc(5px + env(safe-area-inset-bottom));
+    background: white;
+    color: var(--azul);
+    box-shadow: 0 -2px 12px #14243a20;
+  }
+
+  .navegacion a {
+    flex-direction: column;
+    min-height: 50px;
+    font-size: 0.85rem;
+    border: 0;
+    border-radius: 10px;
+  }
+
+  .navegacion span {
+    display: block;
+    font-size: 1.13rem;
+    line-height: 1;
+  }
+
+  .navegacion a[aria-current] {
+    background: var(--ambar);
+  }
+
+  .cabecera__lupa {
+    display: block;
+    font-size: 1.25rem;
+  }
+
+  .productos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .portada__texto {
+    max-width: 62%;
+  }
+
+  /* Cuando el teclado virtual móvil aparece, se oculta la barra inferior */
+  .teclado-visible .navegacion {
+    display: none;
+  }
+
+  .teclado-visible {
+    --pie: 0px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. CELULAR (<= 599 px): 2 columnas en Catálogo y 1 columna en Categorías/Contacto
+   -------------------------------------------------------------------------- */
+@media (max-width: 599px) {
+  .cabecera__interior,
+  .contenedor {
+    padding-inline: 12px;
+  }
+
+  .cabecera__interior,
+  .cabecera__acciones {
+    gap: 4px;
+  }
+
+  .portada {
+    min-height: 350px;
+    align-items: end;
+  }
+
+  .portada__foto {
+    object-position: 73% top;
+  }
+
+  .portada::before {
+    background: linear-gradient(0deg, #f8efe4 0%, #f8efe4e8 30%, #f8efe400 74%);
+  }
+
+  .portada__texto {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .portada__texto p {
+    margin: 6px 0 10px;
+  }
+
+  .categorias,
+  .contacto {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .categoria img {
+    height: 74px;
+  }
+
+  .categorias {
+    gap: 7px;
+  }
+
+  .productos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .producto__nombre {
+    font-size: 0.98rem;
+  }
+
+  .filtros__grupo {
+    gap: 4px;
+  }
+
+  .filtros__grupo span {
+    padding-inline: 10px;
+    font-size: 0.85rem;
+  }
+
+  .contacto__mapa--amplio {
+    display: none;
+  }
+
+  .contacto__mapa--movil {
+    display: block;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. CELULAR VERTICAL (PORTRAIT): Inicio sin scroll y fotos completas
+   -------------------------------------------------------------------------- */
+@media (max-width: 599px) and (orientation: portrait) {
+  .contenedor {
+    padding: 10px 12px calc(10px + var(--pie) + var(--teclado));
+  }
+
+  #inicio {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 10px;
+    min-height: calc(100dvh - var(--cabecera) - var(--pie) - 20px);
+  }
+
+  .portada {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+    background: linear-gradient(160deg, #fff6e8 0%, #efd9bd 100%);
+  }
+
+  .portada::before {
+    content: none;
+  }
+
+  .portada__foto,
+  .portada__foto--producto {
+    position: relative;
+    inset: auto;
+    z-index: auto;
+    width: 100%;
+    height: clamp(110px, 22dvh, 165px);
+    object-fit: contain;
+    object-position: center;
+    padding: 8px 8px 0;
+    background: transparent;
+  }
+
+  .portada__texto {
+    padding: 6px 14px 4px;
+  }
+
+  .portada__etiqueta {
+    margin-bottom: 5px;
+    font-size: 0.7rem;
+    padding: 3px 9px;
+  }
+
+  .portada__texto h1 {
+    font-size: clamp(1.32rem, 5.8vw, 1.8rem);
+    line-height: 1.1;
+  }
+
+  .portada__texto p {
+    margin: 4px 0 8px;
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .portada__enlace {
+    min-height: 44px;
+    padding: 6px 16px;
+    font-size: 0.92rem;
+  }
+
+  .portada__controles {
+    position: static;
+    padding: 4px 14px 10px;
+    flex-wrap: wrap;
+  }
+
+  .portada__controles button {
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 0.85rem;
+  }
+
+  .categorias {
+    gap: 7px;
+    margin-top: 0;
+  }
+
+  .categoria img {
+    height: clamp(50px, 8.5dvh, 62px);
+    object-fit: contain;
+    object-position: right;
+    padding-right: 8px;
+    background: #473a2d;
+  }
+
+  .categoria strong {
+    inset: 0;
+    display: flex;
+    align-items: center;
+    padding: 6px 14px;
+    background: linear-gradient(90deg, #14243af2 0%, #1e3a5fcc 48%, transparent 82%);
+    font-size: 1.05rem;
+  }
+
+  .navegacion a {
+    min-width: 80px;
+  }
+
+  .filtros__grupo {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .filtros__grupo span {
+    padding: 0 10px;
+    font-size: 0.84rem;
+    min-height: 44px;
+  }
+
+  .producto {
+    padding: 7px;
+  }
+
+  .producto__foto {
+    aspect-ratio: 4 / 3;
+    padding: 4px;
+  }
+
+  .producto__nombre {
+    font-size: 0.93rem;
+  }
+
+  .producto__acciones .boton {
+    min-height: 44px;
+    font-size: 0.86rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. AJUSTE PARA TABLETS (600 px – 1023 px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .categoria img {
+    height: 145px;
+    object-fit: cover;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. MODO HORIZONTAL COMPACTO (LANDSCAPE <= 500 px de alto)
+   -------------------------------------------------------------------------- */
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 1023px) {
+  :root {
+    --cabecera: 48px;
+    --pie: 0px;
+  }
+
+  .navegacion {
+    inset: var(--cabecera) 0 0 auto;
+    flex-direction: column;
+    width: 92px;
+    padding: 5px;
+  }
+
+  .contenedor {
+    padding-right: 104px;
+  }
+
+  .portada {
+    min-height: 200px;
+  }
+
+  .portada__texto {
+    padding-bottom: 66px;
+  }
+
+  .portada__texto h1 {
+    font-size: 1.9rem;
+  }
+
+  .categorias {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .categoria img {
+    height: 76px;
+  }
+
+  .teclado-visible .contenedor {
+    padding-right: 12px;
+  }
+}

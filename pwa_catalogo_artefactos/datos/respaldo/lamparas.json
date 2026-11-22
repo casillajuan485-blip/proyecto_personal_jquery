@@ -1,0 +1,216 @@
+﻿[
+    {
+        "id":  "lt01",
+        "codigo":  "LT01",
+        "nombre":  "IKEA HEKTAR Lámpara Colgante",
+        "precio":  399,
+        "precioReferencial":  true,
+        "resumen":  "Techo · 38 × 38 cm · Negro/gris metal",
+        "imagen":  "imagenes/productos/lt01.jpg",
+        "fuente":  "https://www.ikea.com/fr/fr/p/hektar-suspension-gris-fonce-40296108/",
+        "respaldo":  "imagenes/colgante.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Lámpara colgante de estilo industrial con pantalla metálica amplia que concentra la luz sobre comedores o mesones.",
+        "especificaciones":  {
+                                 "Medidas":  "38 cm alto × 38 cm ancho (diámetro)",
+                                 "Ubicación":  "Solo interior",
+                                 "Foco":  "Usa 1 foco rosca normal E27 (no incluido)",
+                                 "Color y material":  "Gris oscuro / negro mate · metal (acero)"
+                             }
+    },
+    {
+        "id":  "lt02",
+        "codigo":  "LT02",
+        "nombre":  "IKEA SINNERLIG Colgante Bambú",
+        "precio":  490,
+        "precioReferencial":  true,
+        "resumen":  "Techo · 36 × 27 cm · Bambú natural",
+        "imagen":  "imagenes/productos/lt02.jpg",
+        "fuente":  "https://www.ikea.com/us/en/p/sinnerlig-pendant-lamp-bamboo-handmade-60515869/",
+        "respaldo":  "imagenes/mimbre.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Pantalla artesanal tejida a mano que proyecta una iluminación cálida y decorativa en salas o dormitorios.",
+        "especificaciones":  {
+                                 "Medidas":  "36 cm alto × 27 cm ancho (diámetro)",
+                                 "Ubicación":  "Solo interior",
+                                 "Foco":  "Usa 1 foco rosca normal E27 (no incluido)",
+                                 "Color y material":  "Natural · bambú tejido"
+                             }
+    },
+    {
+        "id":  "lt03",
+        "codigo":  "LT03",
+        "nombre":  "Philips Downlight LED Empotrable 14 W",
+        "precio":  85,
+        "precioReferencial":  true,
+        "resumen":  "Techo · 5 × 17 cm · Incluye LED 14 W",
+        "imagen":  "imagenes/productos/lt03.jpg",
+        "fuente":  "https://www.philips.com",
+        "respaldo":  "imagenes/colgante.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Ojo de buey LED empotrable ultradelgado de luz uniforme y sin parpadeos para cielo falso o losa.",
+        "especificaciones":  {
+                                 "Medidas":  "5 cm alto × 17 cm ancho (diámetro)",
+                                 "Ubicación":  "Solo interior",
+                                 "Foco":  "Ya incluye foco LED integrado de 14 W",
+                                 "Color y material":  "Blanco · policarbonato y aluminio"
+                             }
+    },
+    {
+        "id":  "lt04",
+        "codigo":  "LT04",
+        "nombre":  "Philips Panel LED Sobreponer 18 W",
+        "precio":  95,
+        "precioReferencial":  true,
+        "resumen":  "Techo · 3,5 × 22 cm · Incluye LED 18 W",
+        "imagen":  "imagenes/productos/lt04.jpg",
+        "fuente":  "https://monikaelectric.com",
+        "respaldo":  "imagenes/colgante.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Plafón LED de sobreponer directo al techo, ideal cuando no se cuenta con cielo falso para empotrar.",
+        "especificaciones":  {
+                                 "Medidas":  "3,5 cm alto × 22 cm ancho",
+                                 "Ubicación":  "Solo interior",
+                                 "Foco":  "Ya incluye foco LED integrado de 18 W",
+                                 "Color y material":  "Blanco · marco de aluminio y difusor acrílico"
+                             }
+    },
+    {
+        "id":  "lt05",
+        "codigo":  "LT05",
+        "nombre":  "Philips Reflector LED Exterior 50 W IP65",
+        "precio":  260,
+        "precioReferencial":  true,
+        "resumen":  "Exterior/Techo · 22 × 27 cm · IP65",
+        "imagen":  "imagenes/productos/lt05.jpg",
+        "fuente":  "https://www.electricpoint.com",
+        "respaldo":  "imagenes/colgante.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Reflector LED de alta potencia resistente a lluvia y polvo, con soporte metálico orientable para pared o techo.",
+        "especificaciones":  {
+                                 "Medidas":  "22 cm alto × 27 cm ancho",
+                                 "Ubicación":  "Exterior e interior (protección IP65 contra lluvia)",
+                                 "Foco":  "Ya incluye módulo LED integrado de 50 W",
+                                 "Color y material":  "Negro · aluminio fundido y vidrio templado"
+                             }
+    },
+    {
+        "id":  "lt06",
+        "codigo":  "LT06",
+        "nombre":  "IKEA Lámpara Colgante Minimalista",
+        "precio":  340,
+        "precioReferencial":  true,
+        "resumen":  "Techo · 30 × 35 cm · Blanco/dorado",
+        "imagen":  "imagenes/productos/lt06.jpg",
+        "fuente":  "https://www.ikea.com",
+        "respaldo":  "imagenes/colgante.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Lámpara colgante moderna de líneas limpias para comedores, barras de cocina y salas contemporáneas.",
+        "especificaciones":  {
+                                 "Medidas":  "30 cm alto × 35 cm ancho",
+                                 "Ubicación":  "Solo interior",
+                                 "Foco":  "Usa 1 foco rosca normal E27 (no incluido)",
+                                 "Color y material":  "Blanco con detalle metálico · acero esmaltado"
+                             }
+    },
+    {
+        "id":  "lp01",
+        "codigo":  "LP01",
+        "nombre":  "IKEA NÖDMAST Lámpara Portátil LED",
+        "precio":  179,
+        "precioReferencial":  true,
+        "resumen":  "Portátil · A pilas · 26 × 14 cm",
+        "imagen":  "imagenes/productos/lp01.jpg",
+        "fuente":  "https://www.ikea.co.id/en/products/luminaires/table-lamps/nodmast-art-40582572",
+        "respaldo":  "imagenes/mesa.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Lámpara portátil liviana con asa superior para llevar a cualquier habitación, mesa o terraza techada.",
+        "especificaciones":  {
+                                 "Energía":  "A pilas (3 × AA)",
+                                 "Duración de batería":  "Hasta 24 horas según la calidad de las pilas",
+                                 "Luz":  "LED integrado luz cálida (2700 K)",
+                                 "Control":  "Botón interruptor",
+                                 "Medidas":  "26 cm alto × 14 cm ancho"
+                             }
+    },
+    {
+        "id":  "lp02",
+        "codigo":  "LP02",
+        "nombre":  "IKEA LÄNSPORT Portátil LED",
+        "precio":  189,
+        "precioReferencial":  true,
+        "resumen":  "Portátil · A pilas · 22 × 11 cm",
+        "imagen":  "imagenes/productos/lp02.jpg",
+        "fuente":  "https://www.ikea.com/de/en/p/laensport-led-portable-lamp-battery-operated-white-dark-grey-60575919/",
+        "respaldo":  "imagenes/mesa.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Lámpara compacta inalámbrica ideal como luz de noche en dormitorios, repisas o cortes de energía.",
+        "especificaciones":  {
+                                 "Energía":  "A pilas (3 × AAA)",
+                                 "Duración de batería":  "Hasta 20 horas según las pilas utilizadas",
+                                 "Luz":  "LED integrado luz cálida suave",
+                                 "Control":  "Botón superior",
+                                 "Medidas":  "22 cm alto × 11 cm ancho"
+                             }
+    },
+    {
+        "id":  "lp03",
+        "codigo":  "LP03",
+        "nombre":  "IKEA TERTIAL Lámpara de Escritorio",
+        "precio":  198,
+        "precioReferencial":  true,
+        "resumen":  "Escritorio · Con enchufe · Brazo articulado",
+        "imagen":  "imagenes/productos/lp03.jpg",
+        "fuente":  "https://www.ikea.com/sa/en/p/tertial-work-lamp-dark-grey-40450802/",
+        "respaldo":  "imagenes/mesa.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Lámpara clásica de arquitecto con brazo metálico articulado y prensa para fijar en escritorios o mesas de trabajo.",
+        "especificaciones":  {
+                                 "Energía":  "Con enchufe (220 V)",
+                                 "Duración de batería":  "No aplica (conexión directa a corriente)",
+                                 "Luz":  "Usa 1 foco rosca E27 intercambiable (según preferencia cálida o fría)",
+                                 "Control":  "Botón interruptor en el cable",
+                                 "Medidas":  "55 cm alto máx. × 17 cm ancho de pantalla"
+                             }
+    },
+    {
+        "id":  "lp04",
+        "codigo":  "LP04",
+        "nombre":  "Zafferano Poldina Pro Táctil",
+        "precio":  890,
+        "precioReferencial":  true,
+        "resumen":  "Portátil · Recargable · Control táctil",
+        "imagen":  "imagenes/productos/lp04.jpg",
+        "fuente":  "https://www.potterybarn.com/products/zafferano-cordless-light/",
+        "respaldo":  "imagenes/mesa.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Lámpara inalámbrica de aluminio con base de carga rápida, perfecta para mesas de restaurantes, salas y terrazas.",
+        "especificaciones":  {
+                                 "Energía":  "Recargable (base de contacto / USB)",
+                                 "Duración de batería":  "Dura hasta 12 horas · carga completa en 6 horas",
+                                 "Luz":  "3 tonos cálidos (2200 / 2700 / 3000 K) + brillo regulable",
+                                 "Control":  "Táctil (touch)",
+                                 "Medidas":  "38 cm alto × 11 cm ancho"
+                             }
+    },
+    {
+        "id":  "lp05",
+        "codigo":  "LP05",
+        "nombre":  "Lámpara de Mesa Minimalista USB-C",
+        "precio":  215,
+        "precioReferencial":  true,
+        "resumen":  "Portátil · Recargable USB-C · Táctil",
+        "imagen":  "imagenes/productos/lp05.jpg",
+        "fuente":  "https://www.ikea.com",
+        "respaldo":  "imagenes/mesa.webp",
+        "unidad":  "unidad",
+        "descripcion":  "Lámpara portátil moderna recargable por USB-C con atenuación continua y selector táctil de temperatura de color.",
+        "especificaciones":  {
+                                 "Energía":  "Recargable (USB-C)",
+                                 "Duración de batería":  "Dura 6 a 8 horas · carga completa en 3 horas",
+                                 "Luz":  "3 tonos de luz (cálida, neutra, fría) + brillo regulable",
+                                 "Control":  "Táctil (touch)",
+                                 "Medidas":  "28 cm alto × 12 cm ancho"
+                             }
+    }
+]

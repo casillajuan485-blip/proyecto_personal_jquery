@@ -1,0 +1,173 @@
+﻿[
+    {
+        "id":  "c01",
+        "codigo":  "C01",
+        "nombre":  "Southwire Cable Dúplex SPT-2 18/2",
+        "precio":  159,
+        "precioReferencial":  true,
+        "resumen":  "Para focos y lámparas · 100% cobre",
+        "imagen":  "imagenes/productos/c01.jpg",
+        "fuente":  "https://www.lowes.com/pd/Southwire-18-2-LAMP-WIRE-BROWN-100-FT/5015169583",
+        "respaldo":  "imagenes/cables.webp",
+        "unidad":  "rollo",
+        "descripcion":  "Cordón mellizo flexible ideal para conexiones de focos, veladores, lámparas colgantes y electrodomésticos ligeros.",
+        "especificaciones":  {
+                                 "Uso recomendado":  "Para focos, lámparas y extensiones ligeras",
+                                 "Material":  "100% cobre trenzado con aislamiento PVC",
+                                 "Colores disponibles":  "Marrón, Blanco, Negro",
+                                 "Presentación":  "Por metro o rollo de 100 pies (30,48 m)"
+                             }
+    },
+    {
+        "id":  "c02",
+        "codigo":  "C02",
+        "nombre":  "Southwire Cable Dúplex SPT-2 16/2",
+        "precio":  355,
+        "precioReferencial":  true,
+        "resumen":  "Para lámparas y extensiones · 100% cobre",
+        "imagen":  "imagenes/productos/c02.jpg",
+        "fuente":  "https://www.homedepot.com/p/202316298",
+        "respaldo":  "imagenes/cables.webp",
+        "unidad":  "rollo",
+        "descripcion":  "Cordón dúplex de mayor calibre para lámparas múltiples, reflectores portátiles y alargadores domésticos.",
+        "especificaciones":  {
+                                 "Uso recomendado":  "Para lámparas de mayor consumo y alargadores domésticos",
+                                 "Material":  "100% cobre trenzado con aislamiento PVC",
+                                 "Colores disponibles":  "Blanco, Negro, Marrón",
+                                 "Presentación":  "Por metro o rollo de 250 pies (76,2 m)"
+                             }
+    },
+    {
+        "id":  "c03",
+        "codigo":  "C03",
+        "nombre":  "Southwire Cable THHN 14 AWG",
+        "precio":  185,
+        "precioReferencial":  true,
+        "resumen":  "Para circuitos de focos e iluminación",
+        "imagen":  "imagenes/productos/c03.jpg",
+        "fuente":  "https://www.lowes.com/pd/Southwire-100-ft-14-AWG-Stranded-Black-Copper-Thhn-Wire-By-the-roll/1000777284?feed=yes\u0026user=shopping",
+        "respaldo":  "imagenes/cables.webp",
+        "unidad":  "rollo",
+        "descripcion":  "Cable unipolar entubado con cubierta de nylon resistente a la abrasión, ideal para circuitos de iluminación residencial.",
+        "especificaciones":  {
+                                 "Uso recomendado":  "Para focos, interruptores y circuitos de iluminación",
+                                 "Material":  "100% cobre trenzado con aislamiento PVC y chaqueta de nylon",
+                                 "Colores disponibles":  "Negro, Blanco, Azul, Amarillo",
+                                 "Presentación":  "Por metro o rollo de 100 m"
+                             }
+    },
+    {
+        "id":  "c04",
+        "codigo":  "C04",
+        "nombre":  "Southwire Cable THHN 12 AWG",
+        "precio":  230,
+        "precioReferencial":  true,
+        "resumen":  "Para tomacorrientes y circuitos generales",
+        "imagen":  "imagenes/productos/c04.jpg",
+        "fuente":  "https://www.lowes.com/pd/Southwire-100-ft-12-AWG-Stranded-Red-Copper-THHN-Wire-By-the-Roll/1000774384",
+        "respaldo":  "imagenes/cables.webp",
+        "unidad":  "rollo",
+        "descripcion":  "Cable unipolar calibre 12 AWG recomendado para circuitos de tomacorrientes, microondas y tomas de cocina.",
+        "especificaciones":  {
+                                 "Uso recomendado":  "Para tomacorrientes y circuitos de fuerza domiciliarios",
+                                 "Material":  "100% cobre trenzado con aislamiento PVC/Nylon",
+                                 "Colores disponibles":  "Rojo, Negro, Blanco, Verde",
+                                 "Presentación":  "Por metro o rollo de 100 m"
+                             }
+    },
+    {
+        "id":  "c05",
+        "codigo":  "C05",
+        "nombre":  "Nexans Cable MTH 2 × 1,5 mm²",
+        "precio":  395,
+        "precioReferencial":  true,
+        "resumen":  "Rollo de 100 m · Iluminación y conexiones",
+        "imagen":  "imagenes/productos/c05.jpg",
+        "fuente":  "https://www.bricoeto.com/shop/cable-mth-2x15mm-100mt-blanc-nexans-2107",
+        "respaldo":  "imagenes/cables.webp",
+        "unidad":  "rollo",
+        "descripcion":  "Cable bipolar flexible de doble aislamiento ideal para instalaciones vistas o canalizadas de iluminación.",
+        "especificaciones":  {
+                                 "Uso recomendado":  "Para focos, luminarias y conexiones domiciliarias",
+                                 "Material":  "100% cobre trenzado con doble aislamiento PVC",
+                                 "Colores disponibles":  "Blanco, Negro",
+                                 "Presentación":  "Por metro o rollo de 100 m"
+                             }
+    },
+    {
+        "id":  "c06",
+        "codigo":  "C06",
+        "nombre":  "Southwire Cable THHN 10 AWG",
+        "precio":  390,
+        "precioReferencial":  true,
+        "resumen":  "Para duchas eléctricas y termas",
+        "imagen":  "imagenes/productos/c06.jpg",
+        "fuente":  "https://www.southwire.com",
+        "respaldo":  "imagenes/cables.webp",
+        "unidad":  "rollo",
+        "descripcion":  "Conductor de grueso calibre diseñado para soportar cargas altas continuas como duchas eléctricas, calefones y aires acondicionados.",
+        "especificaciones":  {
+                                 "Uso recomendado":  "Para duchas eléctricas, termas y cocinas de alta demanda",
+                                 "Material":  "100% cobre electrolítico con aislamiento PVC/Nylon",
+                                 "Colores disponibles":  "Negro, Rojo, Blanco, Verde (tierra)",
+                                 "Presentación":  "Por metro o rollo de 100 m"
+                             }
+    },
+    {
+        "id":  "c07",
+        "codigo":  "C07",
+        "nombre":  "Southwire Cordón Vulcanizado SJOOW 10/3",
+        "precio":  520,
+        "precioReferencial":  true,
+        "resumen":  "Uso rudo · Para herramientas y bombas",
+        "imagen":  "imagenes/productos/c07.jpg",
+        "fuente":  "https://www.homedepot.com",
+        "respaldo":  "imagenes/cables.webp",
+        "unidad":  "rollo",
+        "descripcion":  "Cable encauchetado flexible de 3 vías resistente a humedad, aceite e intemperie para extensiones industriales.",
+        "especificaciones":  {
+                                 "Uso recomendado":  "Para extensiones de uso rudo, bombas de agua y talleres",
+                                 "Material":  "100% cobre flexible con chaqueta vulcanizada resistente al agua",
+                                 "Colores disponibles":  "Negro",
+                                 "Presentación":  "Por metro o rollo de 100 m"
+                             }
+    },
+    {
+        "id":  "c08",
+        "codigo":  "C08",
+        "nombre":  "Cable Coaxial RG6 Blindado",
+        "precio":  180,
+        "precioReferencial":  true,
+        "resumen":  "Para TV cable, antenas y cámaras CCTV",
+        "imagen":  "imagenes/productos/c08.jpg",
+        "fuente":  "https://www.zion-communication.com",
+        "respaldo":  "imagenes/cables.webp",
+        "unidad":  "rollo",
+        "descripcion":  "Cable coaxial de baja pérdida con doble malla de blindaje para señal de televisión, internet por cable y videovigilancia.",
+        "especificaciones":  {
+                                 "Uso recomendado":  "Para antenas, TV cable y cámaras de seguridad CCTV",
+                                 "Material":  "Conductor central de cobre con malla de aluminio blindada",
+                                 "Colores disponibles":  "Negro, Blanco",
+                                 "Presentación":  "Por metro o rollo de 100 m"
+                             }
+    },
+    {
+        "id":  "c09",
+        "codigo":  "C09",
+        "nombre":  "Cable de Red UTP Cat6",
+        "precio":  340,
+        "precioReferencial":  true,
+        "resumen":  "Para internet Gigabit y cámaras IP",
+        "imagen":  "imagenes/productos/c09.jpg",
+        "fuente":  "https://shop.nexustrd.com",
+        "respaldo":  "imagenes/cables.webp",
+        "unidad":  "rollo",
+        "descripcion":  "Cable de red de 4 pares trenzados Categoría 6 para conexiones de alta velocidad en hogares, oficinas y cámaras IP.",
+        "especificaciones":  {
+                                 "Uso recomendado":  "Para routers, computadoras y cámaras de seguridad IP",
+                                 "Material":  "100% cobre sólido 23 AWG con cubierta PVC",
+                                 "Colores disponibles":  "Azul, Gris, Blanco",
+                                 "Presentación":  "Por metro o rollo / caja de 100 m y 305 m"
+                             }
+    }
+]
